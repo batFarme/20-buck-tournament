@@ -1,7 +1,8 @@
 {
 	"nodes":[
-		{"id":"29458bbc5d4fa280","type":"text","text":"weed whacker\n--","x":-220,"y":-340,"width":340,"height":60},
-		{"id":"00965b0e843e4c4d","type":"text","text":"Hand","x":-320,"y":-40,"width":250,"height":60}
+		{"id":"29458bbc5d4fa280","type":"text","text":"weed whacker\n--","x":-345,"y":-380,"width":340,"height":60},
+		{"id":"00965b0e843e4c4d","type":"text","text":"player\n","x":-320,"y":-20,"width":250,"height":60},
+		{"id":"5649c866f15a615f","x":-5,"y":-20,"width":400,"height":400,"type":"file","file":"playerScript.cs.md"}
 	],
 	"edges":[]
 }

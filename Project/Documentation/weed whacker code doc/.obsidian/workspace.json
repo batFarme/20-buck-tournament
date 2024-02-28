@@ -11,11 +11,28 @@
             "id": "1537a4e67cd6f836",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "playerScript.cs.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "5491f044e9be1d6f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "playerScript.cs.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "da5df29b550e5682",
@@ -30,7 +47,7 @@
                 "file": "doc.canvas",
                 "viewState": {
                   "x": 0,
-                  "y": 0,
+                  "y": 372,
                   "zoom": 0
                 }
               }
@@ -102,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "doc.canvas",
+                "file": "playerScript.cs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +136,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "doc.canvas",
+                "file": "playerScript.cs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -142,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "doc.canvas"
+                "file": "playerScript.cs.md"
               }
             }
           }
@@ -163,9 +180,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "85453f887b7864f2",
+  "active": "5491f044e9be1d6f",
   "lastOpenFiles": [
+    "playerStanding.cs.md",
     "doc.canvas",
+    "playerScript.cs.md",
     "Welcome.md"
   ]
 }
