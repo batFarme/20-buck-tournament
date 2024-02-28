@@ -1,7 +1,0 @@
-{
-	"nodes":[
-		{"id":"29458bbc5d4fa280","x":-220,"y":-340,"width":340,"height":60,"type":"text","text":"20 Buck Tournament\n--"},
-		{"id":"00965b0e843e4c4d","x":-320,"y":-40,"width":250,"height":60,"type":"text","text":"Hand"}
-	],
-	"edges":[]
-}
