@@ -1,8 +1,36 @@
 {
 	"nodes":[
-		{"id":"29458bbc5d4fa280","type":"text","text":"weed whacker\n--","x":-345,"y":-380,"width":340,"height":60},
-		{"id":"00965b0e843e4c4d","type":"text","text":"player\n","x":-320,"y":-20,"width":250,"height":60},
-		{"id":"5649c866f15a615f","x":-5,"y":-20,"width":400,"height":400,"type":"file","file":"playerScript.cs.md"}
+		{"id":"e2a78b0cc4a2a8cc","x":362,"y":-930,"width":400,"height":300,"type":"file","file":"Game Flow.md"},
+		{"id":"29458bbc5d4fa280","type":"text","text":"weed whacker\n--","x":377,"y":-1080,"width":340,"height":60},
+		{"id":"ccdf3b22385399c5","x":389,"y":-600,"width":317,"height":60,"type":"text","text":"Expected Behaviours\n--"},
+		{"id":"2110eaa3352fb1f0","x":495,"y":-228,"width":368,"height":139,"type":"text","text":"take damage/get knocked - when hit by an enemy, if damage taken meets or exceeds remaining health, player will go into knocked state. if not, then enemy's damage done is subtracted from player's health, they are sent in the direction the enemy's attack designates, and are placed in a temporary invulnerable state where they can still attack and are still chased by enemies, but they will take no damage until invulnerable state ends."},
+		{"id":"a59903a1884f00f9","x":495,"y":-500,"width":250,"height":102,"type":"text","text":"movement - player can use stick to walk in 8 directions"},
+		{"id":"ee3336d70fcb9ea4","x":495,"y":-386,"width":309,"height":128,"type":"text","text":"attack - player can use button to swing shovel in last pressed direction (eg shovel is swung up and to the left if player is currently moving up and to the left, or if player is still and their last held direction was up and to the left)"},
+		{"id":"1fc9f557d4e5add9","x":512,"y":-20,"width":334,"height":180,"type":"text","text":"knocked state - player's movement is slowed and cannot attack; enemies will ignore a knocked player. can be revived by other player through simply keeping contact for a certain amount of time."},
+		{"id":"023bf72108ed0e0e","x":180,"y":200,"width":250,"height":60,"type":"text","text":"Enemy\n--"},
+		{"id":"3131d0b26c55e286","x":160,"y":-500,"width":250,"height":60,"type":"text","text":"Player\n--"},
+		{"id":"46ef95b5d7fab0e8","x":519,"y":200,"width":281,"height":100,"type":"text","text":"chase - moves in direction of well; when hit by player, changes target to player"},
+		{"id":"44a4ba7830feb898","x":516,"y":340,"width":284,"height":120,"type":"text","text":"attack - when chasing a player and nearby, stops and attacks player; changes target back to well"},
+		{"id":"8394fe64cfe239de","x":519,"y":640,"width":343,"height":143,"type":"text","text":"drink water - when near well, play a lenghty animation to signify drinking; when animation finishes, play animation to signifiy drinking done, then start over"},
+		{"id":"f388d2ec10606ad3","x":516,"y":480,"width":346,"height":140,"type":"text","text":"take damage - when hit by player, sent backwards, and takes damage; if damage receieved meets or exceeds remaining health, play death animation and delete self from scene"},
+		{"id":"84afde37179f223c","x":519,"y":880,"width":342,"height":141,"type":"text","text":"take damage - when enemy nearby drinks from well, lower remaining water count and update HUD; if water taken meets or exceeds remaining water..."},
+		{"id":"633f780230205c5a","x":519,"y":1060,"width":256,"height":100,"type":"text","text":"game end - if water taken meets or exceeds remaining water, then "},
+		{"id":"d08fe95bb6d51225","x":208,"y":898,"width":250,"height":60,"type":"text","text":"Village well\n--"},
+		{"id":"ca3bf8488df3f016","x":1080,"y":-489,"width":400,"height":400,"type":"file","file":"playerScript.cs.md"}
 	],
-	"edges":[]
+	"edges":[
+		{"id":"2b4df40118e4fee8","fromNode":"3131d0b26c55e286","fromSide":"right","toNode":"ee3336d70fcb9ea4","toSide":"left"},
+		{"id":"11062a75cee85d3a","fromNode":"3131d0b26c55e286","fromSide":"right","toNode":"a59903a1884f00f9","toSide":"left"},
+		{"id":"f25ac6c9c4b5bbca","fromNode":"3131d0b26c55e286","fromSide":"right","toNode":"2110eaa3352fb1f0","toSide":"left"},
+		{"id":"e730992254a1d795","fromNode":"2110eaa3352fb1f0","fromSide":"bottom","toNode":"1fc9f557d4e5add9","toSide":"top"},
+		{"id":"2ac627d158b28c6d","fromNode":"3131d0b26c55e286","fromSide":"right","toNode":"1fc9f557d4e5add9","toSide":"left"},
+		{"id":"4b43276f918fc9de","fromNode":"023bf72108ed0e0e","fromSide":"right","toNode":"46ef95b5d7fab0e8","toSide":"left"},
+		{"id":"ff1bb81a047e68ac","fromNode":"023bf72108ed0e0e","fromSide":"right","toNode":"44a4ba7830feb898","toSide":"left"},
+		{"id":"ee8843f12ce4bf68","fromNode":"023bf72108ed0e0e","fromSide":"right","toNode":"f388d2ec10606ad3","toSide":"left"},
+		{"id":"41fcd40c41855f4e","fromNode":"d08fe95bb6d51225","fromSide":"right","toNode":"84afde37179f223c","toSide":"left"},
+		{"id":"d647ac82ba83d238","fromNode":"023bf72108ed0e0e","fromSide":"right","toNode":"8394fe64cfe239de","toSide":"left"},
+		{"id":"41b205b32d5f5cae","fromNode":"46ef95b5d7fab0e8","fromSide":"bottom","toNode":"44a4ba7830feb898","toSide":"top","fromEnd":"arrow"},
+		{"id":"797adf776ee946ad","fromNode":"d08fe95bb6d51225","fromSide":"right","toNode":"633f780230205c5a","toSide":"left"},
+		{"id":"74f74cab0e9eb061","fromNode":"8394fe64cfe239de","fromSide":"bottom","toNode":"84afde37179f223c","toSide":"top"}
+	]
 }
