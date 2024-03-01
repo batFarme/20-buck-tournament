@@ -16,8 +16,8 @@
               "state": {
                 "file": "doc.canvas",
                 "viewState": {
-                  "x": 788.3164199901814,
-                  "y": -207.45228952642958,
+                  "x": 512.3937100632043,
+                  "y": -56.26176353904481,
                   "zoom": -0.3333333333333332
                 }
               }
@@ -169,7 +169,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1537a4e67cd6f836",
+  "active": "4529dd709e1e3250",
   "lastOpenFiles": [
     "doc.canvas",
     "playerScript.cs.md",
