@@ -16,7 +16,8 @@
 		{"id":"84afde37179f223c","type":"text","text":"take damage - when enemy nearby drinks from well, lower remaining water count and update HUD; if water taken meets or exceeds remaining water...","x":519,"y":880,"width":342,"height":141},
 		{"id":"633f780230205c5a","type":"text","text":"game end - if water taken meets or exceeds remaining water, then ","x":519,"y":1060,"width":256,"height":100},
 		{"id":"d08fe95bb6d51225","type":"text","text":"Village well\n--","x":208,"y":898,"width":250,"height":60},
-		{"id":"369931788707d2ed","x":840,"y":-493,"width":400,"height":133,"type":"text","text":"create two private variables, moveAxisX and moveAxisY. inside update function, have left on the joystick add "}
+		{"id":"369931788707d2ed","type":"text","text":"in update function, set velocity of rigidbody equal to vector2 created by input mnager","x":840,"y":-493,"width":400,"height":95},
+		{"id":"58f4bbbe72134bc0","x":900,"y":-386,"width":473,"height":161,"type":"text","text":"create animation "}
 	],
 	"edges":[
 		{"id":"2b4df40118e4fee8","fromNode":"3131d0b26c55e286","fromSide":"right","toNode":"ee3336d70fcb9ea4","toSide":"left"},
@@ -31,6 +32,7 @@
 		{"id":"d647ac82ba83d238","fromNode":"023bf72108ed0e0e","fromSide":"right","toNode":"8394fe64cfe239de","toSide":"left"},
 		{"id":"41b205b32d5f5cae","fromNode":"46ef95b5d7fab0e8","fromSide":"bottom","toNode":"44a4ba7830feb898","toSide":"top","fromEnd":"arrow"},
 		{"id":"797adf776ee946ad","fromNode":"d08fe95bb6d51225","fromSide":"right","toNode":"633f780230205c5a","toSide":"left"},
-		{"id":"74f74cab0e9eb061","fromNode":"8394fe64cfe239de","fromSide":"bottom","toNode":"84afde37179f223c","toSide":"top"}
+		{"id":"74f74cab0e9eb061","fromNode":"8394fe64cfe239de","fromSide":"bottom","toNode":"84afde37179f223c","toSide":"top"},
+		{"id":"056de61578a14c9c","fromNode":"a59903a1884f00f9","fromSide":"right","toNode":"369931788707d2ed","toSide":"left"}
 	]
 }

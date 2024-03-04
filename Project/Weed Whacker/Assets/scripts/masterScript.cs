@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class playerStanding : MonoBehaviour
+public class masterScript : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
