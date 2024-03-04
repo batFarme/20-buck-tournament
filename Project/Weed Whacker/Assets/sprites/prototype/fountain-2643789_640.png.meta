@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 59bb210434934394a9378d57bd0ec2d8
+guid: c8e544917c2ba7342b56c957b4620757
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5628748243791631834
-    second: Sunflower2009HD_0
+      213: 8353620937562472745
+    second: fountain-2643789_640_0
+  - first:
+      213: -6695917893013031624
+    second: fountain-2643789_640_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 800
+  spritePixelsToUnits: 500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sunflower2009HD_0
+      name: fountain-2643789_640_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 15
-        width: 709
-        height: 796
+        x: 19
+        y: 24
+        width: 525
+        height: 603
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +117,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 62a22be6b4ba2e1b0800000000000000
-      internalID: -5628748243791631834
+      spriteID: 9214dabbbf50ee370800000000000000
+      internalID: 8353620937562472745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fountain-2643789_640_1
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 14
+        width: 66
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 835b6cd17225313a0800000000000000
+      internalID: -6695917893013031624
       vertices: []
       indices: 
       edges: []
@@ -131,7 +155,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sunflower2009HD_0: -5628748243791631834
+      fountain-2643789_640_0: 8353620937562472745
+      fountain-2643789_640_1: -6695917893013031624
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

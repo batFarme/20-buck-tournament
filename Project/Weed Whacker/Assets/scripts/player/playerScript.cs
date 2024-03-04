@@ -6,8 +6,10 @@ using UnityEngine.InputSystem;
 public class playerScript : MonoBehaviour
 {
     //references
-    public InputAction playerControls;
+    public InputAction controlMovement;
     public Rigidbody2D myRigidBody2D;
+    public GameObject myHitbox;
+    public GameObject myHurtbox;
 
     //handling
     public float moveSpeed;
@@ -15,6 +17,7 @@ public class playerScript : MonoBehaviour
     //internal control variables
     private delegate void crntStateExecute();
     crntStateExecute crntState;
+    private Vector2 moveDirection;
 
     // Start is called before the first frame update
     void Start()
@@ -24,11 +27,11 @@ public class playerScript : MonoBehaviour
 
     private void OnEnable()
     {
-        playerControls.Enable();
+        controlMovement.Enable();
     }
     private void OnDisable()             // the guy in the video said to put these in... whatever they do
     {
-        playerControls.Disable();
+        controlMovement.Disable();
     }
 
     // Update is called once per frame
@@ -37,17 +40,23 @@ public class playerScript : MonoBehaviour
         crntState();
     }
 
-    private void stateTransition()  //rather than simply setting the crntState var in code directly, use this (future-proofing)
+    private void stateTransition(string stateName)  //rather than simply setting the crntState var in code directly, use this (future-proofing)
     {
 
     }
     // states; when set as crntState, they are called every frame
-    private void standingState()
+    private void standingState() //stateName is standingState
     {
-        myRigidBody2D.velocity = new Vector2(playerControls.ReadValue<Vector2>().x * moveSpeed, playerControls.ReadValue<Vector2>().y * moveSpeed);
+        moveDirection = controlMovement.ReadValue<Vector2>();
+        myRigidBody2D.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed); //movement
     }
 
-    private void knockedState()
+    private void knockedState() //stateName is knockedState
+    {
+
+    }
+
+    private void deadState() //stateName is deadState
     {
 
     }

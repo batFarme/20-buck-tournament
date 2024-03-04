@@ -1,7 +1,7 @@
 {
 	"nodes":[
-		{"id":"e2a78b0cc4a2a8cc","type":"file","file":"Game Flow.md","x":362,"y":-930,"width":400,"height":300},
-		{"id":"29458bbc5d4fa280","type":"text","text":"weed whacker\n--","x":377,"y":-1080,"width":340,"height":60},
+		{"id":"e2a78b0cc4a2a8cc","type":"file","file":"game flow.md","x":362,"y":-930,"width":400,"height":300},
+		{"id":"29458bbc5d4fa280","type":"text","text":"# weed whacker","x":377,"y":-1080,"width":340,"height":60},
 		{"id":"ccdf3b22385399c5","type":"text","text":"Expected Behaviours\n--","x":389,"y":-600,"width":317,"height":60},
 		{"id":"2110eaa3352fb1f0","type":"text","text":"take damage/get knocked - when hit by an enemy, if damage taken meets or exceeds remaining health, player will go into knocked state. if not, then enemy's damage done is subtracted from player's health, they are sent in the direction the enemy's attack designates, and are placed in a temporary invulnerable state where they can still attack and are still chased by enemies, but they will take no damage until invulnerable state ends.","x":495,"y":-228,"width":368,"height":139},
 		{"id":"a59903a1884f00f9","type":"text","text":"movement - player can use stick to walk in 8 directions","x":495,"y":-500,"width":250,"height":102},
@@ -16,9 +16,10 @@
 		{"id":"84afde37179f223c","type":"text","text":"take damage - when enemy nearby drinks from well, lower remaining water count and update HUD; if water taken meets or exceeds remaining water...","x":519,"y":880,"width":342,"height":141},
 		{"id":"633f780230205c5a","type":"text","text":"game end - if water taken meets or exceeds remaining water, then ","x":519,"y":1060,"width":256,"height":100},
 		{"id":"369931788707d2ed","type":"text","text":"in update function, set velocity of rigidbody equal to vector2 created by input mnager","x":840,"y":-493,"width":400,"height":95},
-		{"id":"58f4bbbe72134bc0","x":900,"y":-389,"width":473,"height":161,"type":"text","text":"have player object have child that is collider2d with hitbox tag. have its collision disabled by default. create animation that sets this collider as active for a few frames, then make it inactive again. "},
+		{"id":"58f4bbbe72134bc0","type":"text","text":"have player object have child that is collider2d with hitbox tag. have its collision disabled by default. create animation that sets this collider as active for a few frames, then make it inactive again. ","x":900,"y":-389,"width":473,"height":161},
 		{"id":"d08fe95bb6d51225","type":"text","text":"Village well\n--","x":140,"y":921,"width":250,"height":60},
-		{"id":"709dabf3f91a4e01","x":1420,"y":-523,"width":500,"height":215,"type":"text","text":"### player state machine\nplayer has three states: standing, knocked, and dead. \neach of these are held internally as functions. \nthe current state is held as a delegate called crntState. crntState is called every frame by way of the Update function."}
+		{"id":"709dabf3f91a4e01","type":"text","text":"### player state machine\nplayer has three states: standing, knocked, and dead. \neach of these are held internally as functions. \nthe current state is held as a delegate called crntState. crntState is called every frame by way of the Update function.","x":1420,"y":-523,"width":500,"height":215},
+		{"id":"d072b3c84fa272a9","x":845,"y":200,"width":415,"height":160,"type":"text","text":"on entry, randomly chooses a target priority: player, flower, or well. "}
 	],
 	"edges":[
 		{"id":"2b4df40118e4fee8","fromNode":"3131d0b26c55e286","fromSide":"right","toNode":"ee3336d70fcb9ea4","toSide":"left"},
