@@ -18,8 +18,10 @@
 		{"id":"369931788707d2ed","type":"text","text":"in update function, set velocity of rigidbody equal to vector2 created by input mnager","x":840,"y":-493,"width":400,"height":95},
 		{"id":"58f4bbbe72134bc0","type":"text","text":"have player object have child that is collider2d with hitbox tag. have its collision disabled by default. create animation that sets this collider as active for a few frames, then make it inactive again. ","x":900,"y":-389,"width":473,"height":161},
 		{"id":"d08fe95bb6d51225","type":"text","text":"Village well\n--","x":140,"y":921,"width":250,"height":60},
-		{"id":"709dabf3f91a4e01","type":"text","text":"### player state machine\nplayer has three states: standing, knocked, and dead. \neach of these are held internally as functions. \nthe current state is held as a delegate called crntState. crntState is called every frame by way of the Update function.","x":1420,"y":-523,"width":500,"height":215},
-		{"id":"d072b3c84fa272a9","x":845,"y":200,"width":415,"height":160,"type":"text","text":"on entry, randomly chooses a target priority: player, flower, or well. "}
+		{"id":"709dabf3f91a4e01","type":"text","text":"### player state machine\nplayer has three states: standing, knocked, and dead. \neach of these are held internally as functions. \nthe current state is held as a delegate called crntState. crntState is called every frame by way of the Update function.\nwhen the player needs to change states, it calls the transitionState function. this function assigns crntState to whatever state is passed, and also ","x":1420,"y":-523,"width":500,"height":215},
+		{"id":"d072b3c84fa272a9","type":"text","text":"on entry, randomly chooses a target priority: player, flower, or well.","x":845,"y":200,"width":415,"height":160},
+		{"id":"2bcf67139e148aab","x":957,"y":-191,"width":443,"height":171,"type":"text","text":"run code that gets the position of the attacking weed. then, set the velocity to the attacker's knockbackSpeed (should be defined in their attatched script). also, have an animation called justHit that oscillates player's sprite color to indicate invincibility for a short period, and that also disables the player's hurtbox. upon invincibility expiration, reenable player's hurtbox."},
+		{"id":"61e189a3c6b3e017","x":900,"y":-20,"width":395,"height":209,"type":"text","text":"when transitioning to knocked state, player will have moveSpeed set to knockedStateMoveSpeed (defined in playerScript). when revived and state is returned to standingState, set moveSpeed back to standingMoveSpeed."}
 	],
 	"edges":[
 		{"id":"2b4df40118e4fee8","fromNode":"3131d0b26c55e286","fromSide":"right","toNode":"ee3336d70fcb9ea4","toSide":"left"},
@@ -36,6 +38,8 @@
 		{"id":"797adf776ee946ad","fromNode":"d08fe95bb6d51225","fromSide":"right","toNode":"633f780230205c5a","toSide":"left"},
 		{"id":"74f74cab0e9eb061","fromNode":"8394fe64cfe239de","fromSide":"bottom","toNode":"84afde37179f223c","toSide":"top"},
 		{"id":"056de61578a14c9c","fromNode":"a59903a1884f00f9","fromSide":"right","toNode":"369931788707d2ed","toSide":"left"},
-		{"id":"d958737e6d185c6b","fromNode":"ee3336d70fcb9ea4","fromSide":"right","toNode":"58f4bbbe72134bc0","toSide":"left"}
+		{"id":"d958737e6d185c6b","fromNode":"ee3336d70fcb9ea4","fromSide":"right","toNode":"58f4bbbe72134bc0","toSide":"left"},
+		{"id":"aa80547fca33ac16","fromNode":"1fc9f557d4e5add9","fromSide":"right","toNode":"61e189a3c6b3e017","toSide":"left"},
+		{"id":"10ed2450aef21862","fromNode":"2110eaa3352fb1f0","fromSide":"right","toNode":"2bcf67139e148aab","toSide":"left"}
 	]
 }
