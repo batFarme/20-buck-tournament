@@ -10,6 +10,8 @@ public class playerScript : MonoBehaviour
     public Rigidbody2D myRigidBody2D;
     public GameObject myHitbox;
     public GameObject myHurtbox;
+    public GameObject shovelSprite;
+    public Animator myAnimator;
 
     //handling
     public float moveSpeed;
@@ -18,6 +20,13 @@ public class playerScript : MonoBehaviour
     private delegate void crntStateExecute();
     crntStateExecute crntState;
     private Vector2 moveDirection;
+
+    //states
+    // BAM easy fix to the problem i had where i didnt knwo what variable type funcitons would b considered
+    public class State
+    {
+        //public void 
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -40,10 +49,13 @@ public class playerScript : MonoBehaviour
         crntState();
     }
 
-    private void stateTransition(string stateName)  //rather than simply setting the crntState var in code directly, use this (future-proofing)
+    private void stateTransition(string stateName)
+        //rather than simply setting the crntState var in code directly, use this (future-proofing)
+        //also WAAAHHH IDK WHAT VARIABLE TYPE FUNCTIONS AREEEEEE this is so effed up man
     {
 
     }
+
     // states; when set as crntState, they are called every frame
     private void standingState() //stateName is standingState
     {

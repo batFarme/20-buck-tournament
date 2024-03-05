@@ -5,10 +5,14 @@ using UnityEngine;
 public class weedScript : MonoBehaviour
 {
     //references
-    public GameObject target;
-
+    public GameObject originalTarget;
+    
     //handling
     public float moveSpeed;
+
+    //internal controls
+    private GameObject currentTarget;
+
     // Start is called before the first frame update
     void Start()
     {
