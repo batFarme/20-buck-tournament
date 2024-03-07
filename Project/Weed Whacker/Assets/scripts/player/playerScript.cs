@@ -52,14 +52,13 @@ public class playerScript : MonoBehaviour
     {
         crntState();
     }
-    /*
-    private void stateTransition(string stateName)
+    
+    private string stateTransition(string stateName)
         //rather than simply setting the crntState var in code directly, use this (future-proofing)
         //also WAAAHHH IDK WHAT VARIABLE TYPE FUNCTIONS AREEEEEE this is so effed up man
     {
 
     }
-    */
     // states; when set as crntState, they are called every frame
     private void standingState() //stateName is standingState
     {
