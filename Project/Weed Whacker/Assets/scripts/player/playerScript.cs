@@ -7,6 +7,7 @@ public class playerScript : MonoBehaviour
 {
     //references
     public InputAction controlMovement;
+    public InputAction attackButton;
     public Rigidbody2D myRigidBody2D;
     public GameObject myHitbox;
     public GameObject myHurtbox;
@@ -37,10 +38,13 @@ public class playerScript : MonoBehaviour
     private void OnEnable()
     {
         controlMovement.Enable();
+        attackButton.Enable();
+        attackButton.performed += attack;
     }
     private void OnDisable()             // the guy in the video said to put these in... whatever they do
     {
         controlMovement.Disable();
+        attackButton.Disable();
     }
 
     // Update is called once per frame
@@ -69,6 +73,10 @@ public class playerScript : MonoBehaviour
     }
 
     private void deadState() //stateName is deadState
+    {
+
+    }
+    private void attack(InputAction.CallbackContext context)
     {
 
     }

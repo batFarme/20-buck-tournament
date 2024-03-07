@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0d9f71450862a7d47b05c74569d50c39
+guid: 6417f00fd004c304ca9344d8ec608867
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7367808777163505026
-    second: sunflower_0
+      213: -6315461774752348023
+    second: Health-icon-red-300x300_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sunflower_0
+      name: Health-icon-red-300x300_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 15
-        width: 709
-        height: 796
+        x: 0
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 28df5d7eb07bf3660800000000000000
-      internalID: 7367808777163505026
+      spriteID: 98804530af8fa58a0800000000000000
+      internalID: -6315461774752348023
       vertices: []
       indices: 
       edges: []
@@ -123,15 +123,14 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      sunflower_0: 7367808777163505026
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
