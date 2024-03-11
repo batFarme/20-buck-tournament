@@ -23,10 +23,17 @@ public class playerScript : MonoBehaviour
     private Vector2 moveDirection;
 
     //states
-    // BAM easy fix to the problem i had where i didnt knwo what variable type funcitons would b considered
     public class State
     {
+        void onFirst()
+        {
+
+        }
         //public void 
+        void run()
+        {
+
+        }
     }
 
     // Start is called before the first frame update
@@ -53,7 +60,7 @@ public class playerScript : MonoBehaviour
         crntState();
     }
     
-    private string stateTransition(string stateName)
+    private void stateTransition(string stateName)
         //rather than simply setting the crntState var in code directly, use this (future-proofing)
         //also WAAAHHH IDK WHAT VARIABLE TYPE FUNCTIONS AREEEEEE this is so effed up man
     {
