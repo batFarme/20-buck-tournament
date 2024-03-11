@@ -1,0 +1,34 @@
+{
+    "name": "playerControls",
+    "maps": [
+        {
+            "name": "idle",
+            "id": "81e18296-23dc-4064-8e0a-0f886a5eb193",
+            "actions": [
+                {
+                    "name": "dpad",
+                    "type": "Value",
+                    "id": "1db79725-9408-4e8f-b207-f669b6a4dc37",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8998db96-cab6-461c-a56c-d5ec8e3b0329",
+                    "path": "<Gamepad>/dpad",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "dpad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

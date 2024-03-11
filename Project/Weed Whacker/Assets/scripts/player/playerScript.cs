@@ -7,6 +7,7 @@ public class playerScript : MonoBehaviour
 {
     //references
     public InputAction controlMovement;
+    public InputAction attackButton;
     public Rigidbody2D myRigidBody2D;
     public GameObject myHitbox;
     public GameObject myHurtbox;
@@ -17,45 +18,63 @@ public class playerScript : MonoBehaviour
     public float moveSpeed;
 
     //internal control variables
-    private delegate void crntStateExecute();
-    crntStateExecute crntState;
+    private State crntState;
     private Vector2 moveDirection;
 
     //states
     // BAM easy fix to the problem i had where i didnt knwo what variable type funcitons would b considered
     public class State
     {
-        //public void 
+        public void onFirst()
+        {
+
+        }
+        public void run()
+        {
+
+        }
     }
 
+    private State idle = new State();
+    
     // Start is called before the first frame update
     void Start()
     {
-        crntState = standingState;
+        crntState.run();
     }
 
     private void OnEnable()
     {
         controlMovement.Enable();
+        attackButton.Enable();
+        attackButton.performed += attack;
     }
     private void OnDisable()             // the guy in the video said to put these in... whatever they do
     {
         controlMovement.Disable();
+        attackButton.Disable();
     }
 
     // Update is called once per frame
     void Update()
     {
-        crntState();
+        crntState.run();
     }
-    /*
-    private void stateTransition(string stateName)
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+    private void setState()
+=======
+=======
+>>>>>>> bbd77873f7d9bd0deda850e388e927fca364707c
+    
+    private string stateTransition(string stateName)
         //rather than simply setting the crntState var in code directly, use this (future-proofing)
         //also WAAAHHH IDK WHAT VARIABLE TYPE FUNCTIONS AREEEEEE this is so effed up man
+>>>>>>> bbd77873f7d9bd0deda850e388e927fca364707c
     {
 
     }
-    */
     // states; when set as crntState, they are called every frame
     private void standingState() //stateName is standingState
     {
@@ -69,6 +88,10 @@ public class playerScript : MonoBehaviour
     }
 
     private void deadState() //stateName is deadState
+    {
+
+    }
+    private void attack(InputAction.CallbackContext context)
     {
 
     }

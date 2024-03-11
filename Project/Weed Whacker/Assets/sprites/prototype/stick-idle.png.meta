@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 0d9f71450862a7d47b05c74569d50c39
+guid: e5e672e84ea62b24c9c9f87cc7f86677
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7367808777163505026
-    second: sunflower_0
+      213: 6948081371299150829
+    second: stick-idle_0
+  - first:
+      213: -3607144086594154646
+    second: stick-idle_1
+  - first:
+      213: -1804181281413838449
+    second: stick-idle_2
+  - first:
+      213: -5365499705239847152
+    second: stick-idle_3
+  - first:
+      213: 3536922458462231938
+    second: stick-idle_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 650
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sunflower_0
+      name: stick-idle_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 15
-        width: 709
-        height: 796
+        x: 454
+        y: 709
+        width: 177
+        height: 153
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +126,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 28df5d7eb07bf3660800000000000000
-      internalID: 7367808777163505026
+      spriteID: deb7bc6d13b8c6060800000000000000
+      internalID: 6948081371299150829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stick-idle_1
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 706
+        width: 34
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6f87e09099d0fdc0800000000000000
+      internalID: -3607144086594154646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stick-idle_2
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 707
+        width: 36
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f894beafea246f6e0800000000000000
+      internalID: -1804181281413838449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stick-idle_3
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 220
+        width: 323
+        height: 478
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01f37ba127ae985b0800000000000000
+      internalID: -5365499705239847152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stick-idle_4
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 574
+        width: 203
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28d1ebe8c3ca51130800000000000000
+      internalID: 3536922458462231938
       vertices: []
       indices: 
       edges: []
@@ -131,7 +227,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      sunflower_0: 7367808777163505026
+      stick-idle_0: 6948081371299150829
+      stick-idle_1: -3607144086594154646
+      stick-idle_2: -1804181281413838449
+      stick-idle_3: -5365499705239847152
+      stick-idle_4: 3536922458462231938
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

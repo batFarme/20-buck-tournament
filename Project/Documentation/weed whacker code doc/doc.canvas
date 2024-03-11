@@ -3,16 +3,24 @@
 		{"id":"e2a78b0cc4a2a8cc","type":"file","file":"game flow.md","x":362,"y":-930,"width":400,"height":300},
 		{"id":"29458bbc5d4fa280","type":"text","text":"# weed whacker","x":377,"y":-1080,"width":340,"height":60},
 		{"id":"ccdf3b22385399c5","type":"text","text":"Expected Behaviours\n--","x":389,"y":-600,"width":317,"height":60},
-		{"id":"fc1f9e8a38e266ec","x":423,"y":-472,"width":250,"height":60,"type":"text","text":"wave system - "},
-		{"id":"079eee99acf583d2","x":423,"y":-360,"width":250,"height":60,"type":"text","text":"spawn weeds"},
-		{"id":"8d47bd5b63950893","x":427,"y":-260,"width":250,"height":60,"type":"text","text":"spawn flowers"},
-		{"id":"231a3bb1808ca8b4","x":128,"y":-484,"width":214,"height":84,"type":"text","text":"## Game Logic Master"},
+		{"id":"fc1f9e8a38e266ec","type":"text","text":"wave system - ","x":423,"y":-472,"width":250,"height":60},
+		{"id":"079eee99acf583d2","type":"text","text":"spawn weeds","x":423,"y":-360,"width":250,"height":60},
+		{"id":"8d47bd5b63950893","type":"text","text":"spawn flowers","x":427,"y":-260,"width":250,"height":60},
+		{"id":"231a3bb1808ca8b4","type":"text","text":"## Game Logic Master","x":128,"y":-484,"width":214,"height":84},
 		{"id":"3131d0b26c55e286","type":"text","text":"## Player","x":35,"y":-97,"width":250,"height":60},
 		{"id":"369931788707d2ed","type":"text","text":"in update function, set velocity of rigidbody equal to vector2 created by input mnager","x":715,"y":-90,"width":400,"height":95},
 		{"id":"2bcf67139e148aab","type":"text","text":"run code that gets the position of the attacking weed. then, set the velocity to the attacker's knockbackSpeed (should be defined in their attatched script). also, have an animation called justHit that oscillates player's sprite color to indicate invincibility for a short period, and that also disables the player's hurtbox. upon invincibility expiration, reenable player's hurtbox.","x":832,"y":212,"width":443,"height":171},
 		{"id":"61e189a3c6b3e017","type":"text","text":"when transitioning to knocked state, player will have moveSpeed set to knockedStateMoveSpeed (defined in playerScript). when revived and state is returned to standingState, set moveSpeed back to standingMoveSpeed.","x":775,"y":383,"width":395,"height":209},
 		{"id":"58f4bbbe72134bc0","type":"text","text":"have player object have child that is collider2d with hitbox tag. have its collision disabled by default. create animation that sets this collider as active for a few frames, then make it inactive again. ","x":775,"y":14,"width":473,"height":161},
-		{"id":"709dabf3f91a4e01","type":"text","text":"### player state machine\nplayer has three states: standing, knocked, and dead. \neach of these are held internally as functions. \nthe current state is held as a delegate called crntState. crntState is called every frame by way of the Update function.\nwhen the player needs to change states, it calls the transitionState function. this function assigns crntState to whatever state is passed, and also ","x":1295,"y":-120,"width":500,"height":215},
+<<<<<<< HEAD
+<<<<<<< HEAD
+		{"id":"709dabf3f91a4e01","type":"text","text":"### player state machine\nplayer has three states: standing, knocked, and dead. \neach of these are held internally as instances of a user-created class called PlyrState. These classes all have inside them functions called onFirst() and run(). Another function, called changeStates(), first changes the variable ","x":1295,"y":-120,"width":500,"height":215},
+=======
+		{"id":"709dabf3f91a4e01","type":"text","text":"### player state machine\nplayer has three states: standing, knocked, and dead. \neach of these are held internally as functions. \nstates are all instances of a created class called State. ","x":1295,"y":-120,"width":500,"height":215},
+>>>>>>> bbd77873f7d9bd0deda850e388e927fca364707c
+=======
+		{"id":"709dabf3f91a4e01","type":"text","text":"### player state machine\nplayer has three states: standing, knocked, and dead. \neach of these are held internally as functions. \nstates are all instances of a created class called State. ","x":1295,"y":-120,"width":500,"height":215},
+>>>>>>> bbd77873f7d9bd0deda850e388e927fca364707c
 		{"id":"f388d2ec10606ad3","type":"text","text":"take damage - when hit by player, sent backwards, and takes damage; if damage receieved meets or exceeds remaining health, play death animation and delete self from scene","x":362,"y":928,"width":346,"height":140},
 		{"id":"84afde37179f223c","type":"text","text":"take damage - when enemy nearby drinks from well, lower remaining water count and update HUD; if water taken meets or exceeds remaining water...","x":394,"y":1283,"width":342,"height":141},
 		{"id":"d08fe95bb6d51225","type":"text","text":"## Village Well\n","x":15,"y":1324,"width":250,"height":60},
@@ -21,12 +29,21 @@
 		{"id":"46ef95b5d7fab0e8","type":"text","text":"chase - moves in direction of either a flower, player, or well; when hit by player, changes target to player","x":394,"y":603,"width":281,"height":120},
 		{"id":"d072b3c84fa272a9","type":"text","text":"on entry, randomly chooses a target priority: player, flower, or well. then, sets that target to originalTargetObject. also set currentTargetObject to equal originalTargetObject. use math to set velocity to aim towards target and move at moveSpeed. when hit by player, change currentTargetObject to the player that hit it. when in range... ","x":720,"y":603,"width":415,"height":160},
 		{"id":"44a4ba7830feb898","type":"text","text":"attack - when near target, play bite animation. on hit, if target was originally not the player, then return to pursuing original target. ","x":391,"y":743,"width":284,"height":118},
-		{"id":"7b2452a5f658616b","x":775,"y":794,"width":340,"height":134,"type":"text","text":"play an attack animation. if the attack lands and the weed's original target was NOT the player, then set currentTargetObject to originalTargetObject."},
-		{"id":"56d91fa466ece063","x":802,"y":998,"width":313,"height":105,"type":"text","text":"knockback and damage recieved should be defined in playerScript. upon trigger, find the tied object's damage, knockback and position, and apply accordingly."},
+		{"id":"7b2452a5f658616b","type":"text","text":"play an attack animation. if the attack lands and the weed's original target was NOT the player, then set currentTargetObject to originalTargetObject.","x":775,"y":794,"width":340,"height":134},
+		{"id":"56d91fa466ece063","type":"text","text":"knockback and damage recieved should be defined in playerScript. upon trigger, find the tied object's damage, knockback and position, and apply accordingly.","x":802,"y":998,"width":313,"height":105},
+<<<<<<< HEAD
+<<<<<<< HEAD
 		{"id":"a59903a1884f00f9","type":"text","text":"movement - player can use stick to walk in 8 directions","x":370,"y":-97,"width":250,"height":102},
+=======
+		{"id":"a59903a1884f00f9","type":"text","text":"movement - player can use stick to walk in 8 directions\n","x":370,"y":-120,"width":250,"height":125},
+>>>>>>> bbd77873f7d9bd0deda850e388e927fca364707c
+=======
+		{"id":"a59903a1884f00f9","type":"text","text":"movement - player can use stick to walk in 8 directions\n","x":370,"y":-120,"width":250,"height":125},
+>>>>>>> bbd77873f7d9bd0deda850e388e927fca364707c
 		{"id":"ee3336d70fcb9ea4","type":"text","text":"attack - player can use button to swing shovel in last pressed direction (eg shovel is swung up and to the left if player is currently moving up and to the left, or if player is still and their last held direction was up and to the left)","x":370,"y":17,"width":309,"height":128},
 		{"id":"2110eaa3352fb1f0","type":"text","text":"take damage/get knocked - when hit by an enemy, if damage taken meets or exceeds remaining health, player will go into knocked state. if not, then enemy's damage done is subtracted from player's health, they are sent in the direction the enemy's attack designates, and are placed in a temporary invulnerable state where they can still attack and are still chased by enemies, but they will take no damage until invulnerable state ends.","x":370,"y":175,"width":368,"height":139},
-		{"id":"1fc9f557d4e5add9","type":"text","text":"knocked state - player's movement is slowed and cannot attack; enemies will ignore a knocked player. can be revived by other player through simply keeping contact for a certain amount of time.","x":387,"y":383,"width":334,"height":180}
+		{"id":"1fc9f557d4e5add9","type":"text","text":"knocked state - player's movement is slowed and cannot attack; enemies will ignore a knocked player. can be revived by other player through simply keeping contact for a certain amount of time.","x":387,"y":383,"width":334,"height":180},
+		{"id":"00d7ec88c2ccf23b","x":1001,"y":-529,"width":459,"height":269,"type":"text","text":"# TO DO\n- [ ] after prototype shown off, remove playerScriptTemp and replace with playerScript\n"}
 	],
 	"edges":[
 		{"id":"2b4df40118e4fee8","fromNode":"3131d0b26c55e286","fromSide":"right","toNode":"ee3336d70fcb9ea4","toSide":"left"},
