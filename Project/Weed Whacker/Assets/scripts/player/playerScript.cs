@@ -62,9 +62,12 @@ public class playerScript : MonoBehaviour
     }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     private void setState()
 =======
+=======
+>>>>>>> bbd77873f7d9bd0deda850e388e927fca364707c
 =======
 >>>>>>> bbd77873f7d9bd0deda850e388e927fca364707c
     

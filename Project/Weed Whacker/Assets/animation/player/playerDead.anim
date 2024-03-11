@@ -53,8 +53,11 @@ AnimationClip:
     - time: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: {fileID: 7842713252943946743, guid: 5af5ad38941969346bf128613704296a, type: 3}
 =======
+=======
+>>>>>>> bbd77873f7d9bd0deda850e388e927fca364707c
 =======
 >>>>>>> bbd77873f7d9bd0deda850e388e927fca364707c
       value: {fileID: 21300000, guid: 5af5ad38941969346bf128613704296a, type: 3}
@@ -94,8 +97,11 @@ AnimationClip:
     pptrCurveMapping:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     - {fileID: 7842713252943946743, guid: 5af5ad38941969346bf128613704296a, type: 3}
 =======
+=======
+>>>>>>> bbd77873f7d9bd0deda850e388e927fca364707c
 =======
 >>>>>>> bbd77873f7d9bd0deda850e388e927fca364707c
     - {fileID: 21300000, guid: 5af5ad38941969346bf128613704296a, type: 3}

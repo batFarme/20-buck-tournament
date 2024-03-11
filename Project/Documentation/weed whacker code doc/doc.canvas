@@ -14,7 +14,11 @@
 		{"id":"58f4bbbe72134bc0","type":"text","text":"have player object have child that is collider2d with hitbox tag. have its collision disabled by default. create animation that sets this collider as active for a few frames, then make it inactive again. ","x":775,"y":14,"width":473,"height":161},
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		{"id":"709dabf3f91a4e01","type":"text","text":"### player state machine\nplayer has three states: standing, knocked, and dead. \neach of these are held internally as instances of a user-created class called PlyrState. These classes all have inside them functions called onFirst() and run(). Another function, called changeStates(), first changes the variable ","x":1295,"y":-120,"width":500,"height":215},
+=======
+		{"id":"709dabf3f91a4e01","type":"text","text":"### player state machine\nplayer has three states: standing, knocked, and dead. \neach of these are held internally as functions. \nstates are all instances of a created class called State. ","x":1295,"y":-120,"width":500,"height":215},
+>>>>>>> bbd77873f7d9bd0deda850e388e927fca364707c
 =======
 		{"id":"709dabf3f91a4e01","type":"text","text":"### player state machine\nplayer has three states: standing, knocked, and dead. \neach of these are held internally as functions. \nstates are all instances of a created class called State. ","x":1295,"y":-120,"width":500,"height":215},
 >>>>>>> bbd77873f7d9bd0deda850e388e927fca364707c
@@ -33,7 +37,11 @@
 		{"id":"56d91fa466ece063","type":"text","text":"knockback and damage recieved should be defined in playerScript. upon trigger, find the tied object's damage, knockback and position, and apply accordingly.","x":802,"y":998,"width":313,"height":105},
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		{"id":"a59903a1884f00f9","type":"text","text":"movement - player can use stick to walk in 8 directions","x":370,"y":-97,"width":250,"height":102},
+=======
+		{"id":"a59903a1884f00f9","type":"text","text":"movement - player can use stick to walk in 8 directions\n","x":370,"y":-120,"width":250,"height":125},
+>>>>>>> bbd77873f7d9bd0deda850e388e927fca364707c
 =======
 		{"id":"a59903a1884f00f9","type":"text","text":"movement - player can use stick to walk in 8 directions\n","x":370,"y":-120,"width":250,"height":125},
 >>>>>>> bbd77873f7d9bd0deda850e388e927fca364707c
