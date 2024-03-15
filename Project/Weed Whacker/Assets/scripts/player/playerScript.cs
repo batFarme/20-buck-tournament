@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class playerScript : MonoBehaviour
+public class playerScript : StateMachine<playerScript.States> //StateMachine already inherits from MonoBehaviour
 {
     //references
     public InputAction controlMovement;
@@ -22,32 +22,27 @@ public class playerScript : MonoBehaviour
     crntStateExecute crntState;
     private Vector2 moveDirection;
 
-    //states
-    public class State
+    //States
+
+    public enum States
     {
-        void onFirst()
-        {
-
-        }
-        //public void 
-        void run()
-        {
-
-        }
+        standing,
+        knocked,
+        dead
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-        crntState = standingState;
+        //crntState = standingState;
     }
 
     private void OnEnable()
     {
         controlMovement.Enable();
         attackButton.Enable();
-        attackButton.performed += attack;
+        //attackButton.performed += attack;
     }
+
     private void OnDisable()             // the guy in the video said to put these in... whatever they do
     {
         controlMovement.Disable();
@@ -60,30 +55,4 @@ public class playerScript : MonoBehaviour
         crntState();
     }
     
-    private void stateTransition(string stateName)
-        //rather than simply setting the crntState var in code directly, use this (future-proofing)
-        //also WAAAHHH IDK WHAT VARIABLE TYPE FUNCTIONS AREEEEEE this is so effed up man
-    {
-
-    }
-    // states; when set as crntState, they are called every frame
-    private void standingState() //stateName is standingState
-    {
-        moveDirection = controlMovement.ReadValue<Vector2>();
-        myRigidBody2D.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed); //movement
-    }
-
-    private void knockedState() //stateName is knockedState
-    {
-
-    }
-
-    private void deadState() //stateName is deadState
-    {
-
-    }
-    private void attack(InputAction.CallbackContext context)
-    {
-
-    }
 }
