@@ -5,9 +5,9 @@ using UnityEngine;
 
 public abstract class BaseState<Estate> where Estate : Enum
 {
-    public BaseState()
+    public BaseState(Estate key)
     {
-
+        StateKey = key;
     }
 
     public Enum StateKey { get; set; }

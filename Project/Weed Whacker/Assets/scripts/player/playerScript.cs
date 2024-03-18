@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class playerScript : StateMachine<playerScript.States> //StateMachine already inherits from MonoBehaviour
+public class playerScript : StateMachine<playerScript.PlayerStates> //StateMachine already inherits from MonoBehaviour
 {
     //references
     public InputAction controlMovement;
@@ -44,13 +44,12 @@ public class playerScript : StateMachine<playerScript.States> //StateMachine alr
         //attackButton.performed += attack;
     }
 
-    private void OnDisable()             // the guy in the video said to put these in... whatever they do
+    private void OnDisable()             // the guy in the video said to put these in, theyre for the input system apparently
     {
         controlMovement.Disable();
         attackButton.Disable();
     }
 
-    // Update is called once per frame
     void Update()
     {
         crntState();

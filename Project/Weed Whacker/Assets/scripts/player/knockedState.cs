@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -5,6 +6,10 @@ using UnityEngine;
 
 public class knockedState : BaseState<playerScript.PlayerStates> // this gives an error for some reason....
 {
+    public knockedState(playerScript.PlayerStates key) : base(key)
+    {
+        StateKey = key;
+    }
     
     public override void EnterState()
     {
