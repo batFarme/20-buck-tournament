@@ -5,12 +5,12 @@ using UnityEngine;
 
 public abstract class BaseState<Estate> where Estate : Enum
 {
-    public BaseState(Estate key)
+    public BaseState()
     {
-        StateKey = key;
+
     }
 
-    public Estate StateKey { get; set; }
+    public Enum StateKey { get; set; }
     public abstract void EnterState();
     public abstract void ExitState();
     public abstract void UpdateState();

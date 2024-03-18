@@ -24,10 +24,11 @@ public class playerScript : StateMachine<playerScript.States> //StateMachine alr
 
     //States
 
-    public enum States
+    public enum PlayerStates
     {
+        none,
         standing,
-        knocked,
+        knockedState,
         dead
     }
 
