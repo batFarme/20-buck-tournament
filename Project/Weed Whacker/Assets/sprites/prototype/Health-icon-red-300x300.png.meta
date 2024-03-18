@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Health-icon-red-300x300_0: -6315461774752348023
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
