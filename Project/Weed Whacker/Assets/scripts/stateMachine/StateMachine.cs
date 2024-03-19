@@ -5,25 +5,25 @@ using UnityEngine;
 
 public abstract class StateMachine<Estate> : MonoBehaviour where Estate : Enum
 {
-    Dictionary<Estate, BaseState<Estate>> States = new Dictionary<Estate, BaseState<Estate>>();
-    BaseState<Estate> CurrentState;
+    Dictionary<Estate, BaseState<Estate>> StateDict = new Dictionary<Estate, BaseState<Estate>>();
+    BaseState<Estate> CrntState;
 
-    bool isTransitioningState = false;
+    public bool isTransitioningState = false;
 
     void Start()
     {
-        CurrentState.EnterState();
+        CrntState.EnterState();
     }
 
     void Update()
     {
-        Estate nextStateKey = CurrentState.GetNextState(); 
+        Estate nextStateKey = CrntState.GetNextState(); 
 
         if (!isTransitioningState)
         {
-            if (nextStateKey.Equals(CurrentState.StateKey))  // a check like this running every frame seems unoptimal... im just copying off the video for now but i should come back and see if it cant be optimized  TO-DO-FLAG-1
-            {
-                CurrentState.UpdateState();
+            if (nextStateKey.Equals(CrntState.StateKey))  // a check like this running every frame seems unoptimal... 
+            {                                             // im just copying off the video for now but i should come 
+                CrntState.UpdateState();                  // back and see if it cant be optimized  TO-DO-FLAG-1
             }
             else
             {
@@ -35,24 +35,24 @@ public abstract class StateMachine<Estate> : MonoBehaviour where Estate : Enum
     public void TransitionToState(Estate stateKey)
     {
         isTransitioningState = true;
-        CurrentState.ExitState();
-        CurrentState = States[stateKey];
-        CurrentState.EnterState();
+        CrntState.ExitState();
+        CrntState = StateDict[stateKey];
+        CrntState.EnterState();
         isTransitioningState = false; 
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        CurrentState.OnTriggerEnter(collision);
+        CrntState.OnTriggerEnter(collision);
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        CurrentState.OnTriggerExit(collision);
+        CrntState.OnTriggerExit(collision);
     }
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        CurrentState.OnTriggerStay(collision);
+        CrntState.OnTriggerStay(collision);
     }
 }

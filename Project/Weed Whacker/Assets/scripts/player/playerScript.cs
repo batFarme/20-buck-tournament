@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class playerScript : StateMachine<playerScript.PlayerStates> //StateMachine already inherits from MonoBehaviour
-{
+public class playerScript : StateMachine<playerScript.States>
+{                                   //StateMachine already inherits from MonoBehaviour
     //references
     public InputAction controlMovement;
     public InputAction attackButton;
@@ -16,35 +16,40 @@ public class playerScript : StateMachine<playerScript.PlayerStates> //StateMachi
 
     //handling
     public float moveSpeed;
+    public float rezCountLength;
 
     //internal control variables
-    private delegate void crntStateExecute();
-    crntStateExecute crntState;
     private Vector2 moveDirection;
 
     //States
-
-    public enum PlayerStates
+    public enum States
     {
-        none,
         standing,
-        knockedState,
+        knocked,
         dead
     }
 
+    Dictionary<States, BaseState<States>> StateDict = new Dictionary<States, BaseState<States>>();
+    BaseState<States> CrntState;
+
+    //The Meat!
     void Start()
     {
-        //crntState = standingState;
+        StateDict.Add(States.standing, new standingState(States.standing));
+        StateDict.Add(States.knocked, new knockedState(States.knocked));
+        StateDict.Add(States.dead, new deadState(States.dead));
+        CrntState = StateDict.GetValueOrDefault(States.standing);
+        CrntState.EnterState();
     }
 
-    private void OnEnable()
-    {
+    private void OnEnable() // the guy in the video said to put these in, theyre for the input system apparently -- need to rework
+    {                       // once i learn what im doing :skull: TO-DO-FLAG-2
         controlMovement.Enable();
         attackButton.Enable();
         //attackButton.performed += attack;
     }
 
-    private void OnDisable()             // the guy in the video said to put these in, theyre for the input system apparently
+    private void OnDisable()
     {
         controlMovement.Disable();
         attackButton.Disable();
@@ -52,7 +57,23 @@ public class playerScript : StateMachine<playerScript.PlayerStates> //StateMachi
 
     void Update()
     {
-        crntState();
+        States nextStateKey = CrntState.GetNextState();
+
+        if (!isTransitioningState)
+        {
+            if (!nextStateKey.Equals(CrntState.StateKey))  // a check like this running every frame seems unoptimal... im just copying off the video for now but i should come back and see if it cant be optimized  TO-DO-FLAG-1
+            {
+                TransitionToState(nextStateKey);
+            }
+            CrntState.UpdateState();
+        }
     }
-    
+    public void stateTransition(States stateKey)
+    {
+        isTransitioningState = true;
+        CrntState.ExitState();
+        CrntState = StateDict[stateKey];
+        CrntState.EnterState();
+        isTransitioningState = false;
+    }
 }

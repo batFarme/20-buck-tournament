@@ -2,16 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class deadState : MonoBehaviour
+public class deadState : BaseState<playerScript.States>
 {
-    // Start is called before the first frame update
-    void Start()
+    public deadState(playerScript.States key) : base(key)
+    {
+        StateKey = key;
+        StateIWantToBe = key;
+    }
+    public override void EnterState()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void ExitState()
+    {
+        
+    }
+
+    public override playerScript.States GetNextState()
+    {
+        return StateIWantToBe;
+    }
+
+    public override void OnTriggerEnter(Collider2D collision)
+    {
+        
+    }
+
+    public override void OnTriggerExit(Collider2D collision)
+    {
+        
+    }
+
+    public override void OnTriggerStay(Collider2D collision)
+    {
+        
+    }
+
+    public override void UpdateState()
     {
         
     }

@@ -4,16 +4,23 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class knockedState : BaseState<playerScript.PlayerStates> // this gives an error for some reason....
+public class knockedState : BaseState<playerScript.States> 
 {
-    public knockedState(playerScript.PlayerStates key) : base(key)
+    private int rezCount = 0; // uhh... still undecided if this should be counted in seconds or frames..... oh well!
+    
+
+    public knockedState(playerScript.States key) : base(key)
     {
         StateKey = key;
+        StateIWantToBe = key;
     }
     
     public override void EnterState()
     {
-        
+        //rezCount = playerScript.rezCountLength;  //need to figure ou thow to findthe player gameobject and reference that in htis script
+        // play an initial drop animation
+        // play a sound effect
+        // update this player's hud to portray knocked state
     }
 
     public override void ExitState()
@@ -21,9 +28,9 @@ public class knockedState : BaseState<playerScript.PlayerStates> // this gives a
         
     }
 
-    public override playerScript.PlayerStates GetNextState()
+    public override playerScript.States GetNextState()
     {
-        throw new System.NotImplementedException();
+        return StateIWantToBe;
     }
 
     public override void OnTriggerEnter(Collider2D collision)
@@ -38,7 +45,7 @@ public class knockedState : BaseState<playerScript.PlayerStates> // this gives a
 
     public override void OnTriggerStay(Collider2D collision)
     {
-        
+        // if collision is tagged player, then start counting down 
     }
 
     public override void UpdateState()
