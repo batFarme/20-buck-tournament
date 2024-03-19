@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IWalkBehavior
 {
-    public void movement(float speed, Vector2 direction) { }
+    public void movement(float speed, Vector2 direction);
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class knockedState : BaseState<playerScript.States> 
+public class knockedState : BaseState<playerScript.States>, IWalkBehavior
 {
     private int rezCount = 0; // uhh... still undecided if this should be counted in seconds or frames..... oh well!
     
@@ -33,6 +33,7 @@ public class knockedState : BaseState<playerScript.States>
         return StateIWantToBe;
     }
 
+    
     public override void OnTriggerEnter(Collider2D collision)
     {
         
@@ -51,6 +52,10 @@ public class knockedState : BaseState<playerScript.States>
     public override void UpdateState()
     {
         
+    }
+    public void movement(float speed, Vector2 direction)
+    {
+
     }
 
 }

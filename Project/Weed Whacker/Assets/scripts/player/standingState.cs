@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class standingState : BaseState<playerScript.States>, IWalkBehavior
 {
-
     public standingState(playerScript.States key) : base(key)
     {
         StateKey = key;

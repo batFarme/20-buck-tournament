@@ -76,4 +76,18 @@ public class playerScript : StateMachine<playerScript.States>
         CrntState.EnterState();
         isTransitioningState = false;
     }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        CrntState.OnTriggerEnter(collision);
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        CrntState.OnTriggerExit(collision);
+    }
+
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        CrntState.OnTriggerStay(collision);
+    }
 }
