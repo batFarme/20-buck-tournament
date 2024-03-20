@@ -31,7 +31,7 @@ public class playerScript : StateMachine<playerScript.States>
     Dictionary<States, BaseState<States>> StateDict = new Dictionary<States, BaseState<States>>();
     BaseState<States> CrntState;
 
-    //The Meat!
+    //The meat of the code!
     void Start()
     {
         StateDict.Add(States.standing, new standingState(States.standing, meObject));
