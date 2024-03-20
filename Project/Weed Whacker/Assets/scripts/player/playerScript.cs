@@ -9,9 +9,9 @@ public class playerScript : StateMachine<playerScript.States>
     public InputAction controlMovement;
     public InputAction attackButton;
     public Rigidbody2D myRigidBody2D;
+    public GameObject meObject;
     public GameObject myHitbox;
     public GameObject myHurtbox;
-    public GameObject shovelSprite;
     public Animator myAnimator;
 
     //handling
@@ -35,9 +35,9 @@ public class playerScript : StateMachine<playerScript.States>
     //The Meat!
     void Start()
     {
-        StateDict.Add(States.standing, new standingState(States.standing));
-        StateDict.Add(States.knocked, new knockedState(States.knocked));
-        StateDict.Add(States.dead, new deadState(States.dead));
+        StateDict.Add(States.standing, new standingState(States.standing, meObject));
+        StateDict.Add(States.knocked, new knockedState(States.knocked, meObject));
+        StateDict.Add(States.dead, new deadState(States.dead, meObject));
         CrntState = StateDict.GetValueOrDefault(States.standing);
         CrntState.EnterState();
     }

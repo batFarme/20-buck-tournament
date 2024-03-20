@@ -5,10 +5,12 @@ using UnityEngine;
 
 public abstract class BaseState<Estate> where Estate : Enum
 {
-    public BaseState(Estate key)
+    protected GameObject selfObject;
+    public BaseState(Estate key, GameObject SelfObject)
     {
         StateKey = key;
         StateIWantToBe = key;
+        selfObject = SelfObject;
     }
 
     public Enum StateKey { get; set; }

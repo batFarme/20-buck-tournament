@@ -4480,6 +4480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd1c3d24cf03f6a41869abd358b1eb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTransitioningState: 0
   controlMovement:
     m_Name: Control Movement
     m_Type: 0
@@ -4547,11 +4548,12 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   myRigidBody2D: {fileID: 1601797134}
+  meObject: {fileID: 1601797129}
   myHitbox: {fileID: 136831843}
   myHurtbox: {fileID: 180557427}
-  shovelSprite: {fileID: 0}
   myAnimator: {fileID: 0}
   moveSpeed: 5
+  rezCountLength: 3
 --- !u!61 &1601797133
 BoxCollider2D:
   m_ObjectHideFlags: 0

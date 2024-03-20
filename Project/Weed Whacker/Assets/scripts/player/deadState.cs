@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class deadState : BaseState<playerScript.States>
 {
-    public deadState(playerScript.States key) : base(key)
+
+    public deadState(playerScript.States key, GameObject SelfObject) : base(key, SelfObject)
     {
         StateKey = key;
         StateIWantToBe = key;
+        selfObject = SelfObject;
     }
     public override void EnterState()
     {

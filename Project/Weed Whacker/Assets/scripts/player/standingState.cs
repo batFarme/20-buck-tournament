@@ -6,10 +6,14 @@ using UnityEngine;
 
 public class standingState : BaseState<playerScript.States>, IWalkBehavior
 {
-    public standingState(playerScript.States key) : base(key)
+    //references
+    private GameObject playerObject;
+
+    public standingState(playerScript.States key, GameObject SelfObject) : base(key, SelfObject)
     {
         StateKey = key;
         StateIWantToBe = key;
+        selfObject = SelfObject;
     }
 
     public override void EnterState()

@@ -6,13 +6,18 @@ using UnityEngine;
 
 public class knockedState : BaseState<playerScript.States>, IWalkBehavior
 {
+    //references
+    private GameObject playerObject;
+
+    //internal handling
     private int rezCount = 0; // uhh... still undecided if this should be counted in seconds or frames..... oh well!
     
 
-    public knockedState(playerScript.States key) : base(key)
+    public knockedState(playerScript.States key, GameObject SelfObject) : base(key, SelfObject)
     {
         StateKey = key;
         StateIWantToBe = key;
+        selfObject = SelfObject;
     }
     
     public override void EnterState()
