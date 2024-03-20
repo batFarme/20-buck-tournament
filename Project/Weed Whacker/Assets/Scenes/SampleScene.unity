@@ -4480,78 +4480,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd1c3d24cf03f6a41869abd358b1eb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTransitioningState: 0
-  controlMovement:
-    m_Name: Control Movement
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 0ad69888-a60b-4e5d-9eeb-c4ec2c3f2030
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: movement
-      m_Id: eb9c1032-3b7a-4fb0-b338-2663d8049d3e
-      m_Path: 2DVector
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Control Movement
-      m_Flags: 4
-    - m_Name: up
-      m_Id: 13af9610-4ef0-4e34-b62d-060c78853ea0
-      m_Path: <Keyboard>/w
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Control Movement
-      m_Flags: 8
-    - m_Name: down
-      m_Id: 15918998-e747-4acc-9ca2-1b6efa8279f2
-      m_Path: <Keyboard>/s
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Control Movement
-      m_Flags: 8
-    - m_Name: left
-      m_Id: ae6287d0-21b1-444b-8438-d610dee24b41
-      m_Path: <Keyboard>/a
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Control Movement
-      m_Flags: 8
-    - m_Name: right
-      m_Id: 53ba255d-95e4-4327-95f8-20a74cdf3486
-      m_Path: <Keyboard>/d
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Control Movement
-      m_Flags: 8
-    m_Flags: 0
-  attackButton:
-    m_Name: Attack Button
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 8d99e442-f03b-4fd1-a381-d86f8f9c43d1
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: a6de1891-361a-470a-aa5b-1e3fa2c71875
-      m_Path: <Keyboard>/j
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Attack Button
-      m_Flags: 0
-    m_Flags: 0
   myRigidBody2D: {fileID: 1601797134}
   meObject: {fileID: 1601797129}
   myHitbox: {fileID: 136831843}
   myHurtbox: {fileID: 180557427}
-  myAnimator: {fileID: 0}
+  myAnimator: {fileID: 1601797135}
   moveSpeed: 5
   rezCountLength: 3
 --- !u!61 &1601797133

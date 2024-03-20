@@ -6,8 +6,7 @@ using UnityEngine.InputSystem;
 public class playerScript : StateMachine<playerScript.States>
 {                                   //StateMachine already inherits from MonoBehaviour
     //references
-    public InputAction controlMovement;
-    public InputAction attackButton;
+    public PlayerControls controls;
     public Rigidbody2D myRigidBody2D;
     public GameObject meObject;
     public GameObject myHitbox;
@@ -44,15 +43,13 @@ public class playerScript : StateMachine<playerScript.States>
 
     private void OnEnable() // the guy in the video said to put these in, theyre for the input system apparently -- need to rework
     {                       // once i learn what im doing :skull: TO-DO-FLAG-2
-        controlMovement.Enable();
-        attackButton.Enable();
+        controls.Enable();
         //attackButton.performed += attack;
     }
 
     private void OnDisable()
     {
-        controlMovement.Disable();
-        attackButton.Disable();
+        controls.Disable();
     }
 
     void Update()
