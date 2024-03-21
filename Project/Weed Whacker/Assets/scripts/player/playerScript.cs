@@ -5,8 +5,11 @@ using UnityEngine.InputSystem;
 
 public class playerScript : StateMachine<playerScript.States>
 {                                   //StateMachine already inherits from MonoBehaviour
+    //controls
+    public PlayerInput controls;
+    private InputAction attack;
+
     //references
-    public PlayerControls controls;
     public Rigidbody2D myRigidBody2D;
     public GameObject meObject;
     public GameObject myHitbox;
@@ -31,6 +34,11 @@ public class playerScript : StateMachine<playerScript.States>
     Dictionary<States, BaseState<States>> StateDict = new Dictionary<States, BaseState<States>>();
     BaseState<States> CrntState;
 
+    private void Awake()
+    {
+        attack = controls.actions["attack"];
+    }
+
     //The meat of the code!
     void Start()
     {
@@ -39,17 +47,6 @@ public class playerScript : StateMachine<playerScript.States>
         StateDict.Add(States.dead, new deadState(States.dead, meObject));
         CrntState = StateDict.GetValueOrDefault(States.standing);
         CrntState.EnterState();
-    }
-
-    private void OnEnable() // the guy in the video said to put these in, theyre for the input system apparently -- need to rework
-    {                       // once i learn what im doing :skull: TO-DO-FLAG-2
-        controls.Enable();
-        //attackButton.performed += attack;
-    }
-
-    private void OnDisable()
-    {
-        controls.Disable();
     }
 
     void Update()

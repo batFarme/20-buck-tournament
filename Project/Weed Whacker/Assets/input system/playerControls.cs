@@ -114,106 +114,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
-        },
-        {
-            ""name"": ""knocked"",
-            ""id"": ""acba10a7-b48c-4ce7-ada2-0fb6fdc8833c"",
-            ""actions"": [
-                {
-                    ""name"": ""move"",
-                    ""type"": ""Value"",
-                    ""id"": ""e4108437-33f2-4d16-ba67-92c336fa59f6"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": ""WASD"",
-                    ""id"": ""7a2f6015-db1d-45ee-8b2e-4997273215b2"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""move"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""e966963e-d38d-47ef-9cfe-00162c963b0b"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""90cca6ef-a225-4031-98ad-c6173eb37c15"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""ee84b0b4-24ff-4309-acc0-a4d0384d64b6"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""a59fec83-c6ea-450a-a2c1-886eecf45ee1"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                }
-            ]
-        },
-        {
-            ""name"": ""dead"",
-            ""id"": ""9e4a8970-fae4-46b5-9d1e-4525be5acb93"",
-            ""actions"": [
-                {
-                    ""name"": ""New action"",
-                    ""type"": ""Button"",
-                    ""id"": ""3099a9f2-9f23-49a0-a294-7589d00080c2"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""5c538388-3439-4eb6-80ec-5a7ce81c14dc"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""New action"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
         }
     ],
     ""controlSchemes"": []
@@ -222,12 +122,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_standing = asset.FindActionMap("standing", throwIfNotFound: true);
         m_standing_move = m_standing.FindAction("move", throwIfNotFound: true);
         m_standing_attack = m_standing.FindAction("attack", throwIfNotFound: true);
-        // knocked
-        m_knocked = asset.FindActionMap("knocked", throwIfNotFound: true);
-        m_knocked_move = m_knocked.FindAction("move", throwIfNotFound: true);
-        // dead
-        m_dead = asset.FindActionMap("dead", throwIfNotFound: true);
-        m_dead_Newaction = m_dead.FindAction("New action", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -339,109 +233,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         }
     }
     public StandingActions @standing => new StandingActions(this);
-
-    // knocked
-    private readonly InputActionMap m_knocked;
-    private List<IKnockedActions> m_KnockedActionsCallbackInterfaces = new List<IKnockedActions>();
-    private readonly InputAction m_knocked_move;
-    public struct KnockedActions
-    {
-        private @PlayerControls m_Wrapper;
-        public KnockedActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @move => m_Wrapper.m_knocked_move;
-        public InputActionMap Get() { return m_Wrapper.m_knocked; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(KnockedActions set) { return set.Get(); }
-        public void AddCallbacks(IKnockedActions instance)
-        {
-            if (instance == null || m_Wrapper.m_KnockedActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_KnockedActionsCallbackInterfaces.Add(instance);
-            @move.started += instance.OnMove;
-            @move.performed += instance.OnMove;
-            @move.canceled += instance.OnMove;
-        }
-
-        private void UnregisterCallbacks(IKnockedActions instance)
-        {
-            @move.started -= instance.OnMove;
-            @move.performed -= instance.OnMove;
-            @move.canceled -= instance.OnMove;
-        }
-
-        public void RemoveCallbacks(IKnockedActions instance)
-        {
-            if (m_Wrapper.m_KnockedActionsCallbackInterfaces.Remove(instance))
-                UnregisterCallbacks(instance);
-        }
-
-        public void SetCallbacks(IKnockedActions instance)
-        {
-            foreach (var item in m_Wrapper.m_KnockedActionsCallbackInterfaces)
-                UnregisterCallbacks(item);
-            m_Wrapper.m_KnockedActionsCallbackInterfaces.Clear();
-            AddCallbacks(instance);
-        }
-    }
-    public KnockedActions @knocked => new KnockedActions(this);
-
-    // dead
-    private readonly InputActionMap m_dead;
-    private List<IDeadActions> m_DeadActionsCallbackInterfaces = new List<IDeadActions>();
-    private readonly InputAction m_dead_Newaction;
-    public struct DeadActions
-    {
-        private @PlayerControls m_Wrapper;
-        public DeadActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Newaction => m_Wrapper.m_dead_Newaction;
-        public InputActionMap Get() { return m_Wrapper.m_dead; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(DeadActions set) { return set.Get(); }
-        public void AddCallbacks(IDeadActions instance)
-        {
-            if (instance == null || m_Wrapper.m_DeadActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_DeadActionsCallbackInterfaces.Add(instance);
-            @Newaction.started += instance.OnNewaction;
-            @Newaction.performed += instance.OnNewaction;
-            @Newaction.canceled += instance.OnNewaction;
-        }
-
-        private void UnregisterCallbacks(IDeadActions instance)
-        {
-            @Newaction.started -= instance.OnNewaction;
-            @Newaction.performed -= instance.OnNewaction;
-            @Newaction.canceled -= instance.OnNewaction;
-        }
-
-        public void RemoveCallbacks(IDeadActions instance)
-        {
-            if (m_Wrapper.m_DeadActionsCallbackInterfaces.Remove(instance))
-                UnregisterCallbacks(instance);
-        }
-
-        public void SetCallbacks(IDeadActions instance)
-        {
-            foreach (var item in m_Wrapper.m_DeadActionsCallbackInterfaces)
-                UnregisterCallbacks(item);
-            m_Wrapper.m_DeadActionsCallbackInterfaces.Clear();
-            AddCallbacks(instance);
-        }
-    }
-    public DeadActions @dead => new DeadActions(this);
     public interface IStandingActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
-    }
-    public interface IKnockedActions
-    {
-        void OnMove(InputAction.CallbackContext context);
-    }
-    public interface IDeadActions
-    {
-        void OnNewaction(InputAction.CallbackContext context);
     }
 }
