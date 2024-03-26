@@ -13,7 +13,12 @@ public class deadState : BaseState<playerScript.States>
     }
     public override void EnterState()
     {
-        
+
+    }
+
+    public override void UpdateState()
+    {
+
     }
 
     public override void ExitState()
@@ -37,11 +42,6 @@ public class deadState : BaseState<playerScript.States>
     }
 
     public override void OnTriggerStay(Collider2D collision)
-    {
-        
-    }
-
-    public override void UpdateState()
     {
         
     }

@@ -12,7 +12,6 @@ public abstract class BaseState<Estate> where Estate : Enum
         StateIWantToBe = key;
         selfObject = SelfObject;
     }
-
     public Enum StateKey { get; set; }
     public Estate StateIWantToBe { get; set; }
     public abstract void EnterState();

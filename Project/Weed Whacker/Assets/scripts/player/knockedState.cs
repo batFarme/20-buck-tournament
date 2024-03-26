@@ -7,7 +7,6 @@ using UnityEngine;
 public class knockedState : BaseState<playerScript.States>, IWalkBehavior
 {
     //references
-    private GameObject playerObject;
 
     //internal handling
     private int rezCount = 0; // uhh... still undecided if this should be counted in seconds or frames..... oh well!
@@ -26,6 +25,11 @@ public class knockedState : BaseState<playerScript.States>, IWalkBehavior
         // play an initial drop animation
         // play a sound effect
         // update this player's hud to portray knocked state
+    }
+
+    public override void UpdateState()
+    {
+
     }
 
     public override void ExitState()
@@ -52,11 +56,6 @@ public class knockedState : BaseState<playerScript.States>, IWalkBehavior
     public override void OnTriggerStay(Collider2D collision)
     {
         // if collision is tagged player, then start counting down 
-    }
-
-    public override void UpdateState()
-    {
-        
     }
     public void movement(float speed, Vector2 direction)
     {

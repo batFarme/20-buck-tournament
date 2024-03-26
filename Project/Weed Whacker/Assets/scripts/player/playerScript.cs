@@ -7,7 +7,8 @@ public class playerScript : StateMachine<playerScript.States>
 {                                   //StateMachine already inherits from MonoBehaviour
     //controls
     public PlayerInput controls;
-    private InputAction attack;
+    public InputAction move;
+    public InputAction attack;
 
     //references
     public Rigidbody2D myRigidBody2D;
@@ -15,13 +16,16 @@ public class playerScript : StateMachine<playerScript.States>
     public GameObject myHitbox;
     public GameObject myHurtbox;
     public Animator myAnimator;
+    public Animation playerIdle;
+    public Animation playerMove;
+    public Animation playerKnocked;
+    public Animation playerAttack;
+    public Animation playerDead;
 
     //handling
     public float moveSpeed;
+    public float knockedMoveSpeed;
     public float rezCountLength;
-
-    //internal control variables
-    private Vector2 moveDirection;
 
     //States
     public enum States
@@ -36,6 +40,7 @@ public class playerScript : StateMachine<playerScript.States>
 
     private void Awake()
     {
+        move = controls.actions["move"];
         attack = controls.actions["attack"];
     }
 
@@ -51,6 +56,8 @@ public class playerScript : StateMachine<playerScript.States>
 
     void Update()
     {
+
+
         States nextStateKey = CrntState.GetNextState();
 
         if (!isTransitioningState)
@@ -62,6 +69,7 @@ public class playerScript : StateMachine<playerScript.States>
             CrntState.UpdateState();
         }
     }
+
     public void stateTransition(States stateKey)
     {
         isTransitioningState = true;
@@ -70,6 +78,7 @@ public class playerScript : StateMachine<playerScript.States>
         CrntState.EnterState();
         isTransitioningState = false;
     }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         CrntState.OnTriggerEnter(collision);
@@ -83,5 +92,9 @@ public class playerScript : StateMachine<playerScript.States>
     void OnTriggerStay2D(Collider2D collision)
     {
         CrntState.OnTriggerStay(collision);
+    }
+    void playAnimation(Animation animationToPlay)
+    {
+
     }
 }
