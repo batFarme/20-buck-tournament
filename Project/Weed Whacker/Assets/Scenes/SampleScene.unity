@@ -4412,7 +4412,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956955106}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -4529,6 +4529,7 @@ MonoBehaviour:
   myHitbox: {fileID: 136831843}
   myHurtbox: {fileID: 180557427}
   myAnimator: {fileID: 1601797135}
+  maxHp: 0
   moveSpeed: 5
   knockedMoveSpeed: 3
   rezCountLength: 3
@@ -4540,7 +4541,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601797129}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

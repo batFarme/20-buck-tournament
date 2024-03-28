@@ -54,7 +54,6 @@ public class playerScript : StateMachine<playerScript.States>, Ientity
     void Update()
     {
 
-
         States nextStateKey = CrntState.GetNextState();
 
         if (!isTransitioningState)
@@ -98,5 +97,6 @@ public class playerScript : StateMachine<playerScript.States>, Ientity
     public void takeHit(int dmgTaken)
     {
         crntHp -= dmgTaken;
+        myAnimator.SetTrigger("wasHit");
     }
 }

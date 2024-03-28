@@ -64,6 +64,30 @@ public class standingState : BaseState<playerScript.States>, IWalkBehavior
     {
         Debug.Log(direction);
         myRigidBody.velocity = direction * speed;
+
+        if (direction != Vector2.zero)             // WHOOOOOOO BOY this needs to be HELLA optimized, aint no way having this set every frame is healthy :skull:
+        {
+            animator.SetBool("isMoving", true);
+        }
+        else
+        {
+            animator.SetBool("isMoving", false); 
+        }
+        //sprite flipping
+        if (direction.x != 0)  //if player is currently inputting a move direction
+        {
+            if (direction.x < 0)
+            {
+                selfObject.transform.localScale = new Vector3(-1, 1, 1);
+            }
+            else 
+            {
+                selfObject.transform.localScale = new Vector3(1, 1, 1);
+            }
+        }
+        {
+
+        }
         /*
         if (myRigidBody.velocity != Vector2.zero)
         {
