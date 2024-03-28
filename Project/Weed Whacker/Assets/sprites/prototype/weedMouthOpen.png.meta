@@ -466,7 +466,22 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      weedMouthOpen_0: -8913071996493118847
+      weedMouthOpen_1: -2125510371057841025
+      weedMouthOpen_10: -6428293869783020452
+      weedMouthOpen_11: 5925126854542583560
+      weedMouthOpen_12: -5124950956606714029
+      weedMouthOpen_13: 160349291852265195
+      weedMouthOpen_14: -8231741863449079946
+      weedMouthOpen_2: -6933068535572947037
+      weedMouthOpen_3: -7954472370190138740
+      weedMouthOpen_4: 1830714525446647618
+      weedMouthOpen_5: 6525662698003813347
+      weedMouthOpen_6: 4491005087387178819
+      weedMouthOpen_7: -3871131759055598862
+      weedMouthOpen_8: -4766315445871289361
+      weedMouthOpen_9: -4082023087304243655
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
