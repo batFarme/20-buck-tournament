@@ -7,6 +7,9 @@ using UnityEngine;
 public class knockedState : BaseState<playerScript.States>, IWalkBehavior
 {
     //references
+    private playerScript playerScript;
+    private Rigidbody2D myRigidBody;
+    private Animator animator;
 
     //internal handling
     private int rezCount = 0; // uhh... still undecided if this should be counted in seconds or frames..... oh well!
@@ -17,6 +20,9 @@ public class knockedState : BaseState<playerScript.States>, IWalkBehavior
         StateKey = key;
         StateIWantToBe = key;
         selfObject = SelfObject;
+        myRigidBody = selfObject.GetComponent<Rigidbody2D>();
+        playerScript = selfObject.GetComponent<playerScript>();
+        animator = selfObject.GetComponent<Animator>();
     }
     
     public override void EnterState()
@@ -29,7 +35,7 @@ public class knockedState : BaseState<playerScript.States>, IWalkBehavior
 
     public override void UpdateState()
     {
-
+        movement(playerScript.knockedMoveSpeed, playerScript.move.ReadValue<Vector2>());
     }
 
     public override void ExitState()
@@ -59,7 +65,15 @@ public class knockedState : BaseState<playerScript.States>, IWalkBehavior
     }
     public void movement(float speed, Vector2 direction)
     {
+        Debug.Log(direction);
+        myRigidBody.velocity = direction * speed;
+        /*
+        if (myRigidBody.velocity != Vector2.zero)
+        {
 
+        }
+        selfObject.transform.localScale = new Vector3(1, selfObject.transform.localScale.y, selfObject.transform.localScale.z);
+        */
     }
 
 }

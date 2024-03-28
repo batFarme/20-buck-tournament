@@ -10,6 +10,7 @@ public class standingState : BaseState<playerScript.States>, IWalkBehavior
     //references
     private playerScript playerScript;
     private Rigidbody2D myRigidBody;
+    private Animator animator;
 
     //internal control variables
  
@@ -20,6 +21,7 @@ public class standingState : BaseState<playerScript.States>, IWalkBehavior
         selfObject = SelfObject;
         myRigidBody = selfObject.GetComponent<Rigidbody2D>();
         playerScript = selfObject.GetComponent<playerScript>();
+        animator = selfObject.GetComponent<Animator>();
         playerScript.attack.performed += context => performAttack(context);
     }
 
@@ -62,10 +64,18 @@ public class standingState : BaseState<playerScript.States>, IWalkBehavior
     {
         Debug.Log(direction);
         myRigidBody.velocity = direction * speed;
+        /*
+        if (myRigidBody.velocity != Vector2.zero)
+        {
+
+        }
+        selfObject.transform.localScale = new Vector3(1, selfObject.transform.localScale.y, selfObject.transform.localScale.z);
+        */
     }
 
     public void performAttack(InputAction.CallbackContext context)
     {
-
+        animator.SetTrigger("attackPressed");
+        Debug.Log("attack called! animator's attack parameter is now " + animator.parameters.GetValue(1));
     }
 }

@@ -81,7 +81,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "2D Vector",
+                    "name": "dpad",
                     "id": "290f4b40-2a10-4b10-8697-702a4d9e10bb",
                     "path": "2DVector",
                     "interactions": "",
@@ -179,6 +179,17 @@
                 {
                     "devicePath": "<Gamepad>",
                     "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Keyboard",
+            "bindingGroup": "Keyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": true,
                     "isOR": false
                 }
             ]

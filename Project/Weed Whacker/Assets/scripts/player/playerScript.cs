@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class playerScript : StateMachine<playerScript.States>
+public class playerScript : StateMachine<playerScript.States>, Ientity
 {                                   //StateMachine already inherits from MonoBehaviour
     //controls
     public PlayerInput controls;
@@ -12,22 +12,22 @@ public class playerScript : StateMachine<playerScript.States>
 
     //references
     public Rigidbody2D myRigidBody2D;
+    public SpriteRenderer spriteRenderer;
     public GameObject meObject;
     public GameObject myHitbox;
     public GameObject myHurtbox;
     public Animator myAnimator;
-    public Animation playerIdle;
-    public Animation playerMove;
-    public Animation playerKnocked;
-    public Animation playerAttack;
-    public Animation playerDead;
 
     //handling
+    public int maxHp;
     public float moveSpeed;
     public float knockedMoveSpeed;
     public float rezCountLength;
 
-    //States
+    //internal handling
+    private int crntHp;
+
+    //states
     public enum States
     {
         standing,
@@ -38,15 +38,12 @@ public class playerScript : StateMachine<playerScript.States>
     Dictionary<States, BaseState<States>> StateDict = new Dictionary<States, BaseState<States>>();
     BaseState<States> CrntState;
 
-    private void Awake()
-    {
-        move = controls.actions["move"];
-        attack = controls.actions["attack"];
-    }
-
     //The meat of the code!
     void Start()
     {
+        crntHp = maxHp;
+        move = controls.actions["move"];
+        attack = controls.actions["attack"];
         StateDict.Add(States.standing, new standingState(States.standing, meObject));
         StateDict.Add(States.knocked, new knockedState(States.knocked, meObject));
         StateDict.Add(States.dead, new deadState(States.dead, meObject));
@@ -96,5 +93,10 @@ public class playerScript : StateMachine<playerScript.States>
     void playAnimation(Animation animationToPlay)
     {
 
+    }
+
+    public void takeHit(int dmgTaken)
+    {
+        crntHp -= dmgTaken;
     }
 }

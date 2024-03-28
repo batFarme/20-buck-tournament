@@ -103,7 +103,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""2D Vector"",
+                    ""name"": ""dpad"",
                     ""id"": ""290f4b40-2a10-4b10-8697-702a4d9e10bb"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
@@ -201,6 +201,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""devicePath"": ""<Gamepad>"",
                     ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Keyboard"",
+            ""bindingGroup"": ""Keyboard"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": true,
                     ""isOR"": false
                 }
             ]
@@ -329,6 +340,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         {
             if (m_GamepadSchemeIndex == -1) m_GamepadSchemeIndex = asset.FindControlSchemeIndex("Gamepad");
             return asset.controlSchemes[m_GamepadSchemeIndex];
+        }
+    }
+    private int m_KeyboardSchemeIndex = -1;
+    public InputControlScheme KeyboardScheme
+    {
+        get
+        {
+            if (m_KeyboardSchemeIndex == -1) m_KeyboardSchemeIndex = asset.FindControlSchemeIndex("Keyboard");
+            return asset.controlSchemes[m_KeyboardSchemeIndex];
         }
     }
     public interface IStandingActions

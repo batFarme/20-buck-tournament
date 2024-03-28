@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 5022706d6ceb44e48891007c04aabbbb
+guid: 89b5d5a08d1d06c41a703d4be608eaab
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8706520958703513032
-    second: weedStanding_0
+      213: -6153074192138965764
+    second: stick-hurt_0
+  - first:
+      213: -2959958715957172427
+    second: stick-hurt_1
+  - first:
+      213: 7091653009375255301
+    second: stick-hurt_2
+  - first:
+      213: -5863624027438370638
+    second: stick-hurt_3
+  - first:
+      213: -4804950566982292175
+    second: stick-hurt_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 800
+  spritePixelsToUnits: 650
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: weedStanding_0
+      name: stick-hurt_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 15
-        width: 709
-        height: 796
+        x: 454
+        y: 709
+        width: 177
+        height: 153
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +126,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 832dbf231593c2780800000000000000
-      internalID: -8706520958703513032
+      spriteID: cfceee46f93eb9aa0800000000000000
+      internalID: -6153074192138965764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stick-hurt_1
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 706
+        width: 34
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5372d89fa3d1ce6d0800000000000000
+      internalID: -2959958715957172427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stick-hurt_2
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 707
+        width: 36
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50b542eb6dc9a6260800000000000000
+      internalID: 7091653009375255301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stick-hurt_3
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 220
+        width: 323
+        height: 478
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b0371c830930aea0800000000000000
+      internalID: -5863624027438370638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stick-hurt_4
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 574
+        width: 203
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13d65b3cae2615db0800000000000000
+      internalID: -4804950566982292175
       vertices: []
       indices: 
       edges: []
@@ -131,7 +227,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      weedStanding_0: -8706520958703513032
+      stick-hurt_0: -6153074192138965764
+      stick-hurt_1: -2959958715957172427
+      stick-hurt_2: 7091653009375255301
+      stick-hurt_3: -5863624027438370638
+      stick-hurt_4: -4804950566982292175
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

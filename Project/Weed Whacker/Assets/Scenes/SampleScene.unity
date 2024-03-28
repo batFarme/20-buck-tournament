@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 136831845}
   m_Layer: 0
   m_Name: hitbox
-  m_TagString: Untagged
+  m_TagString: hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3977,7 +3977,7 @@ GameObject:
   - component: {fileID: 180557429}
   m_Layer: 0
   m_Name: hurtbox
-  m_TagString: Untagged
+  m_TagString: hurtbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4273,10 +4273,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 956955107}
-  - component: {fileID: 956955108}
+  - component: {fileID: 956955109}
   - component: {fileID: 956955111}
   - component: {fileID: 956955110}
-  - component: {fileID: 956955109}
+  - component: {fileID: 956955108}
+  - component: {fileID: 956955112}
   m_Layer: 0
   m_Name: weed
   m_TagString: Untagged
@@ -4342,15 +4343,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5628748243791631834, guid: 59bb210434934394a9378d57bd0ec2d8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5022706d6ceb44e48891007c04aabbbb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.09, y: 7.96}
+  m_Size: {x: 1.85, y: 1.035}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &956955109
@@ -4418,7 +4419,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -4429,7 +4430,29 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!95 &956955112
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956955106}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fe147aa963e090046babb7e262104502, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1601797129
 GameObject:
   m_ObjectHideFlags: 0
@@ -4501,12 +4524,13 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   myRigidBody2D: {fileID: 1601797134}
+  spriteRenderer: {fileID: 0}
   meObject: {fileID: 1601797129}
   myHitbox: {fileID: 136831843}
   myHurtbox: {fileID: 180557427}
   myAnimator: {fileID: 1601797135}
   moveSpeed: 5
-  knockedMoveSpeed: 0
+  knockedMoveSpeed: 3
   rezCountLength: 3
 --- !u!50 &1601797134
 Rigidbody2D:
@@ -4534,7 +4558,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &1601797135
 Animator:
   serializedVersion: 7
