@@ -6,22 +6,12 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
 {
     //references
     public GameObject originalTarget;
-    
+    public Rigidbody2D myRigidbody2D;
     //handling
     public float moveSpeed;
 
     //internal controls
     private GameObject currentTarget;
-
-    public void movement(float speed, Vector2 direction)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void takeHit(int dmgTaken)
-    {
-        throw new System.NotImplementedException();
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -35,4 +25,13 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
         
     }
 
+    public void movement(float speed, Vector2 direction)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void takeHit(int dmgTaken, GameObject attacker)
+    {
+        throw new System.NotImplementedException();
+    }
 }

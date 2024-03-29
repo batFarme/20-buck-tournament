@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface Ientity
 {
-    public void takeHit(int dmgTaken);
+    public void takeHit(int dmgTaken, GameObject attacker);
 }

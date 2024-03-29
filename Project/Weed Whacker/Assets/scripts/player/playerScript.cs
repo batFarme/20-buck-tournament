@@ -21,11 +21,13 @@ public class playerScript : StateMachine<playerScript.States>, Ientity
     //handling
     public int maxHp;
     public float moveSpeed;
+    public int maxLives;
     public float knockedMoveSpeed;
     public float rezCountLength;
 
     //internal handling
     private int crntHp;
+    private int crntLives;
 
     //states
     public enum States
@@ -94,9 +96,16 @@ public class playerScript : StateMachine<playerScript.States>, Ientity
 
     }
 
-    public void takeHit(int dmgTaken)
+    public void takeHit(int dmgTaken, GameObject attacker)
     {
         crntHp -= dmgTaken;
-        myAnimator.SetTrigger("wasHit");
+        if (crntHp <= 0)
+        {
+            
+        }
+        else
+        {
+            myAnimator.SetTrigger("wasHit");
+        }
     }
 }
