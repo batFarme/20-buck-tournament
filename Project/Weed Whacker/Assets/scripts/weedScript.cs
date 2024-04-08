@@ -16,7 +16,10 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (originalTarget != null)
+        {
+            print("game manager's object reference system isnt working!");
+        }
     }
 
     // Update is called once per frame

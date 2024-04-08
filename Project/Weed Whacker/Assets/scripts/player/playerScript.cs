@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.Events;
 public class playerScript : StateMachine<playerScript.States>, Ientity
 {                                   //StateMachine already inherits from MonoBehaviour
     //controls
