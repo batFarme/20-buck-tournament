@@ -33,7 +33,7 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
         throw new System.NotImplementedException();
     }
 
-    public void takeHit(int dmgTaken, GameObject attacker)
+    public void takeHit()
     {
         throw new System.NotImplementedException();
     }
