@@ -29,28 +29,44 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
         bothPlayers.Add(player1);
-        bothPlayers.Add(player2);
+        //bothPlayers.Add(player2);      just for now, until i figure out how to get two controllers
     }
 
+    [ContextMenu("spawnWeed")]
     void spawnWeed()
     {
         weedCreate = Instantiate(weedPrefab);
         weedCreate.transform.position = spawnerList[Random.Range(0, spawnerList.Count)].transform.position;
-        weedCreate.GetComponent<weedScript>().originalTarget = randomTarget();
+        print(weedCreate.transform.position);
+        GameObject targetToGive;
+        targetToGive = randomTarget();
+        weedCreate.GetComponent<weedScript>().originalTarget = targetToGive;
+        weedCreate.GetComponent<weedScript>().linkCheck();
+        print("weed born at " + weedCreate.transform.position + "; newborn weed wants to target " + weedCreate.GetComponent<weedScript>().originalTarget.name);
     }
 
     GameObject randomTarget()
     {
-        int randomTarget = Random.Range(1, 3); //this feels. unoptimal. ugh.
+        int randomTarget;
         GameObject targetToReturn;
+
+        if (allFlowers.Count != 0) //if no flowers are on the field, just pick between either the well or players
+        {
+            randomTarget = Random.Range(1, 2);
+        }
+        else
+        {
+            randomTarget = Random.Range(1, 3);
+        }
 
         switch (randomTarget)
         {
             case 1: targetToReturn = theWell; break;
-            case 2: targetToReturn = bothPlayers[Random.Range(0,1)]; break;//hard coded for 2 players; i WOULD future proof but like the parts are already ordered, so... too late :shrug:
+            case 2: targetToReturn = bothPlayers[Random.Range(0,bothPlayers.Count)]; break;
             case 3: targetToReturn = allFlowers[Random.Range(0,allFlowers.Count)]; break;
             default: Debug.Log("what the fuck"); targetToReturn = null; break;
         }
+
         return targetToReturn;
     }
 }

@@ -96,7 +96,7 @@ public class playerScript : StateMachine<playerScript.States>, Ientity
 
     }
 
-    public void takeHit() //becuase of the limitations of unity's event system, this can only take one parameter; if a reference to the attacking gameObject is needed, instead ask hurtbox
+    public void takeHit(GameObject attacker) //becuase of the limitations of unity's event system, this can only take one parameter; if a reference to the attacking gameObject is needed, instead ask hurtbox
     {
         //crntHp -= dmgTaken;
         if (crntHp <= 0)
