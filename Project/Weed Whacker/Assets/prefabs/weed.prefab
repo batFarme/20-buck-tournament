@@ -54,7 +54,7 @@ MonoBehaviour:
   myRigidbody2D: {fileID: 4322924845954113490}
   myHitbox: {fileID: 2133913184924944965}
   me: {fileID: 1908262679094027123}
-  moveSpeed: 5
+  moveSpeed: 1.5
 --- !u!50 &4322924845954113490
 Rigidbody2D:
   serializedVersion: 4

@@ -11,13 +11,14 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
     public Rigidbody2D myRigidbody2D;
     public GameObject myHitbox;
     public GameObject me;
+    private GameManager gameManager; //having each individual weed have its own reference is probably unhealthy, remember to experiment with having each weed be a child of a "hive mind controller" object TO-DO-FLAG-4
 
     //handling
     public float moveSpeed;
 
     //internal controls
     private GameObject currentTarget;
-    private entityClass targetsScript;
+    private EntityClass targetsScript;
     private Vector2 heading;
     private float distance;
     private Vector2 direction;
@@ -27,7 +28,11 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
     {
         print("i am targeting " + originalTarget.name);
         currentTarget = originalTarget;
-        targetsScript = currentTarget.GetComponent<entityClass>;
+        targetsScript = currentTarget.GetComponent<EntityClass>();
+        if (targetsScript != null)
+        {
+            print("it workedd!");
+        }
         targetsScript.tellStalkerToFuckOff.AddListener(findANewBitch);
     }
 
@@ -43,9 +48,9 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
             me.transform.localScale = new Vector3(-1, 1, 1);
         }
 
-        heading = originalTarget.transform.position - myHitbox.transform.position;
-        distance = heading.magnitude * moveSpeed;
-        direction = new Vector2(heading.x/distance, heading.y/distance);
+        heading = originalTarget.transform.position - myHitbox.transform.position; //the vector from current position to target position
+        distance = heading.magnitude / moveSpeed; //the value used to normalize the vector is affected by moveSpeed to change weed's speed
+        direction = new Vector2(heading.x/distance, heading.y/distance); //normalizes the vector, but instead of unit vector 
         myRigidbody2D.velocity = direction;
     }
 
@@ -67,6 +72,7 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
 
     public void findANewBitch()
     {
-
+        originalTarget = gameManager.randomTarget();
+        currentTarget = originalTarget;
     }
 }

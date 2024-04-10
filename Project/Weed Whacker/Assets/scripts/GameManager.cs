@@ -12,9 +12,12 @@ public class GameManager : MonoBehaviour
     public List<GameObject> spawnerList = new List<GameObject>();
     public GameObject weedPrefab;
     List<GameObject> bothPlayers = new List<GameObject>();   //ohhhh this is so scuffed but whatever
-    List<bool> playerAliveStatus = new List<bool>();
+    List<GameObject> alivePlayers = new List<GameObject>();   // AAAHHHHHH this looks like TF2's code but WHATEVER I DONT CARE RAAHHHHHHH
+    //List<bool> playerAliveStatus = new List<bool>();
     List<GameObject> allFlowers = new List<GameObject>();
     public GameObject theWell;  //this should be set in the editor
+
+    public float weedSpeed; // lol
 
     private GameObject weedCreate;
 
@@ -31,10 +34,14 @@ public class GameManager : MonoBehaviour
         Instance = this;
         bothPlayers.Add(player1);
         //bothPlayers.Add(player2);      just for now, until i figure out how to get two controllers
+
+        /*  commenting this block out because bothPlayers isnt bieng used rn but if i need to go back to it, i wont have to rewrite all this
         for (int i = 0; i < bothPlayers.Count; i++) //this method works for however many players are in a game; works as future proofing, but im just writing it like this bc id rather write this now than have to rewrite this when i get a second player in the game
         {
             playerAliveStatus.Add(true);
         }
+        */
+        alivePlayers = bothPlayers;  //grinning like  a dumbass at this :3
     }
 
     
@@ -43,9 +50,11 @@ public class GameManager : MonoBehaviour
         weedCreate = Instantiate(weedPrefab);
         weedCreate.transform.position = spawnerList[Random.Range(0, spawnerList.Count)].transform.position;
         print(weedCreate.transform.position);
-        weedCreate.GetComponent<weedScript>().originalTarget = targetToGive;
-        weedCreate.GetComponent<weedScript>().linkCheck();
-        print("weed born at " + weedCreate.transform.position + "; newborn weed wants to target " + weedCreate.GetComponent<weedScript>().originalTarget.name);
+        weedScript weedCreatesScript = weedCreate.GetComponent<weedScript>();
+        weedCreatesScript.originalTarget = targetToGive;
+        weedCreatesScript.linkCheck();
+        weedCreatesScript.moveSpeed = weedSpeed;
+        print("weed born at " + weedCreate.transform.position + "; newborn weed wants to target " + weedCreatesScript.originalTarget.name);
     }
 
     //the following weed spawning functions are here for debugging purposes.
@@ -81,7 +90,7 @@ public class GameManager : MonoBehaviour
 
 
 
-    GameObject randomTarget()
+    public GameObject randomTarget()
     {
         int randomTarget;
         GameObject targetToReturn;
@@ -98,7 +107,7 @@ public class GameManager : MonoBehaviour
         switch (randomTarget)
         {
             case 1: targetToReturn = theWell; break;
-            case 2: targetToReturn = bothPlayers[Random.Range(0,bothPlayers.Count)]; break;
+            case 2: targetToReturn = alivePlayers[Random.Range(0,alivePlayers.Count)]; break; 
             case 3: targetToReturn = randomFlower(); break;
             default: Debug.Log("what the fuck"); targetToReturn = null; break;
         }

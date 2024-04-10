@@ -6,8 +6,6 @@ using UnityEngine.Events;
 
 public class hurtbox : MonoBehaviour
 {
-    public GameObject mommy; // the parent object. needs to be set in editor. 
-
     public UnityEvent theyHitMeeeeeeeWaaahhhhhhh;
     [HideInInspector] public GameObject objectThatJustHitMe;
 

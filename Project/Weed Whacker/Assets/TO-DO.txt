@@ -1,2 +1,4 @@
-TO-DO-FLAG-1 (Assets/scripts/stateMachine/StateMachine.cs) | see if state transition check cant be optimized....
-TO-DO-FLAG-2 (Assets/scripts/player/playerScript.cs) | rework input system, its all scuffed right now....
+TO-DO-FLAG-1 (Assets/scripts/stateMachine/StateMachine.cs) | see if state transition check cant be optimized
+TO-DO-FLAG-2 (Assets/scripts/player/playerScript.cs) | rework input system, its all scuffed right now
+TO-DO-FLAG-3 (Assets/scripts/player/standingState.cs) | rework movement to accelerate and decelerate instead of just start and stopping
+TO-DO-FLAG-4 (Assets/scripts/weedScript.cs) | optimize weeds' reference to game manager

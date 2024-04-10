@@ -7,8 +7,8 @@ public class playerScript : StateMachine<playerScript.States>, Ientity
 {                                   //StateMachine already inherits from EntityClass, which inherits from MonoBehavior
     //controls
     public PlayerInput controls;
-    public InputAction move;
-    public InputAction attack;
+    [HideInInspector] public InputAction move;
+    [HideInInspector] public InputAction attack;
 
     //references
     public Rigidbody2D myRigidBody2D;
@@ -51,6 +51,7 @@ public class playerScript : StateMachine<playerScript.States>, Ientity
         StateDict.Add(States.dead, new deadState(States.dead, meObject));
         CrntState = StateDict.GetValueOrDefault(States.standing); //im looking at this line a while after having written it and i have NOOOO clue what it does lmaooooooo    like wtf do u mean "getValueOrDefault" what r u yapping abt blud       i am not fucking hirable :skull:
         CrntState.EnterState();
+
     }
 
     void Update()
