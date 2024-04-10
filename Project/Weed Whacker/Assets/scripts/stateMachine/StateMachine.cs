@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class StateMachine<Estate> : MonoBehaviour where Estate : Enum
+public abstract class StateMachine<Estate> : EntityClass where Estate : Enum
 {
     Dictionary<Estate, BaseState<Estate>> StateDict = new Dictionary<Estate, BaseState<Estate>>();
     BaseState<Estate> CrntState;

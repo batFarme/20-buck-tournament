@@ -11,19 +11,24 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
     public Rigidbody2D myRigidbody2D;
     public GameObject myHitbox;
     public GameObject me;
+
     //handling
     public float moveSpeed;
 
     //internal controls
     private GameObject currentTarget;
+    private entityClass targetsScript;
     private Vector2 heading;
     private float distance;
     private Vector2 direction;
+
     // Start is called before the first frame update
     void Start()
     {
         print("i am targeting " + originalTarget.name);
         currentTarget = originalTarget;
+        targetsScript = currentTarget.GetComponent<entityClass>;
+        targetsScript.tellStalkerToFuckOff.AddListener(findANewBitch);
     }
 
     // Update is called once per frame
@@ -39,7 +44,7 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
         }
 
         heading = originalTarget.transform.position - myHitbox.transform.position;
-        distance = heading.magnitude;
+        distance = heading.magnitude * moveSpeed;
         direction = new Vector2(heading.x/distance, heading.y/distance);
         myRigidbody2D.velocity = direction;
     }
@@ -57,5 +62,11 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
     public void takeHit(GameObject attacker)
     {
         throw new System.NotImplementedException();
+    }
+
+
+    public void findANewBitch()
+    {
+
     }
 }

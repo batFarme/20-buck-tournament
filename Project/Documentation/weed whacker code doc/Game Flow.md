@@ -1,2 +1,2 @@
 The players will spawn in a village center where there is a well. Plants will begin spawning at the edges of the screen and move towards the well, which they are trying to drink from. Weeds will also begin spawning at the edges of the screen, and will move towards either the well, the players, or plants. 
-The players' objective is to protect the plants from the weeds. 
+The players' objective is to protect the plants from the weeds for as long as possible. 
