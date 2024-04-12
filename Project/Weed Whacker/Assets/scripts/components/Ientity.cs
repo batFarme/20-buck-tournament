@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface Ientity
 {
-    public void takeHit(GameObject attacker);
+    public void takeHit();
+    public void setMyLayer();
 }

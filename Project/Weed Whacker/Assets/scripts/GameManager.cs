@@ -49,7 +49,6 @@ public class GameManager : MonoBehaviour
     {
         weedCreate = Instantiate(weedPrefab);
         weedCreate.transform.position = spawnerList[Random.Range(0, spawnerList.Count)].transform.position;
-        print(weedCreate.transform.position);
         weedScript weedCreatesScript = weedCreate.GetComponent<weedScript>();
         weedCreatesScript.originalTarget = targetToGive;
         weedCreatesScript.linkCheck();

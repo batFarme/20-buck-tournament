@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7984447017004529148}
   - component: {fileID: 7331101411465410724}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: hitbox
   m_TagString: hitbox
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 6197611619182928815}
   - component: {fileID: 3363388924254896482}
   - component: {fileID: 5999868225932224384}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,6 +129,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd1c3d24cf03f6a41869abd358b1eb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tellStalkerToFuckOff:
+    m_PersistentCalls:
+      m_Calls: []
+  linkFlag: yes, the targetScript link works!
   controls: {fileID: 5658431895831837112}
   move:
     m_Name: Move
@@ -159,6 +163,7 @@ MonoBehaviour:
   maxLives: 2
   knockedMoveSpeed: 3
   rezCountLength: 3
+  myLayer: 10
 --- !u!114 &5658431895831837112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,6 +405,10 @@ PrefabInstance:
     - target: {fileID: 4741362478726254024, guid: ab18d3503dd6a2f45993417a7335eadb, type: 3}
       propertyPath: m_Name
       value: hurtbox
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741362478726254024, guid: ab18d3503dd6a2f45993417a7335eadb, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8693526864845259511, guid: ab18d3503dd6a2f45993417a7335eadb, type: 3}
       propertyPath: mommy

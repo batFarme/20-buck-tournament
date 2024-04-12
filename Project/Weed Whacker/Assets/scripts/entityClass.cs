@@ -6,4 +6,5 @@ using UnityEngine.Events;
 public class EntityClass : MonoBehaviour
 {
     [HideInInspector] public UnityEvent tellStalkerToFuckOff;
+    public string linkFlag = "yes, the targetScript link works!";
 }

@@ -27,7 +27,7 @@ public class standingState : BaseState<playerScript.States>, IWalkBehavior
 
     public override void EnterState()
     {
-        Debug.Log("yep, it works!");
+        
     }
 
     public override void UpdateState()
@@ -60,9 +60,18 @@ public class standingState : BaseState<playerScript.States>, IWalkBehavior
         
     }
 
+    public void getKnocked()
+    {
+        StateIWantToBe = playerScript.States.knocked;
+    }
+
+    public void fuckingDie()
+    {
+        StateIWantToBe = playerScript.States.dead;
+    }
+
     public void movement(float speed, Vector2 direction) 
     {
-        Debug.Log(direction);
         myRigidBody.velocity = direction * speed;   // also later, if possible, change this entirely so player accelerates and decelerates rather than just starting and stopping TO-DO-FLAG-3 
 
         if (direction != Vector2.zero)             // WHOOOOOOO BOY this needs to be HELLA optimized, aint no way having this set every frame is healthy :skull:

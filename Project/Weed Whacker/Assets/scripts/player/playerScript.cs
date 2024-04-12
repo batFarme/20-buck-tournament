@@ -24,6 +24,7 @@ public class playerScript : StateMachine<playerScript.States>, Ientity
     public int maxLives;
     public float knockedMoveSpeed;
     public float rezCountLength;
+    public int myLayer;
 
     //internal handling
     private int crntHp;
@@ -44,6 +45,7 @@ public class playerScript : StateMachine<playerScript.States>, Ientity
     void Start()
     {
         crntHp = maxHp;
+        crntLives = maxLives;
         move = controls.actions["move"];
         attack = controls.actions["attack"];
         StateDict.Add(States.standing, new standingState(States.standing, meObject));
@@ -97,16 +99,32 @@ public class playerScript : StateMachine<playerScript.States>, Ientity
 
     }
 
-    public void takeHit(GameObject attacker) //becuase of the limitations of unity's event system, this can only take one parameter; if a reference to the attacking gameObject is needed, instead ask hurtbox
+    public void takeHit() //becuase of the limitations of unity's event system, this can only take one parameter; if a reference to the attacking gameObject is needed, instead ask hurtbox
     {
+        print("aw fuck someone hit me!!!!");
         //crntHp -= dmgTaken;
         if (crntHp <= 0)
         {
-            
+            //eithe knocked or die
+            if (crntLives == 0) //die
+            {
+
+            }
+            else //get knocked
+            {
+
+            }
         }
         else
         {
             myAnimator.SetTrigger("wasHit");
+            //also do some stuff for getting hit but also... maybe just do that shit in the animator? food for thought TO-DO-FLAG-5
         }
+    }
+
+
+    public void setMyLayer()
+    {
+        myHurtbox.GetComponent<hurtbox>().myLayer = myLayer;
     }
 }

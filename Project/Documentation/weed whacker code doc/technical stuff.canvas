@@ -1,0 +1,22 @@
+{
+	"nodes":[
+		{"id":"b77a85ad17d20945","type":"text","text":"EntityClass","x":-320,"y":-60,"width":250,"height":60,"color":"3"},
+		{"id":"412fc04b143c7ea2","type":"text","text":"playerScript","x":-570,"y":280,"width":250,"height":60},
+		{"id":"4305e530552d6300","type":"text","text":"flowerScript","x":-270,"y":280,"width":250,"height":60},
+		{"id":"efdfa70d3fa1c171","type":"text","text":"weedScript\n","x":10,"y":280,"width":250,"height":60},
+		{"id":"6b00fc4d8ae71b3c","type":"text","text":"wellScript\n","x":290,"y":280,"width":250,"height":60},
+		{"id":"5d3bd06c21a46565","type":"text","text":"StateMachine","x":-520,"y":120,"width":250,"height":60},
+		{"id":"27ece09b5e88b951","type":"text","text":"## Script Infrastructure","x":-140,"y":-420,"width":300,"height":60},
+		{"id":"1a96aa23f73ca1de","type":"text","text":"EntityClass is a class that contains the tellStalkerToFuckOff UnityEvent. Ientity is an interface that has the methods takeHit and setMyLayer. EntityClass is intended for entities that are to be targetted by weeds, and the Ientity interface is for the aforementioned plus weeds themselves. ","x":-620,"y":-280,"width":480,"height":169,"color":"4"},
+		{"id":"d10b86eb30f2064e","type":"text","text":"Ientity\n","x":-645,"y":-60,"width":250,"height":60,"color":"3"},
+		{"id":"141c3f0a42d21283","type":"text","text":"only playerScript inherits from StateMachine, since its only the player that has behavior complex enough to warrant a state machine\n","x":-945,"y":120,"width":300,"height":160,"color":"4"},
+		{"id":"57de501ef132876e","x":-972,"y":340,"width":355,"height":132,"color":"5","type":"text","text":"NOTE: becuase StateMachine is an abstract rather than an actual class, any stuff from EntityClass has to be implemented AGAIN... for some reason. ugh. "}
+	],
+	"edges":[
+		{"id":"05ee29df00a429f2","fromNode":"b77a85ad17d20945","fromSide":"bottom","toNode":"5d3bd06c21a46565","toSide":"top"},
+		{"id":"dd2b9ed1c0fdbdf8","fromNode":"5d3bd06c21a46565","fromSide":"bottom","toNode":"412fc04b143c7ea2","toSide":"top"},
+		{"id":"cc37758d72322bb9","fromNode":"b77a85ad17d20945","fromSide":"bottom","toNode":"4305e530552d6300","toSide":"top"},
+		{"id":"471155eda0095c3a","fromNode":"b77a85ad17d20945","fromSide":"bottom","toNode":"efdfa70d3fa1c171","toSide":"top"},
+		{"id":"94837a345b129c51","fromNode":"b77a85ad17d20945","fromSide":"bottom","toNode":"6b00fc4d8ae71b3c","toSide":"top"}
+	]
+}

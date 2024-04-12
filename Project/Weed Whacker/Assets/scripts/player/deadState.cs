@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class deadState : BaseState<playerScript.States>
 {
-
+    public playerScript theMainScriptSWE; //somehow give deadState.cs a reference to the current instance of playerScript...
     public deadState(playerScript.States key, GameObject SelfObject) : base(key, SelfObject)
     {
         StateKey = key;
@@ -13,7 +13,8 @@ public class deadState : BaseState<playerScript.States>
     }
     public override void EnterState()
     {
-
+        theMainScriptSWE.myAnimator.SetTrigger("wasKillded");
+        theMainScriptSWE.tellStalkerToFuckOff.Invoke();
     }
 
     public override void UpdateState()

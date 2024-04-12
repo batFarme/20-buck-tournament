@@ -4242,6 +4242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 990911348}
   - component: {fileID: 990911347}
+  - component: {fileID: 990911349}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: GameController
@@ -4274,6 +4275,7 @@ MonoBehaviour:
   - {fileID: 534322984}
   weedPrefab: {fileID: 1908262679094027123, guid: 608aaf7e7b129d243bbbe5f4d600e61d, type: 3}
   theWell: {fileID: 1675212882}
+  weedSpeed: 1.5
 --- !u!4 &990911348
 Transform:
   m_ObjectHideFlags: 0
@@ -4297,6 +4299,19 @@ Transform:
   - {fileID: 534322985}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &990911349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990911346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd86c7f0e879c9247b0484f876f3eb02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHit: {fileID: 0}
 --- !u!1 &1494596243
 GameObject:
   m_ObjectHideFlags: 0
@@ -4501,6 +4516,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bdb5090ff4481d4d9ba68a347cbe7d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tellStalkerToFuckOff:
+    m_PersistentCalls:
+      m_Calls: []
+  linkFlag: yes, the targetScript link works!
   myCapsuleCollider2D: {fileID: 0}
 --- !u!1 &1802301940
 GameObject:
@@ -4617,6 +4636,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1062591244021936088, guid: 945673d794e318945ab533a47f4fdee2, type: 3}
+      propertyPath: myLayer
+      value: player
+      objectReference: {fileID: 0}
     - target: {fileID: 6853080703365577334, guid: 945673d794e318945ab533a47f4fdee2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.96
@@ -4660,6 +4683,14 @@ PrefabInstance:
     - target: {fileID: 7086465199763277081, guid: 945673d794e318945ab533a47f4fdee2, type: 3}
       propertyPath: m_Name
       value: player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8564318481535614330, guid: 945673d794e318945ab533a47f4fdee2, type: 3}
+      propertyPath: theyHitMeeeeeeeWaaahhhhhhh.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8564318481535614330, guid: 945673d794e318945ab533a47f4fdee2, type: 3}
+      propertyPath: theyHitMeeeeeeeWaaahhhhhhh.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
