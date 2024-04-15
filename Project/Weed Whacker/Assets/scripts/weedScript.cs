@@ -57,19 +57,18 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
             me.transform.localScale = new Vector3(-1, 1, 1);
         }
 
-        heading = originalTarget.transform.position - myHitbox.transform.position; //the vector from current position to target position
-        distance = heading.magnitude / crntMoveSpeed; //the value used to normalize the vector is affected by moveSpeed to change weed's speed
-        direction = new Vector2(heading.x/distance, heading.y/distance); //normalizes the vector, but instead of unit vector 
-        myRigidbody2D.velocity = direction;
+        movement(crntMoveSpeed, originalTarget.transform.position - myHitbox.transform.position);
     }
 
     public void linkCheck()
     {
     }
 
-    public void movement(float speed, Vector2 direction)
+    public void movement(float speed, Vector2 direction) //direction is the current target's coordinates rather than a regular vector; its still labelled as direction because of how interfaces work and tbh i cannot be bothered to mess with it any more 
     {
-        throw new System.NotImplementedException();
+        distance = direction.magnitude / crntMoveSpeed; //the value used to normalize the vector is affected by moveSpeed to change weed's speed
+        direction = new Vector2(direction.x / distance, direction.y / distance); //normalizes the vector, but instead of unit vector 
+        myRigidbody2D.velocity = direction;
     }
 
     public void takeHit()
