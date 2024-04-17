@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -17,6 +18,7 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
     public GameObject me;
     public Animator myAnimator;
     private GameManager gameManager; //having each individual weed have its own reference is probably unhealthy, remember to experiment with having each weed be a child of a "hive mind controller" object TO-DO-FLAG-4
+    private AIDestinationSetter myDstnSttr;
 
     //handling
     [HideInInspector] public float moveSpeed;
