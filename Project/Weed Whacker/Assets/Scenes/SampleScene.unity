@@ -4086,6 +4086,93 @@ Transform:
   m_Children: []
   m_Father: {fileID: 990911348}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &583063603
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 583063605}
+  - component: {fileID: 583063604}
+  m_Layer: 0
+  m_Name: A-Star
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &583063604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583063603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78396926cbbfc4ac3b48fc5fc34a87d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  data:
+    dataString: UEsDBBQAAAgIAACAn+v9NRHeegIAADcFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMzoWxDcW4t9YQ0kMSJrSTiy/CXmMNQvLoI0Ay/PeuZBs79MSyH2/fvl35kzCha8iNVGvFiidZAPkxIs4m30Z98BHOdC/Fln1Al/PGClO5JOpzXqlhEv2hK9PyCEax/KfYc5ccoNMKVkp1XBV7SKU2Gt0l5RowpKRx1QJdnyNyxp9x4kouaEWxsz7QSoLRFc0chAHVpwaTIJgvwiSOvrcl43AyT+bxLFmEbek4mgRRPJ1HSbQah1OPY0XO6bGGwg3Vw4XJpMMJm4YCB25zAh/LJedMt3yJudRej5TW2uK0mFAwivN7ko5BBWxfGTfLsPilLDWYVhxFL0umUMYGlfySjbZHqg8Nt3fKrafgOTWQT/9Fx6EPl0oeH7uuYeA6mIrlh1d6yak2A+mH7uVX2lacKD/QHYe3CsSzXCtpRYFBo6wrtRqi5QDqNllaQX7o8xqud05bDzbY6t0t2g1x9cOfU86OOy/8rHFsufRy+/sAhav5jYz99egWAr2OxV8Nf+h+eGZt4IEpbTDUjikcvZ20yqWSlRfNTWNNKpUA725J1yAoN5cNwpj7Dd7FBm3vIg/UPai2eRvr3sldiXf3+UFwF9rI021bupKnJ9DVizWcCehJu8Az6pRKIZoDG2rSlW2tKmk+KNtbVny9LRLQaTwvgc5gF+S7aTKO0Zzhv5gmyXwRL4g/PiZwTso3DdFWHtya6MEFHlr3nRmtFa39sReKntbs4ygHkjNRym2uAMRLg3AjDgqb4LMsVgVDgbZgDBN+3+QzI1zmByiyG1DmJ12djaJZj5KRmr1L4zwZSf2HJSPOfbvljYJ3BifXvAO7kus/UEsDBBQAAAgIAACAn+viM46GawAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrSSQaKxuVlaaqJJapJBcpKxpa45kGkC5JknWlqaWZhbKMUC1ZdUFqT6JeamQvQEJJZkpGXmpWTmpeu5F2WmuIOMVoqtBQBQSwECLQAUAAAICAAAgJ/r/TUR3noCAAA3BQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAgJ/r4jOOhmsAAAB4AAAACQAkAAAAAAAAAAAAAADHAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAH0DAAAAAA==
+    upgradeData: 
+    file_cachedStartup: {fileID: 0}
+    data_cachedStartup: 
+    cacheStartup: 0
+  showNavGraphs: 1
+  showUnwalkableNodes: 1
+  debugMode: 0
+  debugFloor: 0
+  debugRoof: 1
+  manualDebugFloorRoof: 0
+  showSearchTree: 0
+  unwalkableNodeDebugSize: 0.3
+  logPathResults: 1
+  maxNearestNodeDistance: 100
+  scanOnStartup: 1
+  fullGetNearestSearch: 0
+  prioritizeGraphs: 0
+  prioritizeGraphsLimit: 1
+  colorSettings:
+    _SolidColor: {r: 0.11764706, g: 0.4, b: 0.7882353, a: 0.9}
+    _UnwalkableNode: {r: 1, g: 0, b: 0, a: 0.5}
+    _BoundsHandles: {r: 0.29, g: 0.454, b: 0.741, a: 0.9}
+    _ConnectionLowLerp: {r: 0, g: 1, b: 0, a: 0.5}
+    _ConnectionHighLerp: {r: 1, g: 0, b: 0, a: 0.5}
+    _MeshEdgeColor: {r: 0, g: 0, b: 0, a: 0.5}
+    _AreaColors:
+    - {r: 0, g: 0, b: 0, a: 0}
+  tagNames: []
+  heuristic: 2
+  heuristicScale: 1
+  threadCount: 1
+  maxFrameTime: 1
+  batchGraphUpdates: 0
+  graphUpdateBatchingInterval: 0.2
+  euclideanEmbedding:
+    mode: 0
+    seed: 0
+    pivotPointRoot: {fileID: 0}
+    spreadOutCount: 1
+  showGraphs: 1
+--- !u!4 &583063605
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583063603}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -4701,6 +4788,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 583063605}
   - {fileID: 990911348}
   - {fileID: 519420032}
   - {fileID: 619394802}
