@@ -72,10 +72,10 @@ AnimationClip:
       value: {fileID: 21300000, guid: 07235f6dbc75eb84b9ba6ed00a7dde13, type: 3}
     - time: 0.8333333
       value: {fileID: 21300000, guid: d9ce56242dc03c24393529204dd1d0bc, type: 3}
-    - time: 1.5
+    - time: 1.5166667
       value: {fileID: 21300000, guid: 5022706d6ceb44e48891007c04aabbbb, type: 3}
     attribute: m_Sprite
-    path: 
+    path: sprite
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -96,7 +96,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 0
+      path: 891129758
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -113,7 +113,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.5166667
+    m_StopTime: 1.5333333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

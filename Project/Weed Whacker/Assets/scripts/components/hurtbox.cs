@@ -17,7 +17,7 @@ public class hurtbox : MonoBehaviour
             if (collision.gameObject.layer != myLayer)
             {
                 print("hurtbox was just smacked");
-                objectThatJustHitMe = collision.gameObject.transform.parent.gameObject;
+                objectThatJustHitMe = collision.gameObject.transform.parent.gameObject; //WOW thats a lot of methods! good fucking bye performance!!!! :D
                 theyHitMeeeeeeeWaaahhhhhhh.Invoke();
             }
             /*

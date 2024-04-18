@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
-public class playerScript : StateMachine<playerScript.States>, Ientity
+public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBehavior
 {                                   //StateMachine already inherits from EntityClass, which inherits from MonoBehavior
     //controls
     public PlayerInput controls;
@@ -126,5 +126,41 @@ public class playerScript : StateMachine<playerScript.States>, Ientity
     public void setMyLayer()
     {
         myHurtbox.GetComponent<hurtbox>().myLayer = myLayer;
+    }
+
+    public void movement(float speed, Vector2 direction)
+    {
+        myRigidBody2D.velocity = direction * speed;   // also later, if possible, change this entirely so player accelerates and decelerates rather than just starting and stopping TO-DO-FLAG-3 
+
+        if (direction != Vector2.zero)             // WHOOOOOOO BOY this needs to be HELLA optimized, aint no way having this set every frame is healthy :skull:
+        {
+            myAnimator.SetBool("isMoving", true);
+        }
+        else
+        {
+            myAnimator.SetBool("isMoving", false);
+        }
+        //sprite flipping
+        if (direction.x != 0)  //if player is currently inputting a move direction
+        {
+            if (direction.x < 0)
+            {
+                meObject.transform.localScale = new Vector3(-1, 1, 1);
+            }
+            else
+            {
+                meObject.transform.localScale = new Vector3(1, 1, 1);
+            }
+        }
+        {
+
+        }
+        /*
+        if (myRigidBody.velocity != Vector2.zero)
+        {
+
+        }
+        selfObject.transform.localScale = new Vector3(1, selfObject.transform.localScale.y, selfObject.transform.localScale.z);
+        */
     }
 }

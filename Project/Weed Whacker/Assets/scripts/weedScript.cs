@@ -11,6 +11,7 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
 {
     //references
     [HideInInspector] public GameObject originalTarget;
+    public AIPath myAIPath;
     public Rigidbody2D myRigidbody2D;
     public GameObject myHitbox;
     public GameObject myHurtbox;
@@ -36,13 +37,10 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
     void Start()
     {
         crntMoveSpeed = moveSpeed;
+        myAIPath.maxSpeed = crntMoveSpeed;
         print("i am targeting " + originalTarget.name);
         currentTarget = originalTarget;
         targetsScript = currentTarget.GetComponent<EntityClass>();
-        if (targetsScript != null)
-        {
-            print("it workedd!");
-        }
         targetsScript.tellStalkerToFuckOff.AddListener(findANewBitch);
         print(targetsScript.linkFlag);
     }
@@ -59,18 +57,11 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
             me.transform.localScale = new Vector3(-1, 1, 1);
         }
 
-        movement(crntMoveSpeed, originalTarget.transform.position - myHitbox.transform.position);
+        //movement(crntMoveSpeed, originalTarget.transform.position - myHitbox.transform.position);
     }
 
     public void linkCheck()
     {
-    }
-
-    public void movement(float speed, Vector2 direction) //direction is the current target's coordinates rather than a regular vector; its still labelled as direction because of how interfaces work and tbh i cannot be bothered to mess with it any more 
-    {
-        distance = direction.magnitude / crntMoveSpeed; //the value used to normalize the vector is affected by moveSpeed to change weed's speed
-        direction = new Vector2(direction.x / distance, direction.y / distance); //normalizes the vector, but instead of unit vector 
-        myRigidbody2D.velocity = direction;
     }
 
     public void takeHit()
@@ -94,6 +85,18 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
     public void setMyLayer()
     {
         myHurtbox.GetComponent<hurtbox>().myLayer = myLayer;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+    }
+
+    //below block of code is made obsolete by pathfinding system, but keep it just in case...
+    public void movement(float speed, Vector2 direction) //direction is the current target's coordinates rather than a regular vector; its still labelled as direction because of how interfaces work and tbh i cannot be bothered to mess with it any more 
+    {
+        distance = direction.magnitude / crntMoveSpeed; //the value used to normalize the vector is affected by moveSpeed to change weed's speed
+        direction = new Vector2(direction.x / distance, direction.y / distance); //normalizes the vector, but instead of unit vector 
+        myRigidbody2D.velocity = direction;
     }
 }
 

@@ -8,7 +8,6 @@ public class detection : MonoBehaviour
     //references
     public GameObject myMommyWeehhhh;
     public Collider2D myCollider;
-    public UnityEvent gotchaBitch;
 
     private void Start()
     {
@@ -18,8 +17,18 @@ public class detection : MonoBehaviour
     {
         if (collision.tag == "hurtbox" && collision.gameObject.layer != LayerMask.NameToLayer("weed"))
         {
+            myMommyWeehhhh.GetComponent<Animator>().SetInteger("detectedTargets",
+            myMommyWeehhhh.GetComponent<Animator>().GetInteger("detectedTargets") + 1);
             print("target acquired!");
-            gotchaBitch.Invoke();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "hurtbox" && collision.gameObject.layer != LayerMask.NameToLayer("weed"))
+        {
+            detectedHurtboxes--;
+            myMommyWeehhhh.GetComponent<Animator>().SetInteger("detectedTargets", detectedHurtboxes);
         }
     }
 }
