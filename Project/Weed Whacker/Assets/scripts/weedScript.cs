@@ -19,7 +19,7 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
     public GameObject me;
     public Animator myAnimator;
     private GameManager gameManager; //having each individual weed have its own reference is probably unhealthy, remember to experiment with having each weed be a child of a "hive mind controller" object TO-DO-FLAG-4
-    private AIDestinationSetter myDstnSttr;
+    public AIDestinationSetter myDstnSttr;
 
     //handling
     [HideInInspector] public float moveSpeed;
@@ -28,6 +28,7 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
     //internal controls
     private float crntMoveSpeed;
     private GameObject currentTarget;
+    private Transform aiTarget; //YEAH OKAY WHATEVER UUUGHHH FINEEEEEEEEEEEEEEEEEEEEEEE
     private EntityClass targetsScript;
     private Vector2 heading;
     private float distance;
@@ -43,12 +44,14 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
         targetsScript = currentTarget.GetComponent<EntityClass>();
         targetsScript.tellStalkerToFuckOff.AddListener(findANewBitch);
         print(targetsScript.linkFlag);
+        aiTarget = currentTarget.transform;
+        myDstnSttr.target = aiTarget;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (currentTarget.transform.position.x > me.transform.position.x) //having sprite flipping run every frame like this proly tanks the performance but this whole game could run on a calculator, its fine :shrug:d
+        if (aiTarget.position.x > me.transform.position.x) //having sprite flipping run every frame like this proly tanks the performance but this whole game could run on a calculator, its fine :shrug:d
         {
             me.transform.localScale = new Vector3(1, 1, 1);
         }
@@ -80,6 +83,8 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
     {
         originalTarget = gameManager.randomTarget();
         currentTarget = originalTarget;
+        aiTarget = currentTarget.transform;
+        myDstnSttr.target = aiTarget;
     }
 
     public void setMyLayer()

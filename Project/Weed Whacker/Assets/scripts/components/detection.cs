@@ -15,7 +15,7 @@ public class detection : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "hurtbox" && collision.gameObject.layer != LayerMask.NameToLayer("weed"))
+        if (collision.gameObject.tag == "hurtbox" && collision.gameObject.layer != LayerMask.NameToLayer("weed"))
         {
             myMommyWeehhhh.GetComponent<Animator>().SetInteger("detectedTargets",
             myMommyWeehhhh.GetComponent<Animator>().GetInteger("detectedTargets") + 1);
@@ -25,10 +25,10 @@ public class detection : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "hurtbox" && collision.gameObject.layer != LayerMask.NameToLayer("weed"))
+        if (collision.gameObject.tag == "hurtbox" && collision.gameObject.layer != LayerMask.NameToLayer("weed"))
         {
-            detectedHurtboxes--;
-            myMommyWeehhhh.GetComponent<Animator>().SetInteger("detectedTargets", detectedHurtboxes);
+            myMommyWeehhhh.GetComponent<Animator>().SetInteger("detectedTargets",
+            myMommyWeehhhh.GetComponent<Animator>().GetInteger("detectedTargets") - 1);
         }
     }
 }

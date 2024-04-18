@@ -142,13 +142,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   originalTarget: {fileID: 0}
-  myAIPath: {fileID: 0}
+  myAIPath: {fileID: 4016861637333297521}
   myRigidbody2D: {fileID: 4322924845954113490}
   myHitbox: {fileID: 2133913184924944965}
-  myHurtbox: {fileID: 0}
+  myHurtbox: {fileID: 4664848003412090425}
   myDetector: {fileID: 4223162503645545018}
   me: {fileID: 1908262679094027123}
   myAnimator: {fileID: 4097485719110453949}
+  myDstnSttr: {fileID: 1474422047836814319}
   moveSpeed: 1.5
   myLayer: 9
 --- !u!114 &4016861637333297521
@@ -187,7 +188,7 @@ MonoBehaviour:
   maxAcceleration: -2.5
   rotationSpeed: 360
   slowdownDistance: 0.6
-  pickNextWaypointDist: 2
+  pickNextWaypointDist: 1
   endReachedDistance: 0.2
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
