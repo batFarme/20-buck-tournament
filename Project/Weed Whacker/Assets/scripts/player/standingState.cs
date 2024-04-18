@@ -5,7 +5,7 @@ using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class standingState : BaseState<playerScript.States>, IWalkBehavior
+public class standingState : BaseState<playerScript.States>
 {
     //references
     private playerScript playerScript;
@@ -32,7 +32,7 @@ public class standingState : BaseState<playerScript.States>, IWalkBehavior
 
     public override void UpdateState()
     {
-        movement(playerScript.moveSpeed, playerScript.move.ReadValue<Vector2>());
+        playerScript.movement(playerScript.moveSpeed, playerScript.move.ReadValue<Vector2>());
     }
 
     public override void ExitState()
@@ -68,42 +68,6 @@ public class standingState : BaseState<playerScript.States>, IWalkBehavior
     public void fuckingDie()
     {
         StateIWantToBe = playerScript.States.dead;
-    }
-
-    public void movement(float speed, Vector2 direction) 
-    {
-        myRigidBody.velocity = direction * speed;   // also later, if possible, change this entirely so player accelerates and decelerates rather than just starting and stopping TO-DO-FLAG-3 
-
-        if (direction != Vector2.zero)             // WHOOOOOOO BOY this needs to be HELLA optimized, aint no way having this set every frame is healthy :skull:
-        {
-            animator.SetBool("isMoving", true);
-        }
-        else
-        {
-            animator.SetBool("isMoving", false); 
-        }
-        //sprite flipping
-        if (direction.x != 0)  //if player is currently inputting a move direction
-        {
-            if (direction.x < 0)
-            {
-                selfObject.transform.localScale = new Vector3(-1, 1, 1);
-            }
-            else 
-            {
-                selfObject.transform.localScale = new Vector3(1, 1, 1);
-            }
-        }
-        {
-
-        }
-        /*
-        if (myRigidBody.velocity != Vector2.zero)
-        {
-
-        }
-        selfObject.transform.localScale = new Vector3(1, selfObject.transform.localScale.y, selfObject.transform.localScale.z);
-        */
     }
 
     public void performAttack(InputAction.CallbackContext context)
