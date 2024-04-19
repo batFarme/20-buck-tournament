@@ -6010,7 +6010,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1062591244021936088, guid: 945673d794e318945ab533a47f4fdee2, type: 3}
       propertyPath: myLayer
-      value: player
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3363388924254896482, guid: 945673d794e318945ab533a47f4fdee2, type: 3}
+      propertyPath: m_BodyType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6853080703365577334, guid: 945673d794e318945ab533a47f4fdee2, type: 3}
       propertyPath: m_LocalPosition.x

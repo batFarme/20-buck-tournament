@@ -21,6 +21,10 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
     //handling
     public int maxHp;
     public float moveSpeed;
+    /*
+    public float accelSpeed;
+    public float maxSpeed;
+    */
     public int maxLives;
     public float knockedMoveSpeed;
     public float rezCountLength;
@@ -131,7 +135,10 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
     public void movement(float speed, Vector2 direction)
     {
         myRigidBody2D.velocity = direction * speed;   // also later, if possible, change this entirely so player accelerates and decelerates rather than just starting and stopping TO-DO-FLAG-3 
-
+        /*
+        myRigidBody2D.AddForce(direction * speed);
+        print(direction * speed);
+        */
         if (direction != Vector2.zero)             // WHOOOOOOO BOY this needs to be HELLA optimized, aint no way having this set every frame is healthy :skull:
         {
             myAnimator.SetBool("isMoving", true);
