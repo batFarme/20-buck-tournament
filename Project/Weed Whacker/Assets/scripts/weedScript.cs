@@ -73,6 +73,14 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
         }
         */
 
+        if (currentTarget.transform.position.x > transform.position.x) //if the target is to the right...
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
         //this movement line is made obsolete by the a* algorithm thing
         //movement(crntMoveSpeed, originalTarget.transform.position - myHitbox.transform.position);
     }
