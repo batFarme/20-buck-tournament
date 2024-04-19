@@ -16,7 +16,6 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
     public GameObject myHitbox;
     public GameObject myHurtbox;
     public GameObject myDetector;
-    public GameObject flipPoint; //this looks really scuffed cause it is
     public GameObject me;
     public Animator myAnimator;
     private GameManager gameManager; //having each individual weed have its own reference is probably unhealthy, remember to experiment with having each weed be a child of a "hive mind controller" object TO-DO-FLAG-4
@@ -57,6 +56,7 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
     // Update is called once per frame
     void Update()
     {
+        /*
         SideSwitch whereIsTarget = sideCheck(currentTarget);
         if (whereIsTarget != currentFace) //having sprite flipping run every frame like this proly tanks the performance but this whole game could run on a calculator, its fine :shrug: ; also btw there are two variables serving the same purpose, currentTarget and aiTarger, i could probably fix it but idrc anymore.
         {
@@ -71,10 +71,12 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
             }
             currentFace = whereIsTarget;
         }
+        */
 
+        //this movement line is made obsolete by the a* algorithm thing
         //movement(crntMoveSpeed, originalTarget.transform.position - myHitbox.transform.position);
     }
-
+    /*
     private SideSwitch sideCheck(GameObject objToCheck)
     {
         if (objToCheck.transform.position.x > flipPoint.transform.position.x) //if the thing i am checking is to the right....
@@ -86,7 +88,7 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
             return SideSwitch.left;
         }
     }
-
+    */
     public void linkCheck()
     {
     }
