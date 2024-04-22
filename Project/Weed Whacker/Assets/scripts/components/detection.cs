@@ -15,7 +15,7 @@ public class detection : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "hurtbox" && collision.gameObject.layer != LayerMask.NameToLayer("weed"))
+        if (collision.gameObject.tag == "hurtbox" && collision.gameObject.layer != LayerMask.NameToLayer("weed")) 
         {
             myMommyWeehhhh.GetComponent<Animator>().SetInteger("detectedTargets",
             myMommyWeehhhh.GetComponent<Animator>().GetInteger("detectedTargets") + 1);

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject player2;
     public List<GameObject> spawnerList = new List<GameObject>();
     public GameObject weedPrefab;
+    public GameObject flowerPrefab;
     List<GameObject> bothPlayers = new List<GameObject>();   //ohhhh this is so scuffed but whatever
     List<GameObject> alivePlayers = new List<GameObject>();   // AAAHHHHHH this looks like TF2's code but WHATEVER I DONT CARE RAAHHHHHHH
     //List<bool> playerAliveStatus = new List<bool>();
@@ -19,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     public float weedSpeed; // lol
 
-    private GameObject weedCreate;
+    
 
     public enum GameState
     {
@@ -44,10 +45,18 @@ public class GameManager : MonoBehaviour
         alivePlayers = bothPlayers;  //grinning like  a dumbass at this :3
     }
 
-    
+    void spawnFlower(GameObject theWell)
+    {
+        var flowerCreate = Instantiate(flowerPrefab);
+        flowerPrefab.transform.position = spawnerList[Random.Range(0, spawnerList.Count)].transform.position;
+        flowerScript flowerCreatesScript = flowerCreate.GetComponent<flowerScript>();
+        flowerCreatesScript.theWell = theWell;
+        allFlowers.Add(flowerCreate);
+    }
+
     void spawnWeed(GameObject targetToGive) //the core weed spawning function.
     {
-        weedCreate = Instantiate(weedPrefab);
+        var weedCreate = Instantiate(weedPrefab);
         weedCreate.transform.position = spawnerList[Random.Range(0, spawnerList.Count)].transform.position;
         weedScript weedCreatesScript = weedCreate.GetComponent<weedScript>();
         weedCreatesScript.originalTarget = targetToGive;

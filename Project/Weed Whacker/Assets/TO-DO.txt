@@ -4,3 +4,4 @@ TO-DO-FLAG-3 (Assets/scripts/player/standingState.cs) | rework movement to accel
 TO-DO-FLAG-4 (Assets/scripts/weedScript.cs) | optimize weeds' reference to game manager
 TO-DO-FLAG-5 (Assets/scripts/player/playerScript.cs) | decide if player behaviour on getting hit should be set in code or animator
 TO-DO-FLAG-6 (Assets/scripts/components/hurtbox.cs) | for some reason unity just completely ignores the collision tag check??? IMPORTANT!!!!
+TO-DO-FLAG-7 (Assets/scripts/components/flowerDetection.cs) | see about optimizing layer masks in regards to detection? 
