@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.UI;
+using UnityEditor.UI; //REMEMBER TO COMMENT OUT WHEN BUILDING
 using UnityEngine;
 using UnityEngine.Events;
 public class detection : MonoBehaviour

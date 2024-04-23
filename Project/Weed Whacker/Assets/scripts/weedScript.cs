@@ -2,10 +2,10 @@ using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
+using UnityEditor.Experimental.GraphView; //REMEMBER TO COMMENT OUT WHEN BUILDING
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
-using static UnityEditor.Experimental.GraphView.GraphView;
+using static UnityEditor.Experimental.GraphView.GraphView; //REMEMBER TO COMMENT OUT WHEN BUILDING
 
 public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
 {
