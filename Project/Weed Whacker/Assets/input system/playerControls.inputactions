@@ -191,6 +191,61 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "arcade stick",
+                    "id": "3371e72b-1c25-4181-b6ad-703cd08088c8",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "b634eec4-610f-4b44-896f-b37c809d42f5",
+                    "path": "<Joystick>/stick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "arcade stick",
+                    "action": "move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "17a1a623-4a1c-402d-965a-c033a0966a77",
+                    "path": "<Joystick>/stick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "arcade stick",
+                    "action": "move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "41139c01-0209-43c4-9070-b54f8b91eed8",
+                    "path": "<Joystick>/stick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "arcade stick",
+                    "action": "move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "c27bc63a-1bdb-4828-a4ae-d19053a33ea3",
+                    "path": "<Joystick>/stick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "arcade stick",
+                    "action": "move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "3918828e-a1df-40d1-881f-7c5e12e2ac83",
                     "path": "<Keyboard>/j",
@@ -222,6 +277,45 @@
                     "action": "attack",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4479f281-f557-4c7e-a338-3456d7ceb645",
+                    "path": "<HID::Microntek              USB Joystick          >/button12",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "arcade stick",
+                    "action": "attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "toJoin",
+            "id": "089b36a6-7596-4864-b9eb-9d42ab3291f8",
+            "actions": [
+                {
+                    "name": "join game",
+                    "type": "Button",
+                    "id": "3ad4a94f-e350-4841-b434-3aeac68bed67",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2f4bde58-0e55-4a34-bdad-3511466b158a",
+                    "path": "<HID::Microntek              USB Joystick          >/button12",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "arcade stick",
+                    "action": "join game",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
@@ -244,6 +338,17 @@
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
+                    "isOptional": true,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "arcade stick",
+            "bindingGroup": "arcade stick",
+            "devices": [
+                {
+                    "devicePath": "<Joystick>",
                     "isOptional": true,
                     "isOR": false
                 }

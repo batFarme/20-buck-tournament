@@ -209,8 +209,13 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 9935d0f5-c488-4b12-b5e0-b16ed15bd5d2
     m_ActionName: 'standing/attack[/Keyboard/j]'
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Gamepad
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3ad4a94f-e350-4841-b434-3aeac68bed67
+    m_ActionName: 'toJoin/join game[/Microntek              USB Joystick         
+      /button12,/Microntek              USB Joystick          1/button12]'
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: arcade stick
   m_DefaultActionMap: standing
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

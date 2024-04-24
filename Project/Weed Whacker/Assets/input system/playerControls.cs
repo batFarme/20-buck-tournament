@@ -213,6 +213,61 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""arcade stick"",
+                    ""id"": ""3371e72b-1c25-4181-b6ad-703cd08088c8"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""b634eec4-610f-4b44-896f-b37c809d42f5"",
+                    ""path"": ""<Joystick>/stick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""arcade stick"",
+                    ""action"": ""move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""17a1a623-4a1c-402d-965a-c033a0966a77"",
+                    ""path"": ""<Joystick>/stick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""arcade stick"",
+                    ""action"": ""move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""41139c01-0209-43c4-9070-b54f8b91eed8"",
+                    ""path"": ""<Joystick>/stick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""arcade stick"",
+                    ""action"": ""move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""c27bc63a-1bdb-4828-a4ae-d19053a33ea3"",
+                    ""path"": ""<Joystick>/stick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""arcade stick"",
+                    ""action"": ""move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""3918828e-a1df-40d1-881f-7c5e12e2ac83"",
                     ""path"": ""<Keyboard>/j"",
@@ -244,6 +299,45 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4479f281-f557-4c7e-a338-3456d7ceb645"",
+                    ""path"": ""<HID::Microntek              USB Joystick          >/button12"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""arcade stick"",
+                    ""action"": ""attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""toJoin"",
+            ""id"": ""089b36a6-7596-4864-b9eb-9d42ab3291f8"",
+            ""actions"": [
+                {
+                    ""name"": ""join game"",
+                    ""type"": ""Button"",
+                    ""id"": ""3ad4a94f-e350-4841-b434-3aeac68bed67"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""2f4bde58-0e55-4a34-bdad-3511466b158a"",
+                    ""path"": ""<HID::Microntek              USB Joystick          >/button12"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""arcade stick"",
+                    ""action"": ""join game"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -270,6 +364,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isOR"": false
                 }
             ]
+        },
+        {
+            ""name"": ""arcade stick"",
+            ""bindingGroup"": ""arcade stick"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Joystick>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                }
+            ]
         }
     ]
 }");
@@ -277,6 +382,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_standing = asset.FindActionMap("standing", throwIfNotFound: true);
         m_standing_move = m_standing.FindAction("move", throwIfNotFound: true);
         m_standing_attack = m_standing.FindAction("attack", throwIfNotFound: true);
+        // toJoin
+        m_toJoin = asset.FindActionMap("toJoin", throwIfNotFound: true);
+        m_toJoin_joingame = m_toJoin.FindAction("join game", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -388,6 +496,52 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         }
     }
     public StandingActions @standing => new StandingActions(this);
+
+    // toJoin
+    private readonly InputActionMap m_toJoin;
+    private List<IToJoinActions> m_ToJoinActionsCallbackInterfaces = new List<IToJoinActions>();
+    private readonly InputAction m_toJoin_joingame;
+    public struct ToJoinActions
+    {
+        private @PlayerControls m_Wrapper;
+        public ToJoinActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @joingame => m_Wrapper.m_toJoin_joingame;
+        public InputActionMap Get() { return m_Wrapper.m_toJoin; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(ToJoinActions set) { return set.Get(); }
+        public void AddCallbacks(IToJoinActions instance)
+        {
+            if (instance == null || m_Wrapper.m_ToJoinActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_ToJoinActionsCallbackInterfaces.Add(instance);
+            @joingame.started += instance.OnJoingame;
+            @joingame.performed += instance.OnJoingame;
+            @joingame.canceled += instance.OnJoingame;
+        }
+
+        private void UnregisterCallbacks(IToJoinActions instance)
+        {
+            @joingame.started -= instance.OnJoingame;
+            @joingame.performed -= instance.OnJoingame;
+            @joingame.canceled -= instance.OnJoingame;
+        }
+
+        public void RemoveCallbacks(IToJoinActions instance)
+        {
+            if (m_Wrapper.m_ToJoinActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IToJoinActions instance)
+        {
+            foreach (var item in m_Wrapper.m_ToJoinActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_ToJoinActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public ToJoinActions @toJoin => new ToJoinActions(this);
     private int m_GamepadSchemeIndex = -1;
     public InputControlScheme GamepadScheme
     {
@@ -406,9 +560,22 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_KeyboardSchemeIndex];
         }
     }
+    private int m_arcadestickSchemeIndex = -1;
+    public InputControlScheme arcadestickScheme
+    {
+        get
+        {
+            if (m_arcadestickSchemeIndex == -1) m_arcadestickSchemeIndex = asset.FindControlSchemeIndex("arcade stick");
+            return asset.controlSchemes[m_arcadestickSchemeIndex];
+        }
+    }
     public interface IStandingActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
+    }
+    public interface IToJoinActions
+    {
+        void OnJoingame(InputAction.CallbackContext context);
     }
 }
