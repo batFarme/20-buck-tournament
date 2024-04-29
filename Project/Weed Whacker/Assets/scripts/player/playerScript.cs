@@ -37,6 +37,7 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
     //states
     public enum States
     {
+        limbo,
         standing,
         knocked,
         dead
