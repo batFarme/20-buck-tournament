@@ -158,6 +158,61 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "dpad",
+                    "id": "cf59a257-5903-4d05-b917-68085eb6f53c",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "c56435cd-f312-46ff-b0df-0b9f118db45f",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Debug",
+                    "action": "move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "25d3a138-eefc-43fc-8033-0a7bbf66edad",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Debug",
+                    "action": "move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "db60dc28-0f12-4a36-96a0-3abb164666d1",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Debug",
+                    "action": "move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "9694c4cf-56f6-47c6-b355-0814595f9fc5",
+                    "path": "<Gamepad>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Debug",
+                    "action": "move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "3918828e-a1df-40d1-881f-7c5e12e2ac83",
                     "path": "<Keyboard>/j",
@@ -175,6 +230,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "arcade stick;Debug",
+                    "action": "attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "decc1fe9-7269-4300-bf54-9c465a12b37a",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Debug",
                     "action": "attack",
                     "isComposite": false,
                     "isPartOfComposite": false

@@ -49,6 +49,22 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
     //The meat of the code!
     void Start()
     {
+        /*
+        crntHp = maxHp;
+        crntLives = maxLives;
+        move = controls.actions["move"];
+        attack = controls.actions["attack"];
+        StateDict.Add(States.standing, new standingState(States.standing, meObject));
+        StateDict.Add(States.knocked, new knockedState(States.knocked, meObject));
+        StateDict.Add(States.dead, new deadState(States.dead, meObject));
+        CrntState = StateDict.GetValueOrDefault(States.standing); //im looking at this line a while after having written it and i have NOOOO clue what it does lmaooooooo    like wtf do u mean "getValueOrDefault" what r u yapping abt blud       i am not fucking hirable :skull:
+        CrntState.EnterState();
+        */
+        //okay. SO. in order to stop unity from pissing its pants and crying about a null reference, instead of having the start function start literally right away, the player object will wait for its guardian angel to TELL it to run start.
+    }
+
+    public void okayNOWYouCanStart()
+    {
         crntHp = maxHp;
         crntLives = maxLives;
         move = controls.actions["move"];
@@ -60,7 +76,6 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
         CrntState.EnterState();
 
     }
-
     void Update()
     {
 
