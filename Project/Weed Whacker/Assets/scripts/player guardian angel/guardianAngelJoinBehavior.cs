@@ -1,15 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class guardianAngelJoinBehavior : MonoBehaviour
 {
+    public UnityEvent joinButtonSmacked;
     //this script will rely on playerGuardianAngel.cs 's references instead of making its own, in an effort to cut down on memory usage. 
-    public void spawnPlayer()
+    public void spawnPlayer(InputAction.CallbackContext context)
     {
-        var playerSpawn = Instantiate(this.gameObject.GetComponent<playerGuardianAngel>().playerPrefab);
-        playerSpawn.GetComponent<playerScript>().controls = this.gameObject.GetComponent<playerGuardianAngel>().playerControlssss;
+        print("join action smacked!");
+        joinButtonSmacked.Invoke();
+        var playerSpawn = Instantiate(this.gameObject.GetComponent<playerGuardianAngelScript>().playerPrefab);
+        playerSpawn.GetComponent<playerScript>().controls = this.gameObject.GetComponent<playerGuardianAngelScript>().playerControlssss;
         playerSpawn.GetComponent<playerScript>().okayNOWYouCanStart();
+        this.gameObject.GetComponent<playerGuardianAngelScript>().deactivateJoinListener();
     }
 }

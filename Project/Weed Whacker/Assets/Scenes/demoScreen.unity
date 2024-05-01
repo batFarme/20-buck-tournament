@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 89201480}
   - component: {fileID: 89201482}
   m_Layer: 0
-  m_Name: Video Player
+  m_Name: demoScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

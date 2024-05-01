@@ -294,6 +294,28 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""join game"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9f08f928-f78e-40db-9637-eeffdb22c1df"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Debug"",
+                    ""action"": ""join game"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""822bf30e-821b-45b0-8aad-8e308cc2d9c9"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Debug"",
+                    ""action"": ""join game"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
