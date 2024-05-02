@@ -49,22 +49,10 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
     //The meat of the code!
     void Start()
     {
-        //okay. SO. in order to stop unity from shitting its pants and crying about a null reference, instead of having the start function start literally right away, the player object will wait for its guardian angel to TELL it to run start; this is because its gotta wait for guardian angel to assign its controller... probably?
-        /*
-        crntHp = maxHp;
-        crntLives = maxLives;
-        move = controls.actions["move"];
-        attack = controls.actions["attack"];
-        StateDict.Add(States.standing, new standingState(States.standing, meObject));
-        StateDict.Add(States.knocked, new knockedState(States.knocked, meObject));
-        StateDict.Add(States.dead, new deadState(States.dead, meObject));
-        CrntState = StateDict.GetValueOrDefault(States.standing); //im looking at this line a while after having written it and i have NOOOO clue what it does lmaooooooo    like wtf do u mean "getValueOrDefault" what r u yapping abt blud       i am not fucking hirable :skull:
-        CrntState.EnterState();
-        */
 
     }
 
-    public void okayNOWYouCanStart()
+    public void okayNOWYouCanStart() //i imagine monobehavior already has a solution for this but i am SO not going through a 500 page toyota corolla manual to do literally this for like a 70th of a frame's worth of performance
     {
         crntHp = maxHp;
         crntLives = maxLives;

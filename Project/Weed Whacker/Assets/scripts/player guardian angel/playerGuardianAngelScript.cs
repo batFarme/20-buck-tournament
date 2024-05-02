@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class playerGuardianAngelScript : MonoBehaviour
 {
 
-    public PlayerInput playerControlssss;
+    public PlayerInput playerControlssss; //this is set in the editor
     [HideInInspector] public InputAction joinAction;
     [HideInInspector] public Vector2 spawnPos;
     public GameObject playerPrefab;
@@ -17,6 +17,7 @@ public class playerGuardianAngelScript : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
         GameObject controllerController = GameObject.Find("playerControllerController");
+        joinAction = playerControlssss.actions["join game"];
         print("controller controller's name is " + controllerController.name);
         transform.position = controllerController.GetComponent<setupScreenScript>().playerJoined();//tells teh setupScreen scirpt that a player has joined
         if (transform.position.x < 0)
@@ -32,13 +33,13 @@ public class playerGuardianAngelScript : MonoBehaviour
             controllerController.GetComponent<setupScreenScript>().bothPlayersIn();
         }
 
-        joinAction = playerControlssss.actions["join game"];
     }
 
     void activateJoinListener()
     {
         this.gameObject.AddComponent<guardianAngelJoinBehavior>();
         joinAction.performed += context => this.gameObject.GetComponent<guardianAngelJoinBehavior>().spawnPlayer(context);
+        joinAction.performed += context => print("the original guardian angel script got the input...");
     }
 
     public void deactivateJoinListener()
