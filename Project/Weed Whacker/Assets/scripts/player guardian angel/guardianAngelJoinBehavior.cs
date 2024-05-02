@@ -30,9 +30,10 @@ public class guardianAngelJoinBehavior : MonoBehaviour
     {
         print("join action smacked!");
         onJoinSmacked?.Invoke(this, EventArgs.Empty);
-        var playerSpawn = Instantiate(this.gameObject.GetComponent<playerGuardianAngelScript>().playerPrefab);
-        playerSpawn.GetComponent<playerScript>().controls = this.gameObject.GetComponent<playerGuardianAngelScript>().playerControlssss;
-        playerSpawn.GetComponent<playerScript>().okayNOWYouCanStart();
+        PlayerInput spawnedPlayer = PlayerInput.Instantiate(this.gameObject.GetComponent<playerGuardianAngelScript>().playerPrefab, controlScheme: "Debug"/*, pairWithDevice: Gamepad*/);
+        //var playerSpawn = Instantiate(this.gameObject.GetComponent<playerGuardianAngelScript>().playerPrefab, InputControlScheme: "Debug");
+        spawnedPlayer.GetComponent<playerScript>().controls = this.gameObject.GetComponent<playerGuardianAngelScript>().playerControlssss;
+        spawnedPlayer.GetComponent<playerScript>().okayNOWYouCanStart();
         this.gameObject.GetComponent<playerGuardianAngelScript>().deactivateJoinListener();
     }
 

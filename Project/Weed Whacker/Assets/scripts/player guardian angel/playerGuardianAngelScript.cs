@@ -35,15 +35,15 @@ public class playerGuardianAngelScript : MonoBehaviour
 
     }
 
-    void activateJoinListener()
+    public void activateJoinListener()
     {
         this.gameObject.AddComponent<guardianAngelJoinBehavior>();
         joinAction.performed += context => this.gameObject.GetComponent<guardianAngelJoinBehavior>().spawnPlayer(context);
-        joinAction.performed += context => print("the original guardian angel script got the input...");
     }
 
     public void deactivateJoinListener()
     {
+        joinAction.performed -= context => this.gameObject.GetComponent<guardianAngelJoinBehavior>().spawnPlayer(context);
         Destroy(this.gameObject.GetComponent<guardianAngelJoinBehavior>());
     }
 }

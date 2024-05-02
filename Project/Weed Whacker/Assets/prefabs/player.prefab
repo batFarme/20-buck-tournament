@@ -215,7 +215,7 @@ MonoBehaviour:
     m_ActionName: 'toJoin/join game[/Microntek              USB Joystick         
       /button12,/Microntek              USB Joystick          1/button12]'
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: arcade stick
+  m_DefaultControlScheme: Debug
   m_DefaultActionMap: standing
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
