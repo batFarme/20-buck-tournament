@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class setupScreenScript : MonoBehaviour
 {
     public TextMeshProUGUI controllerPrompt;
-    public TextMeshProUGUI waitingText;
     public int amtPlayersJoined = 0;
   
     public Vector2 player1SpawnPos = new Vector2(-1.73f, -1.14f);

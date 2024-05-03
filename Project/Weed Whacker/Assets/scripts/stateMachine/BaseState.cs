@@ -13,7 +13,7 @@ public abstract class BaseState<Estate> where Estate : Enum
         selfObject = SelfObject;
     }
     public Enum StateKey { get; set; }
-    public Estate StateIWantToBe { get; set; }
+    public Estate StateIWantToBe { get; set; } //im so sure that the state machine can be optimized to not use so many variables, like you could replace some of it with just accessing variables, but whatever thats for later :shrug:
     public abstract void EnterState();
     public abstract void ExitState();
     public abstract void UpdateState();

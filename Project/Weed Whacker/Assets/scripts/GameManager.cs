@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public GameObject theWell;  //this should be set in the editor
     public float weedSpeed; // lol
 
-    public enum GameState
+    public enum GameState //this is currently unused, and im pretty sure itll stay unused since its not actually needed...
     {
         waveActive,
         waveCelebrate,

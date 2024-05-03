@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +15,7 @@ public class deadState : BaseState<playerScript.States>
     public override void EnterState()
     {
         theMainScriptSWE.myAnimator.SetTrigger("wasKillded");
-        theMainScriptSWE.tellStalkerToFuckOff.Invoke();
+        theMainScriptSWE.tellStalkersToGoAway();
     }
 
     public override void UpdateState()

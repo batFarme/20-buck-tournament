@@ -20,25 +20,16 @@ public class videoPlayerScript : MonoBehaviour
         print("it did the thing");
 
         player1 = GameObject.Find("player 1 guardian angel");
-        player1.GetComponent<playerGuardianAngelScript>().activateJoinListener();
-        player1.GetComponent<guardianAngelJoinBehavior>().onJoinSmacked += itsShowtime;
-        /*
-        player1.AddComponent<guardianAngelJoinBehavior>();
-        */
+        player1.GetComponent<playerScript>().joinGame.performed += context => itsShowtime(context);
         player2 = GameObject.Find("player 2 guardian angel");
-        player2.GetComponent<playerGuardianAngelScript>().activateJoinListener();
-        player2.GetComponent<guardianAngelJoinBehavior>().onJoinSmacked += itsShowtime;
-        /*
-        player2.AddComponent<guardianAngelJoinBehavior>();
-        player2.GetComponent<guardianAngelJoinBehavior>().onJoinSmacked += itsShowtime;
-        */
+        player2.GetComponent<playerScript>().joinGame.performed += context => itsShowtime(context);
     }
 
-    public void itsShowtime(object sender, EventArgs e)
+    public void itsShowtime(InputAction.CallbackContext context)
     {
         print("its showtime!!!!");
-        player1.GetComponent<guardianAngelJoinBehavior>().onJoinSmacked -= itsShowtime; //im actually not sure if unsubscribing is actually necessary, since this object is going to be destroyed after loading the scene... oh well!
-        player2.GetComponent<guardianAngelJoinBehavior>().onJoinSmacked -= itsShowtime;
+        player1.GetComponent<playerScript>().joinGame.performed -= context => itsShowtime(context); //im actually not sure if unsubscribing is actually necessary, since this object is going to be destroyed after loading the scene... oh well! ^_^
+        player2.GetComponent<playerScript>().joinGame.performed -= context => itsShowtime(context);
         SceneManager.LoadScene("debugScene");
     }
 }

@@ -12,7 +12,7 @@ public class guardianAngelJoinBehavior : MonoBehaviour
     //public UnityEvent joinButtonSmacked;
     public int flagVar = 1;
 
-    public event EventHandler onJoinSmacked;
+    //public event EventHandler onJoinSmacked;
 
     //this script will rely on playerGuardianAngel.cs 's references instead of making its own, in an effort to cut down on memory usage. 
     public void Start()
@@ -29,7 +29,7 @@ public class guardianAngelJoinBehavior : MonoBehaviour
     public void spawnPlayer(InputAction.CallbackContext context)
     {
         print("join action smacked!");
-        onJoinSmacked?.Invoke(this, EventArgs.Empty);
+        //onJoinSmacked?.Invoke(this, EventArgs.Empty);
         PlayerInput spawnedPlayer = PlayerInput.Instantiate(this.gameObject.GetComponent<playerGuardianAngelScript>().playerPrefab, controlScheme: "Debug"/*, pairWithDevice: Gamepad*/);
         //var playerSpawn = Instantiate(this.gameObject.GetComponent<playerGuardianAngelScript>().playerPrefab, InputControlScheme: "Debug");
         spawnedPlayer.GetComponent<playerScript>().controls = this.gameObject.GetComponent<playerGuardianAngelScript>().playerControlssss;
