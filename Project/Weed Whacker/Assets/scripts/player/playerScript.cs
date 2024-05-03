@@ -33,6 +33,7 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
     public int myLayer;
 
     //internal handling
+    public bool startUpScreenOver = false;
     public int crntHp;
     public int crntLives;
 

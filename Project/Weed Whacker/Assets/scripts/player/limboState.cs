@@ -1,3 +1,4 @@
+using NUnit.Framework.Constraints;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ public class limboState : BaseState<playerScript.States>
 {
     private playerScript playersScript;
     public event EventHandler onJoinSmacked;
+    public bool startUpScreenOver;
 
     public limboState(playerScript.States key, GameObject SelfObject) : base(key, SelfObject)
     {
@@ -27,7 +29,6 @@ public class limboState : BaseState<playerScript.States>
     public override void ExitState() //essentially the "on spawn" function... though when i work on rezzing stuff, might have to make this a function th acutally nmv
     {
         playersScript.attack.performed -= context => joinGame(context);
-        selfObject.GetComponent<Animator>().SetTrigger("gameJoin");
     }
 
     public override playerScript.States GetNextState()
@@ -56,6 +57,7 @@ public class limboState : BaseState<playerScript.States>
     }
     public void joinGame(InputAction.CallbackContext context)
     {
-
+        selfObject.GetComponent<Animator>().SetTrigger("gameJoin");
+        StateIWantToBe = playerScript.States.standing;
     }
 }
