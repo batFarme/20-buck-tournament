@@ -16,7 +16,6 @@ public class limboState : BaseState<playerScript.States>
         StateIWantToBe = key;
         selfObject = SelfObject;
         playersScript = selfObject.GetComponent<playerScript>();
-        //playersScript.attack.performed += context => performAttack(context);
     }
 
     public override void EnterState()

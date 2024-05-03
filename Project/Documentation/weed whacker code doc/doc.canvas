@@ -48,7 +48,10 @@
 		{"id":"e258ee2391ee1356","type":"text","text":"-> setup screen asks for each controller to be pressed in turn\n-> when the first controller is pressed, the playerControllerController's player input manager component spawns an instance of [player guardian angel], which upon startup:\n--> tags itself as DontDestroyOnLoad\n--> grabs a reference to the playerControllerController object and calls it controllerController (this is done in the start function, so that when the scene inevitably changes, unity wont fucking shit itself and cry about a null reference)\n--> checks if it is player 1 or 2:\n---> if player 1, then sets its name to \"player 1 guardian angel\", then tells the playerControllerController to run nowForPlayer2()\n---> if player 2, then sets its name to \"player 2 guardian angel\", then tells the playerControllerController to run bothPlayersIn()\n-> nowForPlayer2 changes the startup screen text to now prompt the end user to press a button on player 2's controller, in order to assign it\n-> both players in then loads the demo screen; the demo screen loops a video of gameplay, mimicking a real arcade\n-> if either controller is pressed, then have the demo screen run transitionToReal(). this take a screencap of the current frame, \n","x":3163,"y":-487,"width":520,"height":348,"color":"3"},
 		{"id":"8c287efe7d596f88","x":2040,"y":1200,"width":250,"height":60,"type":"text","text":"## demo screen\n"},
 		{"id":"f5ef04935b4ab597","x":1760,"y":1200,"width":250,"height":60,"type":"text","text":"## setup screen\n"},
-		{"id":"c2c8ddc03c42fcb4","x":2320,"y":1200,"width":250,"height":60,"type":"text","text":"## debug screen\n"}
+		{"id":"c2c8ddc03c42fcb4","x":2320,"y":1200,"width":250,"height":60,"type":"text","text":"## debug screen\n"},
+		{"id":"ed8519cdd5058041","x":2040,"y":1320,"width":250,"height":200,"type":"text","text":"still in limbo state, but their join game functions are now subscribed to the attack action in the controls"},
+		{"id":"513873374d9dc384","x":1760,"y":1320,"width":250,"height":200,"type":"text","text":"player objects are created, both in limbo state"},
+		{"id":"0e25ee816f4ff80a","x":2320,"y":1320,"width":250,"height":200,"type":"text","text":"when player joins game, "}
 	],
 	"edges":[
 		{"id":"2b4df40118e4fee8","fromNode":"3131d0b26c55e286","fromSide":"right","toNode":"ee3336d70fcb9ea4","toSide":"left"},
