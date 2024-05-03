@@ -22,12 +22,11 @@ public class standingState : BaseState<playerScript.States>
         myRigidBody = selfObject.GetComponent<Rigidbody2D>();
         playersScript = selfObject.GetComponent<playerScript>();
         animator = selfObject.GetComponent<Animator>();
-        playersScript.attack.performed += context => performAttack(context);
     }
 
     public override void EnterState()
     {
-        
+        playersScript.attack.performed += context => performAttack(context);
     }
 
     public override void UpdateState()
@@ -37,7 +36,7 @@ public class standingState : BaseState<playerScript.States>
 
     public override void ExitState()
     {
-        
+        playersScript.attack.performed -= context => performAttack(context);
     }
 
     public override playerScript.States GetNextState() 

@@ -47,7 +47,7 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
         print("i am targeting " + originalTarget.name);
         currentTarget = originalTarget;
         targetsScript = currentTarget.GetComponent<EntityClass>();
-        targetsScript.tellStalkerToFuckOff.AddListener(findANewBitch);
+        //targetsScript.tellStalkerToFuckOff.AddListener(findANewBitch);
         print(targetsScript.linkFlag);
         aiTarget = currentTarget.transform;
         myDstnSttr.target = aiTarget;

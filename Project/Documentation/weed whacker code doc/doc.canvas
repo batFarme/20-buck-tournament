@@ -46,15 +46,9 @@
 		{"id":"503e813990c14e30","type":"text","text":"SO. kinda roundabout solution. theres proly a better way to do this but OH WELL I DO NOT CARE THIS IS A SCHOOL PROJECT. I DONT GIVE A FUCK\nthe mains scene (as far as Unity is concerned) is gonna be called On Startup. self explanatory. its an ominous balck screen that asks the user to hit the button for player 1 (left side). after doing so, it creates a playerSpawner object that is assigned to that controller using the Player Input Manager; THIS IS DONOTDESTROYONLOAD.  it then asks for player 2 (right side). this is also DONOTDESTROYONLOAD! then, it loads the demo scene; atp each controller is assigned to a side, and will remain as such for the entire session. since this is in an arcade setting, this should only have to be done at the beginning of the day, only having to be redone if the machine is like unplugged or sm.  ","x":2460,"y":57,"width":460,"height":498,"color":"4"},
 		{"id":"f0ddc6a691242cea","type":"text","text":"| playerGuardianAngel.cs                                                                                                                                                  | guardianAngelJoinBehavior.cs                                               |\n| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |\n| - is spawned by playerControllerController in the onStartupScreen<br>- when the demo screen is loaded, then adds the guardianAngelJoinBehavior.cs script as a component | - handles actually spawning its player instance and assigning its controls |","x":3060,"y":87,"width":726,"height":396,"color":"3"},
 		{"id":"e258ee2391ee1356","type":"text","text":"-> setup screen asks for each controller to be pressed in turn\n-> when the first controller is pressed, the playerControllerController's player input manager component spawns an instance of [player guardian angel], which upon startup:\n--> tags itself as DontDestroyOnLoad\n--> grabs a reference to the playerControllerController object and calls it controllerController (this is done in the start function, so that when the scene inevitably changes, unity wont fucking shit itself and cry about a null reference)\n--> checks if it is player 1 or 2:\n---> if player 1, then sets its name to \"player 1 guardian angel\", then tells the playerControllerController to run nowForPlayer2()\n---> if player 2, then sets its name to \"player 2 guardian angel\", then tells the playerControllerController to run bothPlayersIn()\n-> nowForPlayer2 changes the startup screen text to now prompt the end user to press a button on player 2's controller, in order to assign it\n-> both players in then loads the demo screen; the demo screen loops a video of gameplay, mimicking a real arcade\n-> if either controller is pressed, then have the demo screen run transitionToReal(). this take a screencap of the current frame, \n","x":3163,"y":-487,"width":520,"height":348,"color":"3"},
-		{"id":"55eb65253b0546fa","type":"text","text":"### startup screen","x":3840,"y":-442,"width":260,"height":82,"color":"4"},
-		{"id":"2661f3bb2c268c8a","type":"text","text":"### demo screen\n","x":4120,"y":-442,"width":260,"height":82,"color":"4"},
-		{"id":"ba1ee3dfc902e52a","type":"text","text":"### debug scene","x":4400,"y":-442,"width":260,"height":82,"color":"4"},
-		{"id":"3d201cfc9018d615","type":"text","text":"","x":3840,"y":-313,"width":250,"height":60},
-		{"id":"8858633ca2a1ea9e","type":"text","text":"- player guardian angel","x":4125,"y":-313,"width":250,"height":60},
-		{"id":"e44e2760d9ab2298","type":"text","text":"","x":4405,"y":-313,"width":250,"height":60},
-		{"id":"369df2eb2eccad7f","x":4410,"y":-100,"width":250,"height":60,"type":"text","text":"guardian angel\n"},
-		{"id":"64762b98ca8af5ee","x":4740,"y":-130,"width":250,"height":60,"type":"text","text":"guardian angel join bhavior\n"},
-		{"id":"ed2757fc5386f56d","x":4740,"y":120,"width":250,"height":60,"type":"text","text":"player object\n"}
+		{"id":"8c287efe7d596f88","x":2040,"y":1200,"width":250,"height":60,"type":"text","text":"## demo screen\n"},
+		{"id":"f5ef04935b4ab597","x":1760,"y":1200,"width":250,"height":60,"type":"text","text":"## setup screen\n"},
+		{"id":"c2c8ddc03c42fcb4","x":2320,"y":1200,"width":250,"height":60,"type":"text","text":"## debug screen\n"}
 	],
 	"edges":[
 		{"id":"2b4df40118e4fee8","fromNode":"3131d0b26c55e286","fromSide":"right","toNode":"ee3336d70fcb9ea4","toSide":"left"},
@@ -94,7 +88,6 @@
 		{"id":"c0e70dca21c8f378","fromNode":"e47a1e449886c8d1","fromSide":"bottom","toNode":"6b523fc0b758c606","toSide":"top"},
 		{"id":"31248305b16f7c74","fromNode":"6b523fc0b758c606","fromSide":"bottom","toNode":"503e813990c14e30","toSide":"top"},
 		{"id":"7ac97c158067ecd3","fromNode":"e47a1e449886c8d1","fromSide":"bottom","toNode":"e258ee2391ee1356","toSide":"top"},
-		{"id":"a2f06c601b545996","fromNode":"e258ee2391ee1356","fromSide":"bottom","toNode":"f0ddc6a691242cea","toSide":"top"},
-		{"id":"3de85e5fd54555f8","fromNode":"64762b98ca8af5ee","fromSide":"bottom","toNode":"ed2757fc5386f56d","toSide":"top","label":"input stuff...."}
+		{"id":"a2f06c601b545996","fromNode":"e258ee2391ee1356","fromSide":"bottom","toNode":"f0ddc6a691242cea","toSide":"top"}
 	]
 }

@@ -16,17 +16,18 @@ public class limboState : BaseState<playerScript.States>
         StateIWantToBe = key;
         selfObject = SelfObject;
         playersScript = selfObject.GetComponent<playerScript>();
-        playersScript.joinGame.performed += context => joinGame(context);
+        //playersScript.attack.performed += context => performAttack(context);
     }
 
     public override void EnterState()
     {
-        playersScript.controls.currentActionMap = playersScript.controls.
+        playersScript.attack.performed += context => joinGame(context); //forget having action maps change :shrug: ill just have functions subscribe and unsubscribe...
         //selfObject.GetComponent<Animator>().SetTrigger("backToDemoScreen");
     }
 
     public override void ExitState() //essentially the "on spawn" function... though when i work on rezzing stuff, might have to make this a function th acutally nmv
     {
+        playersScript.attack.performed -= context => joinGame(context);
         selfObject.GetComponent<Animator>().SetTrigger("gameJoin");
     }
 
