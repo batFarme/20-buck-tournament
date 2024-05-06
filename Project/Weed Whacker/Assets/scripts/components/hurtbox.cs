@@ -12,7 +12,7 @@ public class hurtbox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "hitbox"/* && collision.gameObject.layer != myLayer*/)  //for some reason unity just fucking ignores the .tag check here?????? and goes on to the next block of code????? hello??????????? TO-DO-FLAG-6
+        if (collision.gameObject.tag == "hitbox"/* && collision.gameObject.layer != myLayer*/)  //for some reason unity just fucking ignores the .tag check here?????? and goes on to the next block of code????? hello??????????? TO-DO-FLAG-6
         {
             if (collision.gameObject.layer != myLayer)
             {

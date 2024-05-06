@@ -66,7 +66,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.12923378, y: -0.10530159}
+  m_Offset: {x: -0.07566208, y: -0.07865107}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -76,7 +76,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.74153244, y: 0.7893968}
+  m_Size: {x: 0.84867585, y: 1.2424552}
   m_EdgeRadius: 0
 --- !u!1 &7086465199763277081
 GameObject:
@@ -152,6 +152,15 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  joinGame:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: b2667825-e381-4fe8-96c2-10d51023420e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   myRigidBody2D: {fileID: 3363388924254896482}
   spriteRenderer: {fileID: 0}
   meObject: {fileID: 7086465199763277081}
@@ -209,9 +218,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 9935d0f5-c488-4b12-b5e0-b16ed15bd5d2
     m_ActionName: 'standing/attack[/Keyboard/j]'
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Gamepad
-  m_DefaultActionMap: standing
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3ad4a94f-e350-4841-b434-3aeac68bed67
+    m_ActionName: 'toJoin/join game[/Microntek              USB Joystick         
+      /button12,/Microntek              USB Joystick          1/button12]'
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Debug
+  m_DefaultActionMap: toJoin
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!212 &1633170005945410197
@@ -351,8 +365,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.54, y: 1.17}
+  m_Offset: {x: 0, y: -0.3149999}
+  m_Size: {x: 0.54, y: 0.54}
   m_Direction: 0
 --- !u!1001 &1044569955478339469
 PrefabInstance:

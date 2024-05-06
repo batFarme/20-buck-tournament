@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 public class standingState : BaseState<playerScript.States>
 {
     //references
-    private playerScript playerScript;
+    private playerScript playersScript;
     private Rigidbody2D myRigidBody;
     private Animator animator;
 
@@ -20,27 +20,26 @@ public class standingState : BaseState<playerScript.States>
         StateIWantToBe = key;
         selfObject = SelfObject;
         myRigidBody = selfObject.GetComponent<Rigidbody2D>();
-        playerScript = selfObject.GetComponent<playerScript>();
+        playersScript = selfObject.GetComponent<playerScript>();
         animator = selfObject.GetComponent<Animator>();
-        playerScript.attack.performed += context => performAttack(context);
     }
 
     public override void EnterState()
     {
-        
+        playersScript.attack.performed += context => performAttack(context);
     }
 
     public override void UpdateState()
     {
-        playerScript.movement(playerScript.moveSpeed, playerScript.move.ReadValue<Vector2>());
+        playersScript.movement(playersScript.moveSpeed, playersScript.move.ReadValue<Vector2>());
     }
 
     public override void ExitState()
     {
-        
+        playersScript.attack.performed -= context => performAttack(context);
     }
 
-    public override playerScript.States GetNextState()
+    public override playerScript.States GetNextState() 
     {
         return StateIWantToBe;
     }
@@ -75,4 +74,5 @@ public class standingState : BaseState<playerScript.States>
         animator.SetTrigger("attackPressed");
         Debug.Log("attack called! animator's attack parameter is now " + animator.parameters.GetValue(1));
     }
+
 }

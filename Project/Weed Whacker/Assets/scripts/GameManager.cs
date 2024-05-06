@@ -9,19 +9,17 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;  // i actually dont know what this does....
     public GameObject player1;
     public GameObject player2;
+    List<GameObject> currentPlayers = new List<GameObject>();   //ohhhh this is so scuffed but whatever
+    List<GameObject> alivePlayers = new List<GameObject>();   // AAAHHHHHH this looks like TF2's code but WHATEVER I DONT CARE RAAHHHHHHH
     public List<GameObject> spawnerList = new List<GameObject>();
     public GameObject weedPrefab;
-    List<GameObject> bothPlayers = new List<GameObject>();   //ohhhh this is so scuffed but whatever
-    List<GameObject> alivePlayers = new List<GameObject>();   // AAAHHHHHH this looks like TF2's code but WHATEVER I DONT CARE RAAHHHHHHH
+    public GameObject flowerPrefab;
     //List<bool> playerAliveStatus = new List<bool>();
     List<GameObject> allFlowers = new List<GameObject>();
     public GameObject theWell;  //this should be set in the editor
-
     public float weedSpeed; // lol
 
-    private GameObject weedCreate;
-
-    public enum GameState
+    public enum GameState //this is currently unused, and im pretty sure itll stay unused since its not actually needed...
     {
         waveActive,
         waveCelebrate,
@@ -32,22 +30,22 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        bothPlayers.Add(player1);
-        //bothPlayers.Add(player2);      just for now, until i figure out how to get two controllers
-
-        /*  commenting this block out because bothPlayers isnt bieng used rn but if i need to go back to it, i wont have to rewrite all this
-        for (int i = 0; i < bothPlayers.Count; i++) //this method works for however many players are in a game; works as future proofing, but im just writing it like this bc id rather write this now than have to rewrite this when i get a second player in the game
-        {
-            playerAliveStatus.Add(true);
-        }
-        */
-        alivePlayers = bothPlayers;  //grinning like  a dumbass at this :3
+        currentPlayers.Add(player1);
+        alivePlayers = currentPlayers;  //grinning like  a dumbass at this :3
     }
 
-    
+    void spawnFlower(GameObject theWell)
+    {
+        var flowerCreate = Instantiate(flowerPrefab);
+        flowerPrefab.transform.position = spawnerList[Random.Range(0, spawnerList.Count)].transform.position;
+        flowerScript flowerCreatesScript = flowerCreate.GetComponent<flowerScript>();
+        flowerCreatesScript.theWell = theWell;
+        allFlowers.Add(flowerCreate);
+    }
+
     void spawnWeed(GameObject targetToGive) //the core weed spawning function.
     {
-        weedCreate = Instantiate(weedPrefab);
+        var weedCreate = Instantiate(weedPrefab);
         weedCreate.transform.position = spawnerList[Random.Range(0, spawnerList.Count)].transform.position;
         weedScript weedCreatesScript = weedCreate.GetComponent<weedScript>();
         weedCreatesScript.originalTarget = targetToGive;

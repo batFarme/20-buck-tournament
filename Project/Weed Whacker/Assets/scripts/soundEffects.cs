@@ -6,5 +6,12 @@ using UnityEngine;
 
 public class soundEffects : MonoBehaviour
 {
-    public AudioClip playerHit; 
+    //this is here just to make importing music and sound stuff easier
+    public List<AudioClip> ingameMusic = new List<AudioClip>();
+    public AudioClip playerHit;
+
+    private void Start()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
 }
