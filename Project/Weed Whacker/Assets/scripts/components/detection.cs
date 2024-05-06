@@ -27,8 +27,7 @@ public class detection : MonoBehaviour
     {
         if (collision.tag == "hurtbox" && collision.gameObject.layer != LayerMask.NameToLayer("weed"))
         {
-            detectedHurtboxes--;
-            myMommyWeehhhh.GetComponent<Animator>().SetInteger("detectedTargets", detectedHurtboxes);
+            myMommyWeehhhh.GetComponent<Animator>().SetInteger("detectedTargets", 1);
         }
     }
 }
