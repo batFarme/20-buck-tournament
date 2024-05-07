@@ -2,12 +2,12 @@ using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView; //REMEMBER TO COMMENT OUT WHEN BUILDING
+//using UnityEditor.Experimental.GraphView; //REMEMBER TO COMMENT OUT WHEN BUILDING
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
-using static UnityEditor.Experimental.GraphView.GraphView; //REMEMBER TO COMMENT OUT WHEN BUILDING
+//using static UnityEditor.Experimental.GraphView.GraphView; //REMEMBER TO COMMENT OUT WHEN BUILDING
 
-public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
+public class weedScript : EntityClass, IWalkBehavior, Ientity
 {
     //references
     [HideInInspector] public GameObject originalTarget;
@@ -101,11 +101,13 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
     {
     }
 
+    /*
     public void takeHit()
     {
         print("i, a weed, have been hit!?!?!?");
         throw new System.NotImplementedException();
     }
+    */
 
     public void sicEm()
     {
@@ -121,10 +123,6 @@ public class weedScript : MonoBehaviour, IWalkBehavior, Ientity
         myDstnSttr.target = aiTarget;
     }
 
-    public void setMyLayer()
-    {
-        myHurtbox.GetComponent<hurtbox>().myLayer = myLayer;
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
 

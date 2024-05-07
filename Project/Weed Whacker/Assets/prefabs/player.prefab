@@ -150,15 +150,15 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   myRigidBody2D: {fileID: 3363388924254896482}
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 1633170005945410197}
   meObject: {fileID: 7086465199763277081}
   myHitbox: {fileID: 2773792658915754310}
   myHurtbox: {fileID: 5743139398053851717}
   myAnimator: {fileID: 6197611619182928815}
-  maxHp: 5
+  maxHp: 3
   moveSpeed: 5
   maxLives: 2
-  knockedMoveSpeed: 3
+  knockedMoveSpeed: 2
   rezCountLength: 3
   myLayer: 10
   startUpScreenOver: 0

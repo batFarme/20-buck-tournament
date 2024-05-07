@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.UI; //REMEMBER TO COMMENT OUT WHEN BUILDING
+//using UnityEditor.UI; //REMEMBER TO COMMENT OUT WHEN BUILDING
 using UnityEngine;
 using UnityEngine.Events;
 public class detection : MonoBehaviour
@@ -17,8 +17,7 @@ public class detection : MonoBehaviour
     {
         if (collision.gameObject.tag == "hurtbox" && collision.gameObject.layer != LayerMask.NameToLayer("weed")) 
         {
-            myMommyWeehhhh.GetComponent<Animator>().SetInteger("detectedTargets",
-            myMommyWeehhhh.GetComponent<Animator>().GetInteger("detectedTargets") + 1);
+            myMommyWeehhhh.GetComponent<Animator>().SetInteger("detectedTargets", myMommyWeehhhh.GetComponent<Animator>().GetInteger("detectedTargets") + 1);
             print("target acquired!");
         }
     }
@@ -27,8 +26,7 @@ public class detection : MonoBehaviour
     {
         if (collision.gameObject.tag == "hurtbox" && collision.gameObject.layer != LayerMask.NameToLayer("weed"))
         {
-            myMommyWeehhhh.GetComponent<Animator>().SetInteger("detectedTargets",
-            myMommyWeehhhh.GetComponent<Animator>().GetInteger("detectedTargets") - 1);
+            myMommyWeehhhh.GetComponent<Animator>().SetInteger("detectedTargets", myMommyWeehhhh.GetComponent<Animator>().GetInteger("detectedTargets") - 1);
         }
     }
 }

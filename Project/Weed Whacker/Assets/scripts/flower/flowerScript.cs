@@ -2,7 +2,7 @@ using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;  //REMEMBER TO COMMENT OUT WHEN BUILDING
+//using static UnityEditor.Experimental.GraphView.GraphView;  //REMEMBER TO COMMENT OUT WHEN BUILDING
 
 public class flowerScript : EntityClass, Ientity
 {
@@ -23,18 +23,5 @@ public class flowerScript : EntityClass, Ientity
     }
 
     //no update function cause flowers do pretty much nothing unless acted upon; movement is handled by the pathfinding solution
-    public void setMyLayer()
-    {
-        myHurtbox.GetComponent<hurtbox>().myLayer = myLayer;
-    }
 
-    public void takeHit()
-    {
-        print("OWWIEEEEE MOMMYYYYYYYY");
-    }
-
-    public void onDeath()
-    {
-
-    }
 }

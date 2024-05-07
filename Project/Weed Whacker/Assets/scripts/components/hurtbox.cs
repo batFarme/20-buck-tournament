@@ -6,9 +6,15 @@ using UnityEngine.Events;
 
 public class hurtbox : MonoBehaviour
 {
-    public UnityEvent theyHitMeeeeeeeWaaahhhhhhh;
+    public UnityEvent theyHitMeeeeeeeWaaahhhhhhh;  //using unity event here is fine cause theres like only ever gona b one subscriber and that can be set in the editor (i so badly wanna use C# events but its too late now :shrug:)
+    public bool ignorePlayerDamage = true; //this should be set in the editor to false for weeds
     [HideInInspector] public GameObject objectThatJustHitMe;
-    public int myLayer; //currently needs to be manually set in the editor cause i have no clue how to get this objects layer through code alone...
+    [HideInInspector] private int myLayer; //currently needs to be manually set in the editor cause i have no clue how to get this objects layer through code alone...
+
+    private void Awake()
+    {
+        myLayer = transform.parent.gameObject.layer;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,7 +22,7 @@ public class hurtbox : MonoBehaviour
         {
             if (collision.gameObject.layer != myLayer)
             {
-                print("hurtbox was just smacked");
+                print(gameObject.name + "'s hurtbox was just smacked; my layer is " + myLayer + " and my attacker's layer is " + collision.gameObject.layer);
                 objectThatJustHitMe = collision.gameObject.transform.parent.gameObject; //WOW thats a lot of methods! good fucking bye performance!!!! :D
                 theyHitMeeeeeeeWaaahhhhhhh.Invoke();
             }

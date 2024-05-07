@@ -20,20 +20,22 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
     public Animator myAnimator;
 
     //handling
-    public int maxHp;
+    //public int maxHp; commenting out this and 
     public float moveSpeed;
-    /*
-    public float accelSpeed;
+
+    /*   having players move based on acceleration rather than set speeds is just a nice-to-have, possible implementation in the future :shrug:
+    public float accelSpeed; 
     public float maxSpeed;
     */
+
     public int maxLives;
     public float knockedMoveSpeed;
     public float rezCountLength;
     public int myLayer;
 
     //internal handling
-    public bool startUpScreenOver = false;
-    public int crntHp;
+    [HideInInspector]  public bool startUpScreenOver = false;
+    //public int crntHp;
     public int crntLives;
     //states
     public enum States
@@ -50,18 +52,24 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
     //The meat of the code!
     void Start()
     {
+        //dont destroy on load
         DontDestroyOnLoad(this.gameObject); //this is part of the guardian angel replacement; when going back to the demo screen, rather than anything else, just change the state to limbo; it will act as if this doesnt exist at all :shrug:
+
+        //controls initialization
         move = controls.actions["move"];
         attack = controls.actions["attack"];
+
+        //state machine intialization
         StateDict.Add(States.limbo, new limboState(States.limbo, meObject));
         StateDict.Add(States.standing, new standingState(States.standing, meObject));
         StateDict.Add(States.knocked, new knockedState(States.knocked, meObject));
         StateDict.Add(States.dead, new deadState(States.dead, meObject));
         CrntState = StateDict.GetValueOrDefault(States.limbo); //this is the startup screen stuff, replaces the guardian angel solution entirely
         CrntState.EnterState();
+
+        //controllercontroller shit
         GameObject controllerController = GameObject.Find("playerControllerController");
         print("controller controller's name is " + controllerController.name);
-        attack.performed += printButtonHit;
         transform.position = controllerController.GetComponent<setupScreenScript>().playerJoined();//tells teh setupScreen scirpt that a player has joined
         if (transform.position.x < 0)
         {
@@ -73,8 +81,6 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
             this.gameObject.name = "player 2";
             controllerController.GetComponent<setupScreenScript>().bothPlayersIn();
         }
-
-        
     }
 
     public void printButtonHit(InputAction.CallbackContext context)
@@ -149,6 +155,20 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
 
 
     }
+
+    public void onHealthEqualsZero()
+    {
+        if (crntLives <= 0) //upon lives running out...
+        {
+            CrntState.StateIWantToBe = States.dead;
+        }
+        else //if there are still lives remaining...
+        {
+            CrntState.StateIWantToBe = States.knocked;
+        }
+    }
+
+    /*
     public void takeHit() //becuase of the limitations of unity's event system, this can only take one parameter; if a reference to the attacking gameObject is needed, instead ask hurtbox
     {
         print("aw fuck someone hit me!!!!");
@@ -171,12 +191,7 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
             //also do some stuff for getting hit but also... maybe just do that shit in the animator? food for thought TO-DO-FLAG-5
         }
     }
-
-    public void setMyLayer()
-    {
-        myHurtbox.GetComponent<hurtbox>().myLayer = myLayer;
-    }
-
+    */
     public void movement(float speed, Vector2 direction)
     {
         myRigidBody2D.velocity = direction * speed;   // also later, if possible, change this entirely so player accelerates and decelerates rather than just starting and stopping TO-DO-FLAG-3 
@@ -204,15 +219,5 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
                 meObject.transform.localScale = new Vector3(1, 1, 1);
             }
         }
-        {
-
-        }
-        /*
-        if (myRigidBody.velocity != Vector2.zero)
-        {
-
-        }
-        selfObject.transform.localScale = new Vector3(1, selfObject.transform.localScale.y, selfObject.transform.localScale.z);
-        */
     }
 }

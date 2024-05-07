@@ -11,8 +11,10 @@ public class wellScript : EntityClass, Ientity
         throw new System.NotImplementedException();
     }
 
+    /*
     public void takeHit()
     {
         throw new System.NotImplementedException();
     }
+    */
 }
