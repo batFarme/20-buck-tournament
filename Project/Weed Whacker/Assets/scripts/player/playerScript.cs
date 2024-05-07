@@ -20,17 +20,11 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
     public Animator myAnimator;
 
     //handling
-    //public int maxHp; commenting out this and 
+    //public int maxHp; commenting out this and
     public float moveSpeed;
-
-    /*   having players move based on acceleration rather than set speeds is just a nice-to-have, possible implementation in the future :shrug:
-    public float accelSpeed; 
-    public float maxSpeed;
-    */
-
-    public int maxLives;
     public float knockedMoveSpeed;
     public float rezCountLength;
+    public int maxLives;
     public int myLayer;
 
     //internal handling
