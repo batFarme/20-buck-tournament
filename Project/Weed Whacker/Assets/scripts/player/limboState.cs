@@ -2,6 +2,7 @@ using NUnit.Framework.Constraints;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.FullSerializer;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,30 +11,33 @@ public class limboState : BaseState<playerScript.States>
 {
     private playerScript playersScript;
     public event EventHandler onJoinSmacked;
-    public bool startUpScreenOver;
+    public bool startUpScreenOver = false; //after the startup screen, this *should* always be true; videoPlayerScript sets it to true upon awakening, and nothing else should say otherwise
 
     public limboState(playerScript.States key, GameObject SelfObject) : base(key, SelfObject)
     {
         StateKey = key;
+        Debug.Log("limbo state initialized!");
         StateIWantToBe = key;
         selfObject = SelfObject;
         playersScript = selfObject.GetComponent<playerScript>();
     }
-
+   
     public override void EnterState()
     {
-        playersScript.attack.performed += context => joinGame(context); //forget having action maps change :shrug: ill just have functions subscribe and unsubscribe...
-        //selfObject.GetComponent<Animator>().SetTrigger("backToDemoScreen");
+        playersScript.attack.performed += joinGameFromLimbo; //forget having action maps change :shrug: ill just have functions subscribe and unsubscribe...
+        selfObject.GetComponent<Animator>().SetTrigger("backToDemoScreen");
+        Debug.Log("limbostate's EnterState() run!");
     }
 
     public override void ExitState() //essentially the "on spawn" function... though when i work on rezzing stuff, might have to make this a function th acutally nmv
     {
-        playersScript.attack.performed -= context => joinGame(context);
+        playersScript.attack.performed -= joinGameFromLimbo;
+        selfObject.GetComponent<Animator>().SetTrigger("gameJoin");
     }
 
     public override playerScript.States GetNextState()
     {
-        throw new System.NotImplementedException();
+        return StateIWantToBe;
     }
 
     public override void OnTriggerEnter(Collider2D collision)
@@ -55,9 +59,16 @@ public class limboState : BaseState<playerScript.States>
     {
         
     }
-    public void joinGame(InputAction.CallbackContext context)
+
+
+    public void joinGameFromLimbo(InputAction.CallbackContext context)
     {
-        selfObject.GetComponent<Animator>().SetTrigger("gameJoin");
-        StateIWantToBe = playerScript.States.standing;
+        Debug.Log("joinGameFromLimbo() attempted... startupScreenOver is currently: " + playersScript.startUpScreenOver);
+        if (playersScript.startUpScreenOver)
+        {
+            selfObject.GetComponent<Animator>().SetTrigger("gameJoin");
+            Debug.Log("animator trigger sent!");
+            StateIWantToBe = playerScript.States.standing;
+        }
     }
 }

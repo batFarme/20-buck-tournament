@@ -12,6 +12,9 @@ public class standingState : BaseState<playerScript.States>
     private Rigidbody2D myRigidBody;
     private Animator animator;
 
+    //gamestate shit
+
+
     //internal control variables
  
     public standingState(playerScript.States key, GameObject SelfObject) : base(key, SelfObject)
@@ -26,7 +29,7 @@ public class standingState : BaseState<playerScript.States>
 
     public override void EnterState()
     {
-        playersScript.attack.performed += context => performAttack(context);
+        playersScript.attack.performed += performAttack; //be mindful that standing can be entered from the knocked state too; anything to do with leaving the limbo state should be done in the limbo state's exitState function.
     }
 
     public override void UpdateState()
@@ -36,7 +39,7 @@ public class standingState : BaseState<playerScript.States>
 
     public override void ExitState()
     {
-        playersScript.attack.performed -= context => performAttack(context);
+        playersScript.attack.performed -= performAttack;
     }
 
     public override playerScript.States GetNextState() 

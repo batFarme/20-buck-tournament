@@ -129,9 +129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd1c3d24cf03f6a41869abd358b1eb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tellStalkerToFuckOff:
-    m_PersistentCalls:
-      m_Calls: []
   linkFlag: yes, the targetScript link works!
   controls: {fileID: 5658431895831837112}
   move:
@@ -152,15 +149,6 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
-  joinGame:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: b2667825-e381-4fe8-96c2-10d51023420e
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
   myRigidBody2D: {fileID: 3363388924254896482}
   spriteRenderer: {fileID: 0}
   meObject: {fileID: 7086465199763277081}
@@ -173,6 +161,9 @@ MonoBehaviour:
   knockedMoveSpeed: 3
   rezCountLength: 3
   myLayer: 10
+  startUpScreenOver: 0
+  crntHp: 0
+  crntLives: 0
 --- !u!114 &5658431895831837112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,7 +216,7 @@ MonoBehaviour:
       /button12,/Microntek              USB Joystick          1/button12]'
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Debug
-  m_DefaultActionMap: toJoin
+  m_DefaultActionMap: standing
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!212 &1633170005945410197

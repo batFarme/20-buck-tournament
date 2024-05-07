@@ -10,7 +10,6 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
     public PlayerInput controls;
     [HideInInspector] public InputAction move;
     [HideInInspector] public InputAction attack;
-    [HideInInspector] public InputAction joinGame;
 
     //references
     public Rigidbody2D myRigidBody2D;
@@ -36,7 +35,6 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
     public bool startUpScreenOver = false;
     public int crntHp;
     public int crntLives;
-
     //states
     public enum States
     {
@@ -46,15 +44,45 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
         dead
     }
 
-    Dictionary<States, BaseState<States>> StateDict = new Dictionary<States, BaseState<States>>();
+    public Dictionary<States, BaseState<States>> StateDict = new Dictionary<States, BaseState<States>>();
     public BaseState<States> CrntState;
 
     //The meat of the code!
     void Start()
     {
         DontDestroyOnLoad(this.gameObject); //this is part of the guardian angel replacement; when going back to the demo screen, rather than anything else, just change the state to limbo; it will act as if this doesnt exist at all :shrug:
+        move = controls.actions["move"];
+        attack = controls.actions["attack"];
+        StateDict.Add(States.limbo, new limboState(States.limbo, meObject));
+        StateDict.Add(States.standing, new standingState(States.standing, meObject));
+        StateDict.Add(States.knocked, new knockedState(States.knocked, meObject));
+        StateDict.Add(States.dead, new deadState(States.dead, meObject));
+        CrntState = StateDict.GetValueOrDefault(States.limbo); //this is the startup screen stuff, replaces the guardian angel solution entirely
+        CrntState.EnterState();
+        GameObject controllerController = GameObject.Find("playerControllerController");
+        print("controller controller's name is " + controllerController.name);
+        attack.performed += printButtonHit;
+        transform.position = controllerController.GetComponent<setupScreenScript>().playerJoined();//tells teh setupScreen scirpt that a player has joined
+        if (transform.position.x < 0)
+        {
+            this.gameObject.name = "player 1";
+            controllerController.GetComponent<setupScreenScript>().nowForPlayer2();
+        }
+        else //a kind of roundabout way of saonsdf;zc
+        {
+            this.gameObject.name = "player 2";
+            controllerController.GetComponent<setupScreenScript>().bothPlayersIn();
+        }
+
+        
     }
 
+    public void printButtonHit(InputAction.CallbackContext context)
+    {
+        print("attack button hit!");
+    }
+    /*  the following block of code is from when i was still doing the guardian angel solution... unnecessary ^_^
+    
     public void okayNOWYouCanStart() //i imagine monobehavior already has a solution for this but i am SO not going through a 500 page toyota corolla manual to do literally this for like a 70th of a frame's worth of performance
     {
         move = controls.actions["move"];
@@ -66,11 +94,11 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
         StateDict.Add(States.dead, new deadState(States.dead, meObject));
         CrntState = StateDict.GetValueOrDefault(States.limbo); //this is the startup screen stuff, replaces the guardian angel solution entirely
         CrntState.EnterState();
-
     }
+    */
+
     void Update()
     {
-
         States nextStateKey = CrntState.GetNextState();
 
         if (!isTransitioningState)

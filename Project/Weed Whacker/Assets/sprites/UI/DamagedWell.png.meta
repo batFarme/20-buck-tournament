@@ -370,7 +370,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DamagedWell_0: -6096061396649701542
+      DamagedWell_1: -6352276768767116102
+      DamagedWell_10: 7041431476559299997
+      DamagedWell_2: 1720092206302543255
+      DamagedWell_3: 7142953087869331457
+      DamagedWell_4: 8308851137118332019
+      DamagedWell_5: -2282698154315644318
+      DamagedWell_6: 8349113972204039529
+      DamagedWell_7: 399634543571653311
+      DamagedWell_8: -8853167028157508663
+      DamagedWell_9: -8822224530119645700
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
