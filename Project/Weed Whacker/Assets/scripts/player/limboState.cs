@@ -36,11 +36,11 @@ public class limboState : BaseState<playerScript.States>
         selfObject.GetComponent<Animator>().SetTrigger("gameJoin");
         if (selfObject.name == "player 1")
         {
-            GameObject.Find("Game Manager").GetComponent<GameManager>().player1 = selfObject;
+            GameObject.Find("Game Manager").GetComponent<GamerManager>().player1 = selfObject;
         }
         else
         {
-            GameObject.Find("Game Manager").GetComponent<GameManager>().player2 = selfObject;
+            GameObject.Find("Game Manager").GetComponent<GamerManager>().player2 = selfObject;
         }
     }
 

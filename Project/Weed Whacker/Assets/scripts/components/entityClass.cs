@@ -14,16 +14,29 @@ public class EntityClass : MonoBehaviour
     [HideInInspector] public event EventHandler onDeath; //same as onHit, but for death
     [HideInInspector] public string linkFlag = "yes, the link works!"; //used for debugging.
 
+
     public void takeHit() //this bit here handles the hp stuff, and invoking death and hit stuff
     {
+        print("aw fuck someone hit me!!!! i am: " + gameObject.name + " and now I have " + crntHp + " health remaining!");
         if (crntHp > 0)
         {
-            print("aw fuck someone hit me!!!!");
+            crntHp--;
+            onHit?.Invoke(this, EventArgs.Empty);
+        }
+        else
+        {
+            onDeath?.Invoke(this, EventArgs.Empty);
+            print("im super dead! i was " + gameObject.name);
+        }
+        /*
+        if (crntHp > 0)
+        {
+            print("aw fuck someone hit me!!!! i am: " + gameObject.name + " and now I have " + crntHp + " health remaining!");
             crntHp--; //no need to check damage value, since all damage universally is one point
             if (crntHp <= 0)
             {
                 onDeath?.Invoke(this, EventArgs.Empty);
-                print("im super dead!");
+                print("im super dead! i was " + gameObject.name);
             }
             else
             {
@@ -31,6 +44,7 @@ public class EntityClass : MonoBehaviour
                 //also do some stuff for getting hit but also... maybe just do that shit in the animator? food for thought TO-DO-FLAG-5
             }
         }
+        */
     }
 
     public void tellStalkersToGoAway() //for some reason, C# doesnt like events being invoked outside of the original script, *even when the script trying to invoke it inherits the script that contains the event.* so to fix this, this function has been made. microsoft, pls fix

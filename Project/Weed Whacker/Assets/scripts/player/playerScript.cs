@@ -62,6 +62,9 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
         CrntState = StateDict.GetValueOrDefault(States.limbo); //this is the startup screen stuff, replaces the guardian angel solution entirely
         CrntState.EnterState();
 
+        //setting health; i so badly wanna just have this be in the entityClass script but it doesnt work :sob: so i gotta do it this way.... i gotta copy paste this in all entity scripts too...
+        crntHp = maxHp;
+        
         //entity class event subscription
         onHit += iJustGotSmackedFUCK;
 
@@ -166,15 +169,9 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
         }
     }
 
-    public IEnumerator joinCoroutine()
+    public IEnumerator joinCoroutine() //this is here so that the player can get a reference to the game manager without me having to learn about load priority :P
     {
-        //Print the time of when the function is first called.
-        Debug.Log("Started Coroutine at timestamp : " + Time.time);
-
-        //yield on a new YieldInstruction that waits for 5 seconds.
         yield return new WaitForSeconds(.2f);
-
-        //After we have waited 5 seconds print the time again.
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
         CrntState.StateIWantToBe = playerScript.States.standing;
     }
@@ -182,13 +179,13 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
     [ContextMenu("Remove from alive pool")] //for debugging
     public void removeFromAlivePool()
     {
-        notTheBallsTheManager.GetComponent<GameManager>().removePlayerFromAlivePool(this.gameObject);
+        notTheBallsTheManager.GetComponent<GamerManager>().removePlayerFromAlivePool(this.gameObject);
     }
 
     [ContextMenu("Add to alive pool")] //for debugging
     public void addToAlivePool()
     {
-        notTheBallsTheManager.GetComponent<GameManager>().addPlayerToAlivePool(this.gameObject);
+        notTheBallsTheManager.GetComponent<GamerManager>().addPlayerToAlivePool(this.gameObject);
     }
 
     private void iJustGotSmackedFUCK(object sender, EventArgs e)

@@ -20,6 +20,7 @@ public class flowerScript : EntityClass, Ientity
     void Start()
     {
         myDstnSttr.target = theWell.transform;
+        crntHp = maxHp;
     }
 
     //no update function cause flowers do pretty much nothing unless acted upon; movement is handled by the pathfinding solution

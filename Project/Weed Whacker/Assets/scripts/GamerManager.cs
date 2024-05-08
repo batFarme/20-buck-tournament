@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GamerManager : MonoBehaviour //its named GamerManager rather than the usual GameManager cause gamemanager persists between scenes and i did NOT code with that in mind so i am just changing it so i have less work to do :P
 {
-    public static GameManager Instance;  // i actually dont know what this does....
+    public static GamerManager Instance;  // i actually dont know what this does....
     public GameObject player1;
     public GameObject player2;
     public List<GameObject> currentPlayers = new List<GameObject>();   //ohhhh this is so scuffed but whatever
