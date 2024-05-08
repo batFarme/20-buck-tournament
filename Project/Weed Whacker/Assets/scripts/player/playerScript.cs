@@ -18,6 +18,7 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
     public GameObject myHitbox;
     public GameObject myHurtbox;
     public Animator myAnimator;
+    public GameObject notTheBallsTheManager;
 
     //handling
     //public int maxHp; commenting out this and
@@ -60,6 +61,9 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
         StateDict.Add(States.dead, new deadState(States.dead, meObject));
         CrntState = StateDict.GetValueOrDefault(States.limbo); //this is the startup screen stuff, replaces the guardian angel solution entirely
         CrntState.EnterState();
+
+        //entity class event subscription
+        onHit += iJustGotSmackedFUCK;
 
         //controllercontroller shit
         GameObject controllerController = GameObject.Find("playerControllerController");
@@ -162,30 +166,41 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
         }
     }
 
-    /*
-    public void takeHit() //becuase of the limitations of unity's event system, this can only take one parameter; if a reference to the attacking gameObject is needed, instead ask hurtbox
+    public IEnumerator joinCoroutine()
     {
-        print("aw fuck someone hit me!!!!");
-        crntHp--; //since theres no variation in damage
-        if (crntHp <= 0)
-        {
-            if (crntLives == 0) //eithe knocked or die
-            {
-                //die
-            }
-            else 
-            {
-                crntLives--;
-                //get knocked
-            }
-        }
-        else
-        {
-            myAnimator.SetTrigger("wasHit");
-            //also do some stuff for getting hit but also... maybe just do that shit in the animator? food for thought TO-DO-FLAG-5
-        }
+        //Print the time of when the function is first called.
+        Debug.Log("Started Coroutine at timestamp : " + Time.time);
+
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(.2f);
+
+        //After we have waited 5 seconds print the time again.
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+        CrntState.StateIWantToBe = playerScript.States.standing;
     }
-    */
+
+    [ContextMenu("Remove from alive pool")] //for debugging
+    public void removeFromAlivePool()
+    {
+        notTheBallsTheManager.GetComponent<GameManager>().removePlayerFromAlivePool(this.gameObject);
+    }
+
+    [ContextMenu("Add to alive pool")] //for debugging
+    public void addToAlivePool()
+    {
+        notTheBallsTheManager.GetComponent<GameManager>().addPlayerToAlivePool(this.gameObject);
+    }
+
+    private void iJustGotSmackedFUCK(object sender, EventArgs e)
+    {
+        myAnimator.SetTrigger("wasHit");
+    }
+    
+    private void imDeadAhhHell(object sender, EventArgs e)
+    {
+        myAnimator.SetTrigger("wasKillded");
+    }
+
     public void movement(float speed, Vector2 direction)
     {
         myRigidBody2D.velocity = direction * speed;   // also later, if possible, change this entirely so player accelerates and decelerates rather than just starting and stopping TO-DO-FLAG-3 

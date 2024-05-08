@@ -9,8 +9,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;  // i actually dont know what this does....
     public GameObject player1;
     public GameObject player2;
-    List<GameObject> currentPlayers = new List<GameObject>();   //ohhhh this is so scuffed but whatever
-    List<GameObject> alivePlayers = new List<GameObject>();   // AAAHHHHHH this looks like TF2's code but WHATEVER I DONT CARE RAAHHHHHHH
+    public List<GameObject> currentPlayers = new List<GameObject>();   //ohhhh this is so scuffed but whatever
+    public List<GameObject> alivePlayers = new List<GameObject>();   // AAAHHHHHH this looks like TF2's code but WHATEVER I DONT CARE RAAHHHHHHH
     public List<GameObject> spawnerList = new List<GameObject>();
     public GameObject weedPrefab;
     public GameObject flowerPrefab;
@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        currentPlayers.Add(player1);
+
         alivePlayers = currentPlayers;  //grinning like  a dumbass at this :3
     }
 
@@ -85,8 +85,6 @@ public class GameManager : MonoBehaviour
         spawnWeed(randomFlower());
     }
 
-
-
     public GameObject randomTarget()
     {
         int randomTarget;
@@ -110,6 +108,16 @@ public class GameManager : MonoBehaviour
         }
 
         return targetToReturn;
+    }
+
+    public void addPlayerToAlivePool(GameObject thePlayerInQuestion)
+    {
+        alivePlayers.Add(thePlayerInQuestion);
+    }
+
+    public void removePlayerFromAlivePool(GameObject thePlayerInQuestion)
+    {
+        alivePlayers.Remove(thePlayerInQuestion);
     }
 
     GameObject randomFlower()

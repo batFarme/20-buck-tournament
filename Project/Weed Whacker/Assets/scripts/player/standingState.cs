@@ -29,6 +29,7 @@ public class standingState : BaseState<playerScript.States>
 
     public override void EnterState()
     {
+        playersScript.notTheBallsTheManager.GetComponent<GameManager>().addPlayerToAlivePool(selfObject);
         playersScript.attack.performed += performAttack; //be mindful that standing can be entered from the knocked state too; anything to do with leaving the limbo state should be done in the limbo state's exitState function.
     }
 
