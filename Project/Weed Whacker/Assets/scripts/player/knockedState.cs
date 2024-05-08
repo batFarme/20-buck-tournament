@@ -31,6 +31,7 @@ public class knockedState : BaseState<playerScript.States>, IWalkBehavior
         // play an initial drop animation
         // play a sound effect
         // update this player's hud to portray knocked state
+        playerScript.tellStalkersToGoAway();
     }
 
     public override void UpdateState()

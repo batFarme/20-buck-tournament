@@ -32,7 +32,16 @@ public class limboState : BaseState<playerScript.States>
     public override void ExitState() //essentially the "on spawn" function... though when i work on rezzing stuff, might have to make this a function th acutally nmv
     {
         playersScript.attack.performed -= joinGameFromLimbo;
+        playersScript.notTheBallsTheManager = GameObject.Find("Game Manager");
         selfObject.GetComponent<Animator>().SetTrigger("gameJoin");
+        if (selfObject.name == "player 1")
+        {
+            GameObject.Find("Game Manager").GetComponent<GameManager>().player1 = selfObject;
+        }
+        else
+        {
+            GameObject.Find("Game Manager").GetComponent<GameManager>().player2 = selfObject;
+        }
     }
 
     public override playerScript.States GetNextState()
@@ -68,7 +77,8 @@ public class limboState : BaseState<playerScript.States>
         {
             selfObject.GetComponent<Animator>().SetTrigger("gameJoin");
             Debug.Log("animator trigger sent!");
-            StateIWantToBe = playerScript.States.standing;
+            playersScript.StartCoroutine(playersScript.joinCoroutine()); //this makes it so that the player object can get a reference to the game manager without me having to actgually learn abt load priority :P
         }
     }
+
 }
