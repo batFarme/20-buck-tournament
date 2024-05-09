@@ -48,7 +48,15 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
     public IEnumerator firstWaveStart()
     {
         yield return new WaitForSeconds(.1f);
+        StartCoroutine(flowerSpawnLoop());
         newWave();
+    }
+
+    public IEnumerator flowerSpawnLoop()
+    {
+        yield return new WaitForSeconds(UnityEngine.Random.Range(1f, 5f));
+        spawnFlower(theWell);
+        StartCoroutine(flowerSpawnLoop());
     }
 
     public void wellGameEnd(object sender, EventArgs e) //this is a seperate function cause of event stuff
