@@ -29,24 +29,19 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
 
     private bool isGameCurrentlyEnding = false;
 
+    public event EventHandler allPlayersDeadEvent;
+
     private void Awake()
     {
-        /*
-        if (GameObject.Find("EventSystem"))
-        EventSystem eventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
-        eventSystem.enabled = false;
-        */
         Instance = this;
 
         crntWave = 0;
         amtOfEnemiesToSpawn += 2;
-        alivePlayers = currentPlayers;  //grinning like  a dumbass at this :3
-
     }
-
     private void Start()
     {
         theWell.GetComponent<EntityClass>().onDeath += wellGameEnd;
+        allPlayersDeadEvent += wellGameEnd;
         StartCoroutine(firstWaveStart());
     }
 
@@ -66,7 +61,7 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
     {
         for (int i = currentPlayers.Count; i != 0; i--)
         {
-            Destroy(currentPlayers[i]);
+            currentPlayers[i].GetComponent<playerScript>().CrntState.StateIWantToBe = playerScript.States.limbo;
         }
         SceneManager.LoadScene("demoScreen");
     }
@@ -79,8 +74,6 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
         flowerCreatesScript.theWell = theWell;
         allFlowers.Add(flowerCreate);
     }
-
-
 
     void spawnWeed(GameObject targetToGive) //the core weed spawning function; NOT TO BE CALLED ON ITS OWN!!!!!!!!!!!!!!!!!!!!!!!!!!
     {
@@ -199,6 +192,10 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
     public void removePlayerFromAlivePool(GameObject thePlayerInQuestion)
     {
         alivePlayers.Remove(thePlayerInQuestion);
+        if (alivePlayers.Count == 0)
+        {
+            allPlayersDeadEvent?.Invoke(this, EventArgs.Empty);
+        }
     }
 
     GameObject randomPlayer()

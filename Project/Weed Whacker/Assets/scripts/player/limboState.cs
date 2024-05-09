@@ -10,7 +10,7 @@ using UnityEngine.InputSystem;
 public class limboState : BaseState<playerScript.States>
 {
     private playerScript playersScript;
-    public event EventHandler onJoinSmacked;
+    public event EventHandler onJoinSmacked; // unity says this goes unused, but im keeping it just in case bc im afraid something will blow up if i remove it...
     public bool startUpScreenOver = false; //after the startup screen, this *should* always be true; videoPlayerScript sets it to true upon awakening, and nothing else should say otherwise
 
     public limboState(playerScript.States key, GameObject SelfObject) : base(key, SelfObject)

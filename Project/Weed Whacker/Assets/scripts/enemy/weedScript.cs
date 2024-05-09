@@ -45,6 +45,7 @@ public class weedScript : EntityClass, IWalkBehavior, Ientity
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.Find("Game Manager").GetComponent<GamerManager>();
         crntMoveSpeed = moveSpeed;
         myAIPath.maxSpeed = crntMoveSpeed;
         print("i am targeting " + originalTarget.name);
