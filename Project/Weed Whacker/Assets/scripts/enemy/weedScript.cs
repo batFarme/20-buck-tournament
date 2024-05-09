@@ -11,6 +11,7 @@ using UnityEngine.InputSystem.XR;
 public class weedScript : EntityClass, IWalkBehavior, Ientity
 {
     //references
+    [HideInInspector] public GameObject notTheBallsTheManager;
     [HideInInspector] public GameObject originalTarget;
     public AIPath myAIPath;
     public Seeker mySeeker;
@@ -102,6 +103,7 @@ public class weedScript : EntityClass, IWalkBehavior, Ientity
 
     public void myFinalMessage()
     {
+        notTheBallsTheManager.GetComponent<GamerManager>().removeWeedFromPool(gameObject);
         GameObject.Destroy(this.gameObject);
     }
 

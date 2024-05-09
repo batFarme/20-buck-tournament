@@ -19,9 +19,9 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
     public GameObject myHurtbox;
     public Animator myAnimator;
     [HideInInspector] public GameObject notTheBallsTheManager;
+    public GameObject myUI;
 
     //handling
-    //public int maxHp; commenting out this and
     public float moveSpeed;
     public float knockedMoveSpeed;
     public float rezCountLength;
@@ -30,8 +30,10 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
 
     //internal handling
     [HideInInspector]  public bool startUpScreenOver = false;
+
     //public int crntHp;
     public int crntLives;
+
     //states
     public enum States
     {
@@ -88,21 +90,6 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
     {
         print("attack button hit!");
     }
-    /*  the following block of code is from when i was still doing the guardian angel solution... unnecessary ^_^
-    
-    public void okayNOWYouCanStart() //i imagine monobehavior already has a solution for this but i am SO not going through a 500 page toyota corolla manual to do literally this for like a 70th of a frame's worth of performance
-    {
-        move = controls.actions["move"];
-        attack = controls.actions["attack"];
-        joinGame = controls.actions["join game"];
-        StateDict.Add(States.limbo, new limboState(States.limbo, meObject));
-        StateDict.Add(States.standing, new standingState(States.standing, meObject));
-        StateDict.Add(States.knocked, new knockedState(States.knocked, meObject));
-        StateDict.Add(States.dead, new deadState(States.dead, meObject));
-        CrntState = StateDict.GetValueOrDefault(States.limbo); //this is the startup screen stuff, replaces the guardian angel solution entirely
-        CrntState.EnterState();
-    }
-    */
 
     void Update()
     {
@@ -141,20 +128,12 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
     {
         CrntState.OnTriggerStay(collision);
     }
-    void playAnimation(Animation animationToPlay)
-    {
 
-    }
-
-    public void revitalize(States fromWhatState)
+    public void revitalize() //for use with getting knocked
     {
         crntHp = maxHp;
-        if (fromWhatState == States.limbo)
-        {
-            crntLives = maxLives;
-        }
-
-
+        crntLives--;
+        CrntState.StateIWantToBe = States.standing;
     }
 
     public void onHealthEqualsZero()

@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
@@ -19,39 +20,66 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
     public GameObject theWell;  //this should be set in the editor
     public float weedSpeed; // lol
 
-    public enum GameState //this is currently unused, and im pretty sure itll stay unused since its not actually needed...
-    {
-        waveActive,
-        waveCelebrate,
-        waveBeginning,
-        gameLost
-    }
+    public int crntWave = 0;
+    private int amtOfEnemiesToSpawn = 0;
+
+    private List<GameObject> aliveEnemyPool = new List<GameObject>();
 
     private void Awake()
     {
         Instance = this;
 
+        crntWave = 0;
+        amtOfEnemiesToSpawn += 2;
         alivePlayers = currentPlayers;  //grinning like  a dumbass at this :3
+
+        newWave();
     }
 
     void spawnFlower(GameObject theWell)
     {
         var flowerCreate = Instantiate(flowerPrefab);
-        flowerPrefab.transform.position = spawnerList[Random.Range(0, spawnerList.Count)].transform.position;
+        flowerPrefab.transform.position = spawnerList[UnityEngine.Random.Range(0, spawnerList.Count)].transform.position;
         flowerScript flowerCreatesScript = flowerCreate.GetComponent<flowerScript>();
         flowerCreatesScript.theWell = theWell;
         allFlowers.Add(flowerCreate);
     }
 
-    void spawnWeed(GameObject targetToGive) //the core weed spawning function.
+    void spawnWeed(GameObject targetToGive) //the core weed spawning function; NOT TO BE CALLED ON ITS OWN!!!!!!!!!!!!!!!!!!!!!!!!!!
     {
         var weedCreate = Instantiate(weedPrefab);
-        weedCreate.transform.position = spawnerList[Random.Range(0, spawnerList.Count)].transform.position;
+        weedCreate.transform.position = spawnerList[UnityEngine.Random.Range(0, spawnerList.Count)].transform.position;
         weedScript weedCreatesScript = weedCreate.GetComponent<weedScript>();
         weedCreatesScript.originalTarget = targetToGive;
         weedCreatesScript.linkCheck();
         weedCreatesScript.moveSpeed = weedSpeed;
-        print("weed born at " + weedCreate.transform.position + "; newborn weed wants to target " + weedCreatesScript.originalTarget.name);
+        aliveEnemyPool.Add(weedCreate);
+        weedCreate.GetComponent<weedScript>().notTheBallsTheManager = gameObject;
+        //print("weed born at " + weedCreate.transform.position + "; newborn weed wants to target " + weedCreatesScript.originalTarget.name);
+    }
+
+    public void removeWeedFromPool(GameObject theWeedInQuestion)
+    {
+        aliveEnemyPool.Remove(theWeedInQuestion);
+        if (aliveEnemyPool.Count == 0)
+        {
+            newWave();
+        }
+    }
+
+    void newWave()
+    {
+        crntWave++;
+        amtOfEnemiesToSpawn++;
+        startWave(); //later, after new wave animation is finsihed, have start wave be called at the end of that animation rather than being called immeidately in code, to make the situation more clear.
+    }
+
+    void startWave()
+    {
+        for (int i = amtOfEnemiesToSpawn; i > 0; i--)
+        {
+            spawnWeedRandTarget();// maybe make the spawns staggered, say within a 10 second window?
+        }
     }
 
     //the following weed spawning functions are here for debugging purposes.
@@ -92,17 +120,17 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
 
         if (allFlowers.Count != 0) //if no flowers are on the field, just pick between either the well or players
         {
-            randomTarget = Random.Range(1, 2);
+            randomTarget = UnityEngine.Random.Range(1, 2);
         }
         else
         {
-            randomTarget = Random.Range(1, 3);
+            randomTarget = UnityEngine.Random.Range(1, 3);
         }
 
         switch (randomTarget)
         {
             case 1: targetToReturn = theWell; break;
-            case 2: targetToReturn = alivePlayers[Random.Range(0,alivePlayers.Count)]; break; 
+            case 2: targetToReturn = alivePlayers[UnityEngine.Random.Range(0,alivePlayers.Count)]; break; 
             case 3: targetToReturn = randomFlower(); break;
             default: Debug.Log("what the fuck"); targetToReturn = null; break;
         }
@@ -122,6 +150,6 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
 
     GameObject randomFlower()
     {
-        return allFlowers[Random.Range(0, allFlowers.Count)];
+        return allFlowers[UnityEngine.Random.Range(0, allFlowers.Count)];
     }
 }

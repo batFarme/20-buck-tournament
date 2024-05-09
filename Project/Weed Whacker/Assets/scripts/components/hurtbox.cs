@@ -22,7 +22,7 @@ public class hurtbox : MonoBehaviour
         {
             if (collision.gameObject.layer != myLayer)
             {
-                print(gameObject.name + "'s hurtbox was just smacked; my layer is " + myLayer + " and my attacker's layer is " + collision.gameObject.layer);
+                print(transform.parent.gameObject.name + "'s hurtbox was just smacked; my layer is " + myLayer + " and my attacker's layer is " + collision.gameObject.layer);
                 objectThatJustHitMe = collision.gameObject.transform.parent.gameObject; //WOW thats a lot of methods! good fucking bye performance!!!! :D
                 theyHitMeeeeeeeWaaahhhhhhh.Invoke();
             }
