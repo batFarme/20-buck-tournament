@@ -66,9 +66,11 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
 
         //setting health; i so badly wanna just have this be in the entityClass script but it doesnt work :sob: so i gotta do it this way.... i gotta copy paste this in all entity scripts too...
         crntHp = maxHp;
+        crntLives = maxLives;
         
         //entity class event subscription
         onHit += iJustGotSmackedFUCK;
+        onDeath += onHealthEqualsZero;
 
         //controllercontroller shit
         GameObject controllerController = GameObject.Find("playerControllerController");
@@ -129,6 +131,7 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
         CrntState.OnTriggerStay(collision);
     }
 
+    [ContextMenu("revive!")]
     public void revitalize() //for use with getting knocked
     {
         crntHp = maxHp;
@@ -136,11 +139,15 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
         CrntState.StateIWantToBe = States.standing;
     }
 
-    public void onHealthEqualsZero()
+    public void onHealthEqualsZero(object sender, EventArgs e)
     {
-        if (crntLives <= 0) //upon lives running out...
+        if (notTheBallsTheManager.GetComponent<GamerManager>().alivePlayers.Count == 1)
         {
             CrntState.StateIWantToBe = States.dead;
+        }
+        else if (crntLives <= 0) //upon lives running out...
+        {
+            CrntState.StateIWantToBe = States.dead; //im sure theres a better way to do this but oh well :shrug:
         }
         else //if there are still lives remaining...
         {
@@ -148,10 +155,9 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
         }
     }
 
-    public IEnumerator joinCoroutine() //this is here so that the player can get a reference to the game manager without me having to learn about load priority :P
+    public IEnumerator joinGameDelay() //this is here so that the player can get a reference to the game manager without me having to learn about load priority :P
     {
-        yield return new WaitForSeconds(.2f);
-        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+        yield return new WaitForSeconds(.1f);
         CrntState.StateIWantToBe = playerScript.States.standing;
     }
 
@@ -177,6 +183,7 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
         myAnimator.SetTrigger("wasKillded");
     }
 
+    //the following should only be called by states' update function!
     public void movement(float speed, Vector2 direction)
     {
         myRigidBody2D.velocity = direction * speed;   // also later, if possible, change this entirely so player accelerates and decelerates rather than just starting and stopping TO-DO-FLAG-3 

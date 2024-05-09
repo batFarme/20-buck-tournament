@@ -27,6 +27,11 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
 
     private void Awake()
     {
+        /*
+        if (GameObject.Find("EventSystem"))
+        EventSystem eventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
+        eventSystem.enabled = false;
+        */
         Instance = this;
 
         crntWave = 0;
@@ -39,7 +44,7 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
     void spawnFlower(GameObject theWell)
     {
         var flowerCreate = Instantiate(flowerPrefab);
-        flowerPrefab.transform.position = spawnerList[UnityEngine.Random.Range(0, spawnerList.Count)].transform.position;
+        flowerPrefab.transform.position = spawnerList[UnityEngine.Random.Range(0, spawnerList.Count - 1)].transform.position;
         flowerScript flowerCreatesScript = flowerCreate.GetComponent<flowerScript>();
         flowerCreatesScript.theWell = theWell;
         allFlowers.Add(flowerCreate);
@@ -48,7 +53,7 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
     void spawnWeed(GameObject targetToGive) //the core weed spawning function; NOT TO BE CALLED ON ITS OWN!!!!!!!!!!!!!!!!!!!!!!!!!!
     {
         var weedCreate = Instantiate(weedPrefab);
-        weedCreate.transform.position = spawnerList[UnityEngine.Random.Range(0, spawnerList.Count)].transform.position;
+        weedCreate.transform.position = spawnerList[UnityEngine.Random.Range(0, spawnerList.Count - 1)].transform.position;
         weedScript weedCreatesScript = weedCreate.GetComponent<weedScript>();
         weedCreatesScript.originalTarget = targetToGive;
         weedCreatesScript.linkCheck();
@@ -113,6 +118,11 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
         spawnWeed(randomFlower());
     }
 
+    public void deathCheck()
+    {
+        //check player count, if theres only one and that one has just been knocked, just make em dead and show a game over screen. 
+    }
+
     public GameObject randomTarget()
     {
         int randomTarget;
@@ -130,7 +140,7 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
         switch (randomTarget)
         {
             case 1: targetToReturn = theWell; break;
-            case 2: targetToReturn = alivePlayers[UnityEngine.Random.Range(0,alivePlayers.Count)]; break; 
+            case 2: targetToReturn = randomPlayer(); break; 
             case 3: targetToReturn = randomFlower(); break;
             default: Debug.Log("what the fuck"); targetToReturn = null; break;
         }
@@ -148,8 +158,23 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
         alivePlayers.Remove(thePlayerInQuestion);
     }
 
+    GameObject randomPlayer()
+    {
+        int e = UnityEngine.Random.Range(0, alivePlayers.Count - 1);
+        print("feeding the weed this player: " + alivePlayers[e]);
+        return alivePlayers[e];
+    }
+
     GameObject randomFlower()
     {
-        return allFlowers[UnityEngine.Random.Range(0, allFlowers.Count)];
+        int e = UnityEngine.Random.Range(0, allFlowers.Count - 1);
+        print("feeding the weed this flower: " + allFlowers[e]);
+        return allFlowers[e];
+    }
+
+    public IEnumerator spawnFlowerCoroutine()
+    {
+        yield return new WaitForSeconds(UnityEngine.Random.Range(1f, 5f));
+        spawnFlower(theWell);
     }
 }

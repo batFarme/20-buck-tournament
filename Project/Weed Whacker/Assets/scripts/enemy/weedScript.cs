@@ -56,6 +56,7 @@ public class weedScript : EntityClass, IWalkBehavior, Ientity
         myDstnSttr.target = aiTarget;
         onDeath += deadAhhHell;
         crntHp = maxHp;
+        currentTarget.GetComponent<EntityClass>().tellStalkerToFuckOff += findANewBitch;
     }
 
     // Update is called once per frame
@@ -80,8 +81,9 @@ public class weedScript : EntityClass, IWalkBehavior, Ientity
         myAnimator.SetTrigger("sic em!!!");
     }
 
-    public void findANewBitch()
+    public void findANewBitch(object sender, EventArgs e)
     {
+        currentTarget.GetComponent<EntityClass>().tellStalkerToFuckOff -= findANewBitch;
         originalTarget = gameManager.randomTarget();
         currentTarget = originalTarget;
         aiTarget = currentTarget.transform;

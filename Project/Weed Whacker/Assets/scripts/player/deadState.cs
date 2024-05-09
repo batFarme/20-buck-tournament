@@ -11,9 +11,11 @@ public class deadState : BaseState<playerScript.States>
         StateKey = key;
         StateIWantToBe = key;
         selfObject = SelfObject;
+        theMainScriptSWE = selfObject.GetComponent<playerScript>();
     }
     public override void EnterState()
     {
+        selfObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0); //to prevent the player from just sliding off into the distance upon death....
         theMainScriptSWE.myAnimator.SetTrigger("wasKillded");
         theMainScriptSWE.tellStalkersToGoAway();
     }

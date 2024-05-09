@@ -3857,7 +3857,7 @@ GameObject:
   m_Component:
   - component: {fileID: 511020995}
   - component: {fileID: 511020996}
-  m_Layer: 13
+  m_Layer: 14
   m_Name: collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4119,7 +4119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAACAn+seMoMSdwIAADMFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2kAM/SvMngtjEya2e2sJIT0kYUo7ufiy2DLeYb3r2Y8AyfDfq12vsUO5IEt60tOT7E/ChG6hMFKtFSufZQnk+4Q4m3ybDMEnONG9FFv2AX3OGytN7ZKoz/lNDZPojx1MywaMYsUPsecuOUKnFaySqlmVe1hKbTS6K8o1YEhJ49ACXZ8TcsK/aeYgZ7TmibM+0MqiyQXNAoQBNUqNZlGSJNFikQbINJ5laTxPsrskQDukFQWnTQulG2MoMM9m9wEZp7M0wl8ce4DAUUNuNFu43pJzpgNTYs6tV2Lb1qDASVEyioN7dk6HGti+Nq7FGPtaVRpMUEXR8wNTqF9XlPyUnagN1YeO4jvl1rVJ42zuWXVVn/9LmHakKyWbp75xHLkmpmbF4Tc9F1Sbkexj98NX5lYcKT/QHYe3GsSLXCtpRYlBo6yDWg3zh+HxOtuyhuIw+DuqN07bDtr3W+537Ga4+PFPS86a3VV5dGy59Hr70wCFu/mFhP3h6FACvY7FXw1/6H58YSHwyJQ2GApTCkdvJ61yqWTlNXPTWLOUSoB3B9ItCMrNeYNlzO0Ob2KjtjeRR+repdA8xPpX5Abi3UN+FN2ENvJ4XZau5fEZdP1qDWcCBtIu8II6LaUQ3YmNNelhW6sqWoxge8vKr6dFInqX3FdAF7CLit1dNk3QXOBTQrPsPk1S4m+PCZyT8k1HNMiDWxNDcYF31n9iJmtFW3/upaLHNfto5JggE5XcFgpAvHYlrsxBYRd8MctVyVChLRjDhF84+cwJl8UByvzaM/ejrk5G0XyokpOWvUvjPDlZ+o9KTpz7eswbBe8Mjq55X+xCLv8AUEsDBBQAAAgIAACAn+viM46GawAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrSSQaKxuVlaaqJJapJBcpKxpa45kGkC5JknWlqaWZhbKMUC1ZdUFqT6JeamQvQEJJZkpGXmpWTmpeu5F2WmuIOMVoqtBQBQSwECLQAUAAAICAAAgJ/rHjKDEncCAAAzBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAgJ/r4jOOhmsAAAB4AAAACQAkAAAAAAAAAAAAAADEAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAHoDAAAAAA==
+    dataString: UEsDBBQAAAgIAACAn+tGV98heAIAADQFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2kAM/SvMngtjE4pxby0hpIckTGgnF18WW8Y7rHc9+xEgGf57tes1digXZElPenqS/UmY0A3kRqq1YsWTLID8GBFnk2+jPvgIJ7qXYss+oMt5Y4WpXBL1Oa/UMIn+2MG0rMEolv8Ue+6SI3RawUqp6lWxh6XURqO7pFwDhpQ0Di3Q9TkiJ/wbpw5yRmuaOOsDrTQaXdDMQRhQg9RoEiVJEs1miwAZx5N0EU+T9C4J0BZpRc5p3UDhxugLTNPJPCDjxWQR4S+OPUDgqCE3msxcb8k504EpMefGK7FtKlDgpCgYxcE9O6dDBWxfGddiiH0pSw0mqKLo+Z4p1K8tSn7JVtSa6kNL8Z1y69pMZ9+TuafVln36L2Pcsi6VrB+7znHkupiK5YdXes6pNgPdh+77r9StOFJ+oDsObxWIZ7lW0ooCg0ZZB7Uapvf943W4ZQX5ofe3VG+ctunF79bcLdnNcPHzn5ac1bur9OjYcukF97cBCpfzGwn7y9GhBHodi78a/tD98MRC4IEpbTAUphSO3k5a5VLJymvmprFmKZUA7w6kGxCUm/MGy5jbJd7EBm1vIg/UvUyheYh178gNxLv7/Ci6CW3k8bosXcnjE+jqxRrOBPSkXeAZdVpKIdobG2rSwbZWlTQfwPaWFV9Pi0T0LpmXQGewi/LdXTpO0JzhU0LTdL5IFsTfHhM4J+WblmiQB7cm+uIC76z7xozWijb+3gtFj2v2UcshQSZKuc0VgHhpS1yZg8Iu+GYWq4KhQlswhgm/cPKZES7zAxTZtWfmR12djKJZXyUjDXuXxnkysvRflYw49/WYNwreGRxd867YhVz+AVBLAwQUAAAICAAAgJ/r4jOOhmsAAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNdRUEovSizIKAaKGII4pZkpIHa0kkGisblZWmqiSWqSQXKSsaWuOZBpAuSZJ1pamlmYWyjFAtWXVBak+iXmpkL0BCSWZKRl5qVk5qXruRdlpriDjFaKrQUAUEsBAi0AFAAACAgAAICf60ZX3yF4AgAANAUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAICf6+IzjoZrAAAAeAAAAAkAJAAAAAAAAAAAAAAAxQIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAAB7AwAAAAA=
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -5025,6 +5025,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1267378635}
   - component: {fileID: 1267378634}
+  - component: {fileID: 1267378636}
   m_Layer: 0
   m_Name: player UI
   m_TagString: Untagged
@@ -5063,6 +5064,28 @@ Transform:
   - {fileID: 689607585}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1267378636
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267378633}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1639034387
 GameObject:
   m_ObjectHideFlags: 0
