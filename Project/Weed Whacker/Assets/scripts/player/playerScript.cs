@@ -141,6 +141,11 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
 
     public void onHealthEqualsZero(object sender, EventArgs e)
     {
+        if (notTheBallsTheManager.GetComponent<GamerManager>().amIAlone())
+        {
+            CrntState.StateIWantToBe = States.dead;
+        }
+        /*
         if (notTheBallsTheManager.GetComponent<GamerManager>().alivePlayers.Count == 1)
         {
             CrntState.StateIWantToBe = States.dead;
@@ -153,6 +158,7 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
         {
             CrntState.StateIWantToBe = States.knocked;
         }
+        */
     }
 
     public IEnumerator joinGameDelay() //this is here so that the player can get a reference to the game manager without me having to learn about load priority :P

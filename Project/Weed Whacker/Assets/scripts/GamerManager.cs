@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class GamerManager : MonoBehaviour //its named GamerManager rather than the usual GameManager cause gamemanager persists between scenes and i did NOT code with that in mind so i am just changing it so i have less work to do :P
 {
+    public Animator myAnimator;
+
     public static GamerManager Instance;  // i actually dont know what this does....
     public GameObject player1;
     public GameObject player2;
@@ -127,8 +129,21 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
         spawnWeed(randomFlower());
     }
 
-    public void deathCheck()
+    public void gameEnd()
     {
+
+    }
+
+    public bool amIAlone()
+    {
+        if (alivePlayers.Count == 1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
         //check player count, if theres only one and that one has just been knocked, just make em dead and show a game over screen. 
     }
 

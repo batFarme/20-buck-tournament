@@ -5074,7 +5074,7 @@ Animator:
   m_GameObject: {fileID: 1267378633}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a78f2e1d4850f45479fc0676ce8c5243, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6578,6 +6578,7 @@ MonoBehaviour:
   - {fileID: 7009347110637059641}
   weedPrefab: {fileID: 1908262679094027123, guid: 608aaf7e7b129d243bbbe5f4d600e61d, type: 3}
   flowerPrefab: {fileID: 5992573065117894709, guid: 3270241d762e88240a0db766828d88f0, type: 3}
+  allFlowers: []
   theWell: {fileID: 1675212882}
   weedSpeed: 1.5
   crntWave: 0
