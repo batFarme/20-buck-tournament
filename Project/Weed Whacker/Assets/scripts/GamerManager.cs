@@ -15,8 +15,7 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
     public List<GameObject> spawnerList = new List<GameObject>();
     public GameObject weedPrefab;
     public GameObject flowerPrefab;
-    //List<bool> playerAliveStatus = new List<bool>();
-    List<GameObject> allFlowers = new List<GameObject>();
+    public List<GameObject> allFlowers = new List<GameObject>();
     public GameObject theWell;  //this should be set in the editor
     public float weedSpeed; // lol
 
@@ -160,14 +159,36 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
 
     GameObject randomPlayer()
     {
-        int e = UnityEngine.Random.Range(0, alivePlayers.Count - 1);
+        int e;
+        /*
+        if (alivePlayers.Count > 1)
+        {
+            e = UnityEngine.Random.Range(0, alivePlayers.Count - 1);
+        }
+        else
+        {
+            e = 0;
+        }
+        */
+        e = UnityEngine.Random.Range(1, alivePlayers.Count);
         print("feeding the weed this player: " + alivePlayers[e]);
         return alivePlayers[e];
     }
 
     GameObject randomFlower()
     {
-        int e = UnityEngine.Random.Range(0, allFlowers.Count - 1);
+        int e;
+        /*
+        if (allFlowers.Count > 1)
+        {
+            e = UnityEngine.Random.Range(0, allFlowers.Count - 1);
+        }
+        else
+        {
+            e = 0;
+        }
+        */
+        e = UnityEngine.Random.Range(1, allFlowers.Count);
         print("feeding the weed this flower: " + allFlowers[e]);
         return allFlowers[e];
     }
