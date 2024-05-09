@@ -18,7 +18,7 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
     public GameObject myHitbox;
     public GameObject myHurtbox;
     public Animator myAnimator;
-    public GameObject notTheBallsTheManager;
+    [HideInInspector] public GameObject notTheBallsTheManager;
 
     //handling
     //public int maxHp; commenting out this and
