@@ -1,0 +1,498 @@
+fileFormatVersion: 2
+guid: b64aaad5b5dd96e43ba4a66777d4af38
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7888855193036222031
+    second: viask73$fgbdj& 1_0
+  - first:
+      213: -4064063165490283359
+    second: viask73$fgbdj& 1_1
+  - first:
+      213: 8941344379620874581
+    second: viask73$fgbdj& 1_2
+  - first:
+      213: -6616491839526092353
+    second: viask73$fgbdj& 1_3
+  - first:
+      213: -9215535756433795923
+    second: viask73$fgbdj& 1_4
+  - first:
+      213: -6489309744497950519
+    second: viask73$fgbdj& 1_5
+  - first:
+      213: 8330734996576395144
+    second: viask73$fgbdj& 1_6
+  - first:
+      213: 2843543596651161201
+    second: viask73$fgbdj& 1_7
+  - first:
+      213: 1423621142732983330
+    second: viask73$fgbdj& 1_8
+  - first:
+      213: 4710544884035754866
+    second: viask73$fgbdj& 1_9
+  - first:
+      213: 5474407724931443866
+    second: viask73$fgbdj& 1_10
+  - first:
+      213: 8945617471802121521
+    second: viask73$fgbdj& 1_11
+  - first:
+      213: 6965426170845322195
+    second: viask73$fgbdj& 1_12
+  - first:
+      213: -7156224729249694760
+    second: viask73$fgbdj& 1_13
+  - first:
+      213: -1065657423542996802
+    second: viask73$fgbdj& 1_14
+  - first:
+      213: 5967164837190823679
+    second: viask73$fgbdj& 1_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: viask73$fgbdj& 1_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 32
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4e6b694008da7d60800000000000000
+      internalID: 7888855193036222031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: viask73$fgbdj& 1_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 0
+        width: 33
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1acb334551c8997c0800000000000000
+      internalID: -4064063165490283359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: viask73$fgbdj& 1_2
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 0
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 559dcb90759061c70800000000000000
+      internalID: 8941344379620874581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: viask73$fgbdj& 1_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 0
+        width: 36
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb1c6c54abf7d24a0800000000000000
+      internalID: -6616491839526092353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: viask73$fgbdj& 1_4
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 0
+        width: 37
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da45ad63e07db1080800000000000000
+      internalID: -9215535756433795923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: viask73$fgbdj& 1_5
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 0
+        width: 36
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c008b15b2751f5a0800000000000000
+      internalID: -6489309744497950519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: viask73$fgbdj& 1_6
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 0
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88fd9dc5757bc9370800000000000000
+      internalID: 8330734996576395144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: viask73$fgbdj& 1_7
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 0
+        width: 33
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 176aabdd5db467720800000000000000
+      internalID: 2843543596651161201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: viask73$fgbdj& 1_8
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 0
+        width: 32
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22cc55bf2e7b1c310800000000000000
+      internalID: 1423621142732983330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: viask73$fgbdj& 1_9
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 0
+        width: 33
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27b1c7f4d973f5140800000000000000
+      internalID: 4710544884035754866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: viask73$fgbdj& 1_10
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 0
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9c613832d009fb40800000000000000
+      internalID: 5474407724931443866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: viask73$fgbdj& 1_11
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 0
+        width: 36
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13d1b47d1b7352c70800000000000000
+      internalID: 8945617471802121521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: viask73$fgbdj& 1_12
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 0
+        width: 37
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dbd17ea23a2aa060800000000000000
+      internalID: 6965426170845322195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: viask73$fgbdj& 1_13
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 0
+        width: 36
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dbb438268bffac90800000000000000
+      internalID: -7156224729249694760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: viask73$fgbdj& 1_14
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 0
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb0367928360631f0800000000000000
+      internalID: -1065657423542996802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: viask73$fgbdj& 1_15
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 0
+        width: 33
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffee5f4ddc0afc250800000000000000
+      internalID: 5967164837190823679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
