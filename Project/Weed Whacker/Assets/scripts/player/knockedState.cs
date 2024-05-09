@@ -74,7 +74,7 @@ public class knockedState : BaseState<playerScript.States>, IWalkBehavior
     }
     public void movement(float speed, Vector2 direction)
     {
-        Debug.Log(direction);
+        //Debug.Log(direction);
         myRigidBody.velocity = direction * speed;
         /*
         if (myRigidBody.velocity != Vector2.zero)

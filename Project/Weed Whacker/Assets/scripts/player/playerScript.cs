@@ -146,6 +146,9 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
 
     public void onHealthEqualsZero(object sender, EventArgs e)
     {
+        print("------");
+        print("onHealthEqualsZero() just ran!");
+        print("------");
         if (notTheBallsTheManager.GetComponent<GamerManager>().amIAlone()) //if player is the only one in the scene....
         {
             print("i was just told i am alone...");

@@ -77,7 +77,7 @@ public class limboState : BaseState<playerScript.States>
         if (playersScript.startUpScreenOver)
         {
             selfObject.GetComponent<Animator>().SetTrigger("gameJoin");
-            Debug.Log("animator trigger sent!");
+            //Debug.Log("animator trigger sent!");
             playersScript.StartCoroutine(playersScript.joinGameDelay()); //this makes it so that the player object can get a reference to the game manager without me having to actgually learn abt load priority :P
         }
     }

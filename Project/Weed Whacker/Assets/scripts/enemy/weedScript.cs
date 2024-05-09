@@ -83,7 +83,7 @@ public class weedScript : EntityClass, IWalkBehavior, Ientity
 
     public void findANewBitch(object sender, EventArgs e)
     {
-        currentTarget.GetComponent<EntityClass>().tellStalkerToFuckOff -= findANewBitch;
+        //currentTarget.GetComponent<EntityClass>().tellStalkerToFuckOff -= findANewBitch;
         originalTarget = gameManager.randomTarget();
         currentTarget = originalTarget;
         aiTarget = currentTarget.transform;

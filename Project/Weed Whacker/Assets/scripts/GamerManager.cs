@@ -85,7 +85,8 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
     void spawnWeed(GameObject targetToGive) //the core weed spawning function; NOT TO BE CALLED ON ITS OWN!!!!!!!!!!!!!!!!!!!!!!!!!!
     {
         var weedCreate = Instantiate(weedPrefab);
-        weedCreate.transform.position = spawnerList[UnityEngine.Random.Range(0, spawnerList.Count - 1)].transform.position;
+        Vector2 spawnerPosToUse = spawnerList[UnityEngine.Random.Range(0, spawnerList.Count - 1)].transform.position;
+        weedCreate.transform.position = new Vector2(UnityEngine.Random.Range(spawnerPosToUse.x - .5f, spawnerPosToUse.x + .5f), UnityEngine.Random.Range(spawnerPosToUse.y - .5f, spawnerPosToUse.y + .5f)); //the random ranges here are to make it so that weeds dont like hide behind eachother, making 2 weeds look like just one
         weedScript weedCreatesScript = weedCreate.GetComponent<weedScript>();
         weedCreatesScript.originalTarget = targetToGive;
         weedCreatesScript.linkCheck();
@@ -204,7 +205,7 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
     {
         int e;
         
-        if (alivePlayers.Count > 1)
+        if (alivePlayers.Count == 2)
         {
             print("there are two players");
             e = UnityEngine.Random.Range(1, alivePlayers.Count);
