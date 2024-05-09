@@ -37,6 +37,16 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
         amtOfEnemiesToSpawn += 2;
         alivePlayers = currentPlayers;  //grinning like  a dumbass at this :3
 
+    }
+
+    private void Start()
+    {
+        StartCoroutine(firstWaveStart());
+    }
+
+    public IEnumerator firstWaveStart()
+    {
+        yield return new WaitForSeconds(.1f);
         newWave();
     }
 
@@ -160,17 +170,19 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
     GameObject randomPlayer()
     {
         int e;
-        /*
+        
         if (alivePlayers.Count > 1)
         {
-            e = UnityEngine.Random.Range(0, alivePlayers.Count - 1);
+            print("there are two players");
+            e = UnityEngine.Random.Range(1, alivePlayers.Count);
         }
         else
         {
+            print("there is only one player");
             e = 0;
         }
-        */
-        e = UnityEngine.Random.Range(1, alivePlayers.Count);
+        print(alivePlayers + ": these are the alive players");
+        print("rng picks " + e + " to feed.");
         print("feeding the weed this player: " + alivePlayers[e]);
         return alivePlayers[e];
     }
