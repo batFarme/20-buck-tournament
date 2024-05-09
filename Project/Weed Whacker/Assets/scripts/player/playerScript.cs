@@ -18,10 +18,10 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
     public GameObject myHitbox;
     public GameObject myHurtbox;
     public Animator myAnimator;
-    public GameObject notTheBallsTheManager;
+    [HideInInspector] public GameObject notTheBallsTheManager;
+    public GameObject myUI;
 
     //handling
-    //public int maxHp; commenting out this and
     public float moveSpeed;
     public float knockedMoveSpeed;
     public float rezCountLength;
@@ -30,8 +30,10 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
 
     //internal handling
     [HideInInspector]  public bool startUpScreenOver = false;
+
     //public int crntHp;
     public int crntLives;
+
     //states
     public enum States
     {
@@ -62,8 +64,13 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
         CrntState = StateDict.GetValueOrDefault(States.limbo); //this is the startup screen stuff, replaces the guardian angel solution entirely
         CrntState.EnterState();
 
+        //setting health; i so badly wanna just have this be in the entityClass script but it doesnt work :sob: so i gotta do it this way.... i gotta copy paste this in all entity scripts too...
+        crntHp = maxHp;
+        crntLives = maxLives;
+        
         //entity class event subscription
         onHit += iJustGotSmackedFUCK;
+        onDeath += onHealthEqualsZero;
 
         //controllercontroller shit
         GameObject controllerController = GameObject.Find("playerControllerController");
@@ -85,21 +92,6 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
     {
         print("attack button hit!");
     }
-    /*  the following block of code is from when i was still doing the guardian angel solution... unnecessary ^_^
-    
-    public void okayNOWYouCanStart() //i imagine monobehavior already has a solution for this but i am SO not going through a 500 page toyota corolla manual to do literally this for like a 70th of a frame's worth of performance
-    {
-        move = controls.actions["move"];
-        attack = controls.actions["attack"];
-        joinGame = controls.actions["join game"];
-        StateDict.Add(States.limbo, new limboState(States.limbo, meObject));
-        StateDict.Add(States.standing, new standingState(States.standing, meObject));
-        StateDict.Add(States.knocked, new knockedState(States.knocked, meObject));
-        StateDict.Add(States.dead, new deadState(States.dead, meObject));
-        CrntState = StateDict.GetValueOrDefault(States.limbo); //this is the startup screen stuff, replaces the guardian angel solution entirely
-        CrntState.EnterState();
-    }
-    */
 
     void Update()
     {
@@ -138,57 +130,60 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
     {
         CrntState.OnTriggerStay(collision);
     }
-    void playAnimation(Animation animationToPlay)
-    {
 
-    }
-
-    public void revitalize(States fromWhatState)
+    [ContextMenu("revive!")]
+    public void revitalize() //for use with getting knocked
     {
         crntHp = maxHp;
-        if (fromWhatState == States.limbo)
-        {
-            crntLives = maxLives;
-        }
-
-
+        crntLives--;
+        CrntState.StateIWantToBe = States.standing;
     }
 
-    public void onHealthEqualsZero()
+    public void rezFinished()
     {
-        if (crntLives <= 0) //upon lives running out...
+        revitalize();
+    }
+
+    public void onHealthEqualsZero(object sender, EventArgs e)
+    {
+        print("------");
+        print("onHealthEqualsZero() just ran!");
+        print("------");
+        if (notTheBallsTheManager.GetComponent<GamerManager>().amIAlone()) //if player is the only one in the scene....
         {
+            print("i was just told i am alone...");
             CrntState.StateIWantToBe = States.dead;
+            //notTheBallsTheManager.GetComponent<GamerManager>().wellGameEnd();
         }
-        else //if there are still lives remaining...
+        else
         {
-            CrntState.StateIWantToBe = States.knocked;
+            if (crntLives == 0)
+            {
+                CrntState.StateIWantToBe = States.dead;
+            }
+            else
+            {
+                CrntState.StateIWantToBe = States.knocked;
+            }
         }
     }
 
-    public IEnumerator joinCoroutine()
+    public IEnumerator joinGameDelay() //this is here so that the player can get a reference to the game manager without me having to learn about load priority :P
     {
-        //Print the time of when the function is first called.
-        Debug.Log("Started Coroutine at timestamp : " + Time.time);
-
-        //yield on a new YieldInstruction that waits for 5 seconds.
-        yield return new WaitForSeconds(.2f);
-
-        //After we have waited 5 seconds print the time again.
-        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+        yield return new WaitForSeconds(.1f);
         CrntState.StateIWantToBe = playerScript.States.standing;
     }
 
     [ContextMenu("Remove from alive pool")] //for debugging
     public void removeFromAlivePool()
     {
-        notTheBallsTheManager.GetComponent<GameManager>().removePlayerFromAlivePool(this.gameObject);
+        notTheBallsTheManager.GetComponent<GamerManager>().removePlayerFromAlivePool(this.gameObject);
     }
 
     [ContextMenu("Add to alive pool")] //for debugging
     public void addToAlivePool()
     {
-        notTheBallsTheManager.GetComponent<GameManager>().addPlayerToAlivePool(this.gameObject);
+        notTheBallsTheManager.GetComponent<GamerManager>().addPlayerToAlivePool(this.gameObject);
     }
 
     private void iJustGotSmackedFUCK(object sender, EventArgs e)
@@ -201,6 +196,7 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
         myAnimator.SetTrigger("wasKillded");
     }
 
+    //the following should only be called by states' update function!
     public void movement(float speed, Vector2 direction)
     {
         myRigidBody2D.velocity = direction * speed;   // also later, if possible, change this entirely so player accelerates and decelerates rather than just starting and stopping TO-DO-FLAG-3 

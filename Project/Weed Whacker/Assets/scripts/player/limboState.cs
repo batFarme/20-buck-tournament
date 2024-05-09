@@ -10,7 +10,7 @@ using UnityEngine.InputSystem;
 public class limboState : BaseState<playerScript.States>
 {
     private playerScript playersScript;
-    public event EventHandler onJoinSmacked;
+    public event EventHandler onJoinSmacked; // unity says this goes unused, but im keeping it just in case bc im afraid something will blow up if i remove it...
     public bool startUpScreenOver = false; //after the startup screen, this *should* always be true; videoPlayerScript sets it to true upon awakening, and nothing else should say otherwise
 
     public limboState(playerScript.States key, GameObject SelfObject) : base(key, SelfObject)
@@ -34,13 +34,14 @@ public class limboState : BaseState<playerScript.States>
         playersScript.attack.performed -= joinGameFromLimbo;
         playersScript.notTheBallsTheManager = GameObject.Find("Game Manager");
         selfObject.GetComponent<Animator>().SetTrigger("gameJoin");
+        GameObject.Find("Game Manager").GetComponent<GamerManager>().currentPlayers.Add(selfObject);
         if (selfObject.name == "player 1")
         {
-            GameObject.Find("Game Manager").GetComponent<GameManager>().player1 = selfObject;
+            GameObject.Find("Game Manager").GetComponent<GamerManager>().player1 = selfObject;
         }
         else
         {
-            GameObject.Find("Game Manager").GetComponent<GameManager>().player2 = selfObject;
+            GameObject.Find("Game Manager").GetComponent<GamerManager>().player2 = selfObject;
         }
     }
 
@@ -76,8 +77,8 @@ public class limboState : BaseState<playerScript.States>
         if (playersScript.startUpScreenOver)
         {
             selfObject.GetComponent<Animator>().SetTrigger("gameJoin");
-            Debug.Log("animator trigger sent!");
-            playersScript.StartCoroutine(playersScript.joinCoroutine()); //this makes it so that the player object can get a reference to the game manager without me having to actgually learn abt load priority :P
+            //Debug.Log("animator trigger sent!");
+            playersScript.StartCoroutine(playersScript.joinGameDelay()); //this makes it so that the player object can get a reference to the game manager without me having to actgually learn abt load priority :P
         }
     }
 

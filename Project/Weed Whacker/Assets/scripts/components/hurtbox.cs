@@ -20,17 +20,25 @@ public class hurtbox : MonoBehaviour
     {
         if (collision.gameObject.tag == "hitbox"/* && collision.gameObject.layer != myLayer*/)  //for some reason unity just fucking ignores the .tag check here?????? and goes on to the next block of code????? hello??????????? TO-DO-FLAG-6
         {
-            if (collision.gameObject.layer != myLayer)
+            if (myLayer == 12) //for the flowers, so they dont get killed by players. honeslty, this solution is horrible since it adds a check for all entites that arent flowers, but this game could run on a caluclator anyways, so....
             {
-                print(gameObject.name + "'s hurtbox was just smacked; my layer is " + myLayer + " and my attacker's layer is " + collision.gameObject.layer);
+                if (collision.gameObject.layer == 10)
+                {
+
+                }
+                else if (collision.gameObject.layer != myLayer)
+                {
+                    print(transform.parent.gameObject.name + "'s hurtbox was just smacked; my layer is " + myLayer + " and my attacker's layer is " + collision.gameObject.layer);
+                    objectThatJustHitMe = collision.gameObject.transform.parent.gameObject; //WOW thats a lot of methods! good fucking bye performance!!!! :D
+                    theyHitMeeeeeeeWaaahhhhhhh.Invoke();
+                }
+            }
+            else if (collision.gameObject.layer != myLayer)
+            {
+                print(transform.parent.gameObject.name + "'s hurtbox was just smacked; my layer is " + myLayer + " and my attacker's layer is " + collision.gameObject.layer);
                 objectThatJustHitMe = collision.gameObject.transform.parent.gameObject; //WOW thats a lot of methods! good fucking bye performance!!!! :D
                 theyHitMeeeeeeeWaaahhhhhhh.Invoke();
             }
-            /*
-            print("hurtbox was just smacked");
-            objectThatJustHitMe = collision.gameObject.transform.parent.gameObject;
-            theyHitMeeeeeeeWaaahhhhhhh.Invoke();
-            */
         }
     }
 }

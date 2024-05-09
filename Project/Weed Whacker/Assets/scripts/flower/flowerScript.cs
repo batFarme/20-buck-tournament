@@ -1,4 +1,5 @@
 using Pathfinding;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,9 +20,15 @@ public class flowerScript : EntityClass, Ientity
     // Start is called before the first frame update
     void Start()
     {
+        onDeath += iDiedSadFace;
         myDstnSttr.target = theWell.transform;
+        crntHp = maxHp;
     }
 
+    public void iDiedSadFace(object sender, EventArgs e)
+    {
+        Destroy(gameObject);
+    }
     //no update function cause flowers do pretty much nothing unless acted upon; movement is handled by the pathfinding solution
 
 }

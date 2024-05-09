@@ -6,6 +6,7 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using Unity.VisualScripting;
 using System;
+using UnityEngine.EventSystems;
 //using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class videoPlayerScript : MonoBehaviour
@@ -16,6 +17,8 @@ public class videoPlayerScript : MonoBehaviour
     //public UnityAction itsShowtimeAction;
     public void Awake()
     {
+        EventSystem eventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
+        eventSystem.enabled = false;
         //itsShowtimeAction += itsShowtimeFunction; //honestly no clue why unityevents cant just have regular methods as listeners and needs so badly to have a unityaction in between, but what fucking ever
         print("it did the thing");
 

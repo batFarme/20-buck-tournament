@@ -1,4 +1,5 @@
 using Pathfinding;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -10,16 +11,18 @@ using UnityEngine.InputSystem.XR;
 public class weedScript : EntityClass, IWalkBehavior, Ientity
 {
     //references
+    [HideInInspector] public GameObject notTheBallsTheManager;
     [HideInInspector] public GameObject originalTarget;
     public AIPath myAIPath;
+    public Seeker mySeeker;
+    public AIDestinationSetter myDstnSttr;
     public Rigidbody2D myRigidbody2D;
     public GameObject myHitbox;
     public GameObject myHurtbox;
     public GameObject myDetector;
     public GameObject me;
     public Animator myAnimator;
-    private GameManager gameManager; //having each individual weed have its own reference is probably unhealthy, remember to experiment with having each weed be a child of a "hive mind controller" object TO-DO-FLAG-4
-    public AIDestinationSetter myDstnSttr;
+    private GamerManager gameManager; //having each individual weed have its own reference is probably unhealthy, remember to experiment with having each weed be a child of a "hive mind controller" object TO-DO-FLAG-4
 
     //handling
     [HideInInspector] public float moveSpeed;
@@ -42,6 +45,7 @@ public class weedScript : EntityClass, IWalkBehavior, Ientity
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.Find("Game Manager").GetComponent<GamerManager>();
         crntMoveSpeed = moveSpeed;
         myAIPath.maxSpeed = crntMoveSpeed;
         print("i am targeting " + originalTarget.name);
@@ -51,28 +55,14 @@ public class weedScript : EntityClass, IWalkBehavior, Ientity
         print(targetsScript.linkFlag);
         aiTarget = currentTarget.transform;
         myDstnSttr.target = aiTarget;
+        onDeath += deadAhhHell;
+        crntHp = maxHp;
+        currentTarget.GetComponent<EntityClass>().tellStalkerToFuckOff += findANewBitch;
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*
-        SideSwitch whereIsTarget = sideCheck(currentTarget);
-        if (whereIsTarget != currentFace) //having sprite flipping run every frame like this proly tanks the performance but this whole game could run on a calculator, its fine :shrug: ; also btw there are two variables serving the same purpose, currentTarget and aiTarger, i could probably fix it but idrc anymore.
-        {
-            transform.position = flipPoint.transform.position;
-            if (whereIsTarget == SideSwitch.left)
-            {
-                transform.localScale = new Vector3(-1, 1, 1);
-            }
-            else
-            {
-                transform.localScale = new Vector3(1, 1, 1);
-            }
-            currentFace = whereIsTarget;
-        }
-        */
-
         if (currentTarget.transform.position.x > transform.position.x) //if the target is to the right...
         {
             transform.localScale = new Vector3(1, 1, 1);
@@ -81,33 +71,10 @@ public class weedScript : EntityClass, IWalkBehavior, Ientity
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
-        //this movement line is made obsolete by the a* algorithm thing
-        //movement(crntMoveSpeed, originalTarget.transform.position - myHitbox.transform.position);
     }
-    /*
-    private SideSwitch sideCheck(GameObject objToCheck)
-    {
-        if (objToCheck.transform.position.x > flipPoint.transform.position.x) //if the thing i am checking is to the right....
-        {
-            return SideSwitch.right;
-        }
-        else
-        {
-            return SideSwitch.left;
-        }
-    }
-    */
     public void linkCheck()
     {
     }
-
-    /*
-    public void takeHit()
-    {
-        print("i, a weed, have been hit!?!?!?");
-        throw new System.NotImplementedException();
-    }
-    */
 
     public void sicEm()
     {
@@ -115,8 +82,9 @@ public class weedScript : EntityClass, IWalkBehavior, Ientity
         myAnimator.SetTrigger("sic em!!!");
     }
 
-    public void findANewBitch()
+    public void findANewBitch(object sender, EventArgs e)
     {
+        //currentTarget.GetComponent<EntityClass>().tellStalkerToFuckOff -= findANewBitch;
         originalTarget = gameManager.randomTarget();
         currentTarget = originalTarget;
         aiTarget = currentTarget.transform;
@@ -126,6 +94,20 @@ public class weedScript : EntityClass, IWalkBehavior, Ientity
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
+    }
+
+    private void deadAhhHell(object sender, EventArgs e)
+    {
+        myAnimator.SetTrigger("AAAAHHHHHHH I FUCKING DIED");
+        myDstnSttr.enabled = false;// im gona b so fr dawg i actually do not know what each of these do :skull: im just using public libraries i have NO clue how these work :sob: :sob: :sob:
+        myAIPath.enabled = false;
+        mySeeker.enabled = false;
+    }
+
+    public void myFinalMessage()
+    {
+        notTheBallsTheManager.GetComponent<GamerManager>().removeWeedFromPool(gameObject);
+        GameObject.Destroy(this.gameObject);
     }
 
     //below block of code is made obsolete by pathfinding system, but keep it just in case...

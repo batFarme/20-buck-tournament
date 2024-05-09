@@ -103,28 +103,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""dpad"",
-                    ""id"": ""290f4b40-2a10-4b10-8697-702a4d9e10bb"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""move"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""left stick"",
-                    ""id"": ""60a51adb-2514-483b-ae28-840c77bbfde5"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""move"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
                     ""name"": ""arcade stick"",
                     ""id"": ""3371e72b-1c25-4181-b6ad-703cd08088c8"",
                     ""path"": ""2DVector"",

@@ -14,23 +14,27 @@ public class EntityClass : MonoBehaviour
     [HideInInspector] public event EventHandler onDeath; //same as onHit, but for death
     [HideInInspector] public string linkFlag = "yes, the link works!"; //used for debugging.
 
+
     public void takeHit() //this bit here handles the hp stuff, and invoking death and hit stuff
     {
+        //print("aw fuck someone hit me!!!! i am: " + gameObject.name + " and now I have " + crntHp + " health remaining!");
         if (crntHp > 0)
         {
-            print("aw fuck someone hit me!!!!");
-            crntHp--; //no need to check damage value, since all damage universally is one point
-            if (crntHp <= 0)
-            {
-                onDeath?.Invoke(this, EventArgs.Empty);
-                print("im super dead!");
-            }
-            else
-            {
-                onHit?.Invoke(this, EventArgs.Empty);
-                //also do some stuff for getting hit but also... maybe just do that shit in the animator? food for thought TO-DO-FLAG-5
-            }
+            crntHp--;
+            onHit?.Invoke(this, EventArgs.Empty);
         }
+        else
+        {
+            tellStalkersToGoAway();
+            StartCoroutine(yodaDeathNoiseCoroutine()); // so theres a coroutine here so that any weeds targeting this object have time to unsubscribe to the event, avoiding any null reference exceptions; im sure theres a far better way to do it with like ordering code n shit but that's beyond the scope of this project :shrug:
+        }
+    }
+
+    public IEnumerator yodaDeathNoiseCoroutine()
+    {
+        yield return new WaitForSeconds(.1f);
+        onDeath?.Invoke(this, EventArgs.Empty); //rather than have a Destroy(self) here, instead leave it up to different entities to decide what exactly to do upon death.
+        print("im super dead! i was " + gameObject.name);
     }
 
     public void tellStalkersToGoAway() //for some reason, C# doesnt like events being invoked outside of the original script, *even when the script trying to invoke it inherits the script that contains the event.* so to fix this, this function has been made. microsoft, pls fix
