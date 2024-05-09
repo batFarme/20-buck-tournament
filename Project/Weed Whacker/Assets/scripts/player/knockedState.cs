@@ -7,7 +7,7 @@ using UnityEngine;
 public class knockedState : BaseState<playerScript.States>, IWalkBehavior
 {
     //references
-    private playerScript playerScript;
+    private playerScript theMainScriptSWE;
     private Rigidbody2D myRigidBody;
     private Animator animator;
 
@@ -21,22 +21,23 @@ public class knockedState : BaseState<playerScript.States>, IWalkBehavior
         StateIWantToBe = key;
         selfObject = SelfObject;
         myRigidBody = selfObject.GetComponent<Rigidbody2D>();
-        playerScript = selfObject.GetComponent<playerScript>();
+        theMainScriptSWE = selfObject.GetComponent<playerScript>();
         animator = selfObject.GetComponent<Animator>();
     }
     
     public override void EnterState()
     {
+        theMainScriptSWE.myAnimator.SetTrigger("wasKnocked");
         //rezCount = playerScript.rezCountLength;  //need to figure ou thow to findthe player gameobject and reference that in htis script
         // play an initial drop animation
         // play a sound effect
         // update this player's hud to portray knocked state
-        playerScript.tellStalkersToGoAway();
+        //theMainScriptSWE.tellStalkersToGoAway();
     }
 
     public override void UpdateState()
     {
-        movement(playerScript.knockedMoveSpeed, playerScript.move.ReadValue<Vector2>());
+        movement(theMainScriptSWE.knockedMoveSpeed, theMainScriptSWE.move.ReadValue<Vector2>());
     }
 
     public override void ExitState()
@@ -52,12 +53,19 @@ public class knockedState : BaseState<playerScript.States>, IWalkBehavior
     
     public override void OnTriggerEnter(Collider2D collision)
     {
-        
+        if (collision.gameObject.layer == selfObject.layer) //rezzing; code does not account for more than two players, but that shouldnt be an issue :shrug:
+        {
+            theMainScriptSWE.myAnimator.SetTrigger("teammateTouchingMe");
+        }
     }
 
     public override void OnTriggerExit(Collider2D collision)
     {
-        
+        if (collision.gameObject.layer == selfObject.layer)
+        {
+            theMainScriptSWE.myAnimator.SetTrigger("teammateNoLongerTouchingMe");
+        }
+
     }
 
     public override void OnTriggerStay(Collider2D collision)

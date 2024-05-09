@@ -27,10 +27,6 @@ public class EntityClass : MonoBehaviour
         {
             tellStalkersToGoAway();
             StartCoroutine(yodaDeathNoiseCoroutine()); // so theres a coroutine here so that any weeds targeting this object have time to unsubscribe to the event, avoiding any null reference exceptions; im sure theres a far better way to do it with like ordering code n shit but that's beyond the scope of this project :shrug:
-            /*
-            onDeath?.Invoke(this, EventArgs.Empty);
-            print("im super dead! i was " + gameObject.name);
-            */
         }
     }
 

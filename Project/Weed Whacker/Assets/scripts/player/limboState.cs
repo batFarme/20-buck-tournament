@@ -34,6 +34,7 @@ public class limboState : BaseState<playerScript.States>
         playersScript.attack.performed -= joinGameFromLimbo;
         playersScript.notTheBallsTheManager = GameObject.Find("Game Manager");
         selfObject.GetComponent<Animator>().SetTrigger("gameJoin");
+        GameObject.Find("Game Manager").GetComponent<GamerManager>().currentPlayers.Add(selfObject);
         if (selfObject.name == "player 1")
         {
             GameObject.Find("Game Manager").GetComponent<GamerManager>().player1 = selfObject;

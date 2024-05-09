@@ -139,26 +139,30 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
         CrntState.StateIWantToBe = States.standing;
     }
 
+    public void rezFinished()
+    {
+        revitalize();
+    }
+
     public void onHealthEqualsZero(object sender, EventArgs e)
     {
-        if (notTheBallsTheManager.GetComponent<GamerManager>().amIAlone())
+        if (notTheBallsTheManager.GetComponent<GamerManager>().amIAlone()) //if player is the only one in the scene....
         {
+            print("i was just told i am alone...");
             CrntState.StateIWantToBe = States.dead;
+            //notTheBallsTheManager.GetComponent<GamerManager>().wellGameEnd();
         }
-        /*
-        if (notTheBallsTheManager.GetComponent<GamerManager>().alivePlayers.Count == 1)
+        else
         {
-            CrntState.StateIWantToBe = States.dead;
+            if (crntLives == 0)
+            {
+                CrntState.StateIWantToBe = States.dead;
+            }
+            else
+            {
+                CrntState.StateIWantToBe = States.knocked;
+            }
         }
-        else if (crntLives <= 0) //upon lives running out...
-        {
-            CrntState.StateIWantToBe = States.dead; //im sure theres a better way to do this but oh well :shrug:
-        }
-        else //if there are still lives remaining...
-        {
-            CrntState.StateIWantToBe = States.knocked;
-        }
-        */
     }
 
     public IEnumerator joinGameDelay() //this is here so that the player can get a reference to the game manager without me having to learn about load priority :P

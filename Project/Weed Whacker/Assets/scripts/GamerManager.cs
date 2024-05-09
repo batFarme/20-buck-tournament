@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GamerManager : MonoBehaviour //its named GamerManager rather than the usual GameManager cause gamemanager persists between scenes and i did NOT code with that in mind so i am just changing it so i have less work to do :P
 {
@@ -26,6 +27,8 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
 
     private List<GameObject> aliveEnemyPool = new List<GameObject>();
 
+    private bool isGameCurrentlyEnding = false;
+
     private void Awake()
     {
         /*
@@ -43,6 +46,7 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
 
     private void Start()
     {
+        theWell.GetComponent<EntityClass>().onDeath += wellGameEnd;
         StartCoroutine(firstWaveStart());
     }
 
@@ -50,6 +54,21 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
     {
         yield return new WaitForSeconds(.1f);
         newWave();
+    }
+
+    public void wellGameEnd(object sender, EventArgs e) //this is a seperate function cause of event stuff
+    {
+        isGameCurrentlyEnding = true;
+        myAnimator.SetTrigger("onLose");
+    }
+
+    public void returnToDemoScreen()
+    {
+        for (int i = currentPlayers.Count; i != 0; i--)
+        {
+            Destroy(currentPlayers[i]);
+        }
+        SceneManager.LoadScene("demoScreen");
     }
 
     void spawnFlower(GameObject theWell)
@@ -60,6 +79,8 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
         flowerCreatesScript.theWell = theWell;
         allFlowers.Add(flowerCreate);
     }
+
+
 
     void spawnWeed(GameObject targetToGive) //the core weed spawning function; NOT TO BE CALLED ON ITS OWN!!!!!!!!!!!!!!!!!!!!!!!!!!
     {
@@ -129,15 +150,12 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
         spawnWeed(randomFlower());
     }
 
-    public void gameEnd()
-    {
-
-    }
 
     public bool amIAlone()
     {
         if (alivePlayers.Count == 1)
         {
+            print("yes, you are alone");
             return true;
         }
         else
