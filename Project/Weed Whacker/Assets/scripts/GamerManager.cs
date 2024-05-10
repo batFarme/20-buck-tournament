@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class GamerManager : MonoBehaviour //its named GamerManager rather than the usual GameManager cause gamemanager persists between scenes and i did NOT code with that in mind so i am just changing it so i have less work to do :P
@@ -21,7 +22,8 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
     public List<GameObject> allFlowers = new List<GameObject>();
     public GameObject theWell;  //this should be set in the editor
     public float weedSpeed; // lol
-
+    public AudioSource myJukebox;
+    public List<AudioClip> songList = new List<AudioClip>();
     public int crntWave = 0;
     private int amtOfEnemiesToSpawn = 0;
 
@@ -43,6 +45,9 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
         theWell.GetComponent<EntityClass>().onDeath += wellGameEnd;
         allPlayersDeadEvent += wellGameEnd;
         StartCoroutine(firstWaveStart());
+        AudioResource songToPlay = songList[UnityEngine.Random.Range(0, songList.Count)];
+        myJukebox.resource = songToPlay;
+        print("now playing: " + songToPlay.name);
     }
 
     public IEnumerator firstWaveStart()

@@ -32,16 +32,16 @@ public class limboState : BaseState<playerScript.States>
     public override void ExitState() //essentially the "on spawn" function... though when i work on rezzing stuff, might have to make this a function th acutally nmv
     {
         playersScript.attack.performed -= joinGameFromLimbo;
-        playersScript.notTheBallsTheManager = GameObject.Find("Game Manager");
+        playersScript.notTheBallsTheManager = GameObject.Find("newGameManager");
         selfObject.GetComponent<Animator>().SetTrigger("gameJoin");
-        GameObject.Find("Game Manager").GetComponent<GamerManager>().currentPlayers.Add(selfObject);
+        GameObject.Find("newGameManager").GetComponent<GamerManager>().currentPlayers.Add(selfObject);
         if (selfObject.name == "player 1")
         {
-            GameObject.Find("Game Manager").GetComponent<GamerManager>().player1 = selfObject;
+            GameObject.Find("newGameManager").GetComponent<GamerManager>().player1 = selfObject;
         }
         else
         {
-            GameObject.Find("Game Manager").GetComponent<GamerManager>().player2 = selfObject;
+            GameObject.Find("newGameManager").GetComponent<GamerManager>().player2 = selfObject;
         }
     }
 
