@@ -538,7 +538,25 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pixilart-sprite (11) 1_0: -1189301058522369079
+      pixilart-sprite (11) 1_1: 6285224523484708663
+      pixilart-sprite (11) 1_10: 5126052262268693197
+      pixilart-sprite (11) 1_11: 1855691235392312577
+      pixilart-sprite (11) 1_12: 1753725370102415608
+      pixilart-sprite (11) 1_13: -9169325378247694292
+      pixilart-sprite (11) 1_14: -3038144218851579480
+      pixilart-sprite (11) 1_15: -8409324353142996156
+      pixilart-sprite (11) 1_16: 5667015201844755927
+      pixilart-sprite (11) 1_17: 2615940666234210161
+      pixilart-sprite (11) 1_2: -7219110054569934722
+      pixilart-sprite (11) 1_3: -2266032918142628286
+      pixilart-sprite (11) 1_4: 2497598605706529889
+      pixilart-sprite (11) 1_5: -5755213461567250030
+      pixilart-sprite (11) 1_6: 3717897282184202058
+      pixilart-sprite (11) 1_7: 7861127184494547404
+      pixilart-sprite (11) 1_8: -7094443248909316574
+      pixilart-sprite (11) 1_9: -1524906375793369140
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

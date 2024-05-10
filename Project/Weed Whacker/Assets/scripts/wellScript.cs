@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,9 +6,11 @@ using UnityEngine;
 public class wellScript : EntityClass, Ientity
 {
     public CapsuleCollider2D myCapsuleCollider2D;
+    
 
     public void Start()
     {
+        onHit += wellReportDamages;
         crntHp = maxHp;
     }
 
@@ -16,10 +19,8 @@ public class wellScript : EntityClass, Ientity
         throw new System.NotImplementedException();
     }
 
-    /*
-    public void takeHit()
+    public void wellReportDamages(object sender, EventArgs e)
     {
-        throw new System.NotImplementedException();
+        print("well health is now " + crntHp + "!");
     }
-    */
 }

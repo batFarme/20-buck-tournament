@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: b5cb668937e46724a93eb039a772ee89
+guid: 6b4dc2669d1e11b4abdf9e9cb57b466c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1053796382863180719
-    second: VGD Nefarious Game Shadowhaven Island OL_0
-  - first:
-      213: 4873922919558844792
-    second: VGD Nefarious Game Shadowhaven Island OL_1
-  - first:
-      213: 238079687444690345
-    second: VGD Nefarious Game Shadowhaven Island OL_2
-  - first:
-      213: -2159663985852866582
-    second: VGD Nefarious Game Shadowhaven Island OL_3
+      213: -7157529272000693026
+    second: playerLimbo_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: VGD Nefarious Game Shadowhaven Island OL_0
+      name: playerLimbo_0
       rect:
         serializedVersion: 2
-        x: 254
-        y: 709
-        width: 17
-        height: 13
+        x: 0
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -123,71 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fa3c62a1a36df9e00800000000000000
-      internalID: 1053796382863180719
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: VGD Nefarious Game Shadowhaven Island OL_1
-      rect:
-        serializedVersion: 2
-        x: 257
-        y: 27
-        width: 1272
-        height: 1050
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 87190fa7217a3a340800000000000000
-      internalID: 4873922919558844792
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: VGD Nefarious Game Shadowhaven Island OL_2
-      rect:
-        serializedVersion: 2
-        x: 213
-        y: 685
-        width: 17
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9a5706ed634dd4300800000000000000
-      internalID: 238079687444690345
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: VGD Nefarious Game Shadowhaven Island OL_3
-      rect:
-        serializedVersion: 2
-        x: 248
-        y: 687
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: aef19091c055702e0800000000000000
-      internalID: -2159663985852866582
+      spriteID: edc30f0ac095bac90800000000000000
+      internalID: -7157529272000693026
       vertices: []
       indices: 
       edges: []
@@ -202,11 +130,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      VGD Nefarious Game Shadowhaven Island OL_0: 1053796382863180719
-      VGD Nefarious Game Shadowhaven Island OL_1: 4873922919558844792
-      VGD Nefarious Game Shadowhaven Island OL_2: 238079687444690345
-      VGD Nefarious Game Shadowhaven Island OL_3: -2159663985852866582
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

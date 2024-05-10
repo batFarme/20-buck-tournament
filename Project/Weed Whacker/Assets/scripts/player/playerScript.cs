@@ -206,11 +206,11 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
         */
         if (direction != Vector2.zero)             // WHOOOOOOO BOY this needs to be HELLA optimized, aint no way having this set every frame is healthy :skull:
         {
-            myAnimator.SetBool("isMoving", true);
+            //myAnimator.SetBool("isMoving", true);
         }
         else
         {
-            myAnimator.SetBool("isMoving", false);
+            //myAnimator.SetBool("isMoving", false);
         }
         //sprite flipping
         if (direction.x != 0)  //if player is currently inputting a move direction

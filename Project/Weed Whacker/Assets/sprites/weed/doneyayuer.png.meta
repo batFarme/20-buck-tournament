@@ -466,7 +466,22 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      doneyayuer_0: 181330306312253287
+      doneyayuer_1: 2407964560324940283
+      doneyayuer_10: 6500785003930823531
+      doneyayuer_11: 4794367873533952733
+      doneyayuer_12: 830859351556811539
+      doneyayuer_13: 7255622038334019366
+      doneyayuer_14: -5630976563041021487
+      doneyayuer_2: -6796422042175493198
+      doneyayuer_3: 4659789912771292804
+      doneyayuer_4: -333913209536260616
+      doneyayuer_5: 8802657734799550997
+      doneyayuer_6: 7940935039106953638
+      doneyayuer_7: 2431216020008184726
+      doneyayuer_8: 2279839123414620224
+      doneyayuer_9: -3778166406478558718
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

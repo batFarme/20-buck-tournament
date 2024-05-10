@@ -370,7 +370,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      zzfui_0: -2320923728004317653
+      zzfui_1: -2354940364071719951
+      zzfui_10: 5341288589456690530
+      zzfui_2: 4403766824891096312
+      zzfui_3: 4118830347372406630
+      zzfui_4: 5010929069110127629
+      zzfui_5: 122933573732941631
+      zzfui_6: -2978707291152064368
+      zzfui_7: 173924835567586549
+      zzfui_8: -8064274713292824040
+      zzfui_9: -3585419089056586194
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

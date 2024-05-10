@@ -1,4 +1,5 @@
 using Cinemachine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,7 +25,7 @@ public class hurtbox : MonoBehaviour
             {
                 if (collision.gameObject.layer == 10)
                 {
-
+                    return;
                 }
                 else if (collision.gameObject.layer != myLayer)
                 {
@@ -33,11 +34,15 @@ public class hurtbox : MonoBehaviour
                     theyHitMeeeeeeeWaaahhhhhhh.Invoke();
                 }
             }
-            else if (collision.gameObject.layer != myLayer)
+            else if (collision.gameObject.layer != gameObject.layer)
             {
                 print(transform.parent.gameObject.name + "'s hurtbox was just smacked; my layer is " + myLayer + " and my attacker's layer is " + collision.gameObject.layer);
                 objectThatJustHitMe = collision.gameObject.transform.parent.gameObject; //WOW thats a lot of methods! good fucking bye performance!!!! :D
                 theyHitMeeeeeeeWaaahhhhhhh.Invoke();
+            }
+            else
+            {
+                print("friendly fire on " + gameObject.name);
             }
         }
     }

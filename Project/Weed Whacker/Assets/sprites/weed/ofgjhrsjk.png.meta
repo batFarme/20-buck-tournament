@@ -322,7 +322,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ofgjhrsjk_0: 9041801821662121070
+      ofgjhrsjk_1: 4337270834042377573
+      ofgjhrsjk_2: -414672920660419021
+      ofgjhrsjk_3: 6207931793699512341
+      ofgjhrsjk_4: 8712690880690384927
+      ofgjhrsjk_5: 1707814007519444292
+      ofgjhrsjk_6: 8254319185380442957
+      ofgjhrsjk_7: -4826300501191198739
+      ofgjhrsjk_8: -7629926837537827117
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

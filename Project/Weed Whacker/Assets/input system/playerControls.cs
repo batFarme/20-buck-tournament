@@ -213,6 +213,61 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""arcade stick hardware"",
+                    ""id"": ""ca1c3a5b-a9d4-4c14-adee-4dddce47bddf"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""ab034de1-806f-44d4-9193-d33b43b41fdb"",
+                    ""path"": ""<HID::Microntek              USB Joystick          >/stick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Debug"",
+                    ""action"": ""move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""1e64359d-3570-42f9-b436-fa973062958b"",
+                    ""path"": ""<HID::Microntek              USB Joystick          >/stick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Debug"",
+                    ""action"": ""move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""a4d3a78b-388c-4806-9f2d-f033b750f256"",
+                    ""path"": ""<HID::Microntek              USB Joystick          >/stick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Debug"",
+                    ""action"": ""move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""8e828232-fc43-4638-a6f4-549661166816"",
+                    ""path"": ""<HID::Microntek              USB Joystick          >/stick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Debug"",
+                    ""action"": ""move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""3918828e-a1df-40d1-881f-7c5e12e2ac83"",
                     ""path"": ""<Keyboard>/j"",
@@ -249,6 +304,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""2b91075a-0528-4325-acfc-245bb3fcd169"",
                     ""path"": ""<Joystick>/trigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""arcade stick;Debug"",
+                    ""action"": ""attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""feee65b1-07ab-48fe-9353-fe3fafe8ea58"",
+                    ""path"": ""<HID::Microntek              USB Joystick          >/trigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""arcade stick;Debug"",
@@ -332,6 +398,11 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<HID::Microntek              USB Joystick          >"",
                     ""isOptional"": false,
                     ""isOR"": false
                 }

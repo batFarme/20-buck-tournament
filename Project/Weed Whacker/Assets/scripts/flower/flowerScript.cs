@@ -13,7 +13,7 @@ public class flowerScript : EntityClass, Ientity
     [HideInInspector] public int myLayer;
     public AIPath myAIPath;
     public AIDestinationSetter myDstnSttr;
-
+    public Animator myAnimator;
     //handling
     public float moveSpeed; //this is set by the game manager upon instantiation, so dw abt leaving it blank :shrug:
 
@@ -27,8 +27,15 @@ public class flowerScript : EntityClass, Ientity
 
     public void iDiedSadFace(object sender, EventArgs e)
     {
+        GameObject.Find("newGameManager").GetComponent<GamerManager>().allFlowers.Remove(gameObject);
         Destroy(gameObject);
     }
+
+    public void imOuttaHereBucko()
+    {
+        Destroy(gameObject);
+    }
+
     //no update function cause flowers do pretty much nothing unless acted upon; movement is handled by the pathfinding solution
 
 }

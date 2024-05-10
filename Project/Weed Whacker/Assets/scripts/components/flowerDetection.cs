@@ -5,13 +5,14 @@ using UnityEngine;
 public class flowerDetection : MonoBehaviour
 {
     //references
-
+    public flowerScript theMainScriptSWE;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "hurtbox" && collision.gameObject.layer != LayerMask.NameToLayer("flower")) //now im prety sure i can just get rid of the NameToLayer method by replacing it with a straight up int thats set in the start function but. WHATEVER. TO-DO-7
+        if (collision.gameObject.tag == "well")
         {
-            //start the drinking animation
+            print("i am touching well!");
+            theMainScriptSWE.myAnimator.SetTrigger("flowerTouchWell");
         }
     }
 

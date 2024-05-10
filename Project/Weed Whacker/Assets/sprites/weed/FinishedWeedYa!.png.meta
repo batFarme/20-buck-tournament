@@ -298,7 +298,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FinishedWeedYa!_0: -547955604590120953
+      FinishedWeedYa!_1: -3331231342486380477
+      FinishedWeedYa!_2: 6893265917997354747
+      FinishedWeedYa!_3: 8427097209917212953
+      FinishedWeedYa!_4: -8724512035876001790
+      FinishedWeedYa!_5: -2504384276617695405
+      FinishedWeedYa!_6: 6267835999486393561
+      FinishedWeedYa!_7: -261018526475857100
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

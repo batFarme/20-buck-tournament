@@ -42,7 +42,7 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
     }
     private void Start()
     {
-        theWell.GetComponent<EntityClass>().onDeath += wellGameEnd;
+        theWell.GetComponent<wellScript>().onDeath += wellGameEnd;
         allPlayersDeadEvent += wellGameEnd;
         StartCoroutine(firstWaveStart());
         AudioResource songToPlay = songList[UnityEngine.Random.Range(0, songList.Count)];
@@ -66,15 +66,21 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
 
     public void wellGameEnd(object sender, EventArgs e) //this is a seperate function cause of event stuff
     {
+        print("game manager recieved well game end signal!");
         isGameCurrentlyEnding = true;
         myAnimator.SetTrigger("onLose");
     }
 
     public void returnToDemoScreen()
     {
-        for (int i = currentPlayers.Count; i != 0; i--)
+        print("going back to the demo scene!");
+        if (player1 != null)
         {
-            currentPlayers[i].GetComponent<playerScript>().CrntState.StateIWantToBe = playerScript.States.limbo;
+            player1.GetComponent<playerScript>().CrntState.StateIWantToBe = playerScript.States.limbo;
+        }
+        if (player2 != null)
+        {
+            player2.GetComponent<playerScript>().CrntState.StateIWantToBe = playerScript.States.limbo;
         }
         SceneManager.LoadScene("demoScreen");
     }
@@ -205,8 +211,10 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
     public void removePlayerFromAlivePool(GameObject thePlayerInQuestion)
     {
         alivePlayers.Remove(thePlayerInQuestion);
+        print(alivePlayers.Count + " players are left standing....");
         if (alivePlayers.Count == 0)
         {
+            print("all players are dead!");
             allPlayersDeadEvent?.Invoke(this, EventArgs.Empty);
         }
     }
@@ -220,9 +228,14 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
             print("there are two players");
             e = UnityEngine.Random.Range(1, alivePlayers.Count);
         }
-        else
+        else if (alivePlayers.Count == 1)
         {
             print("there is only one player");
+            e = 0;
+        }
+        else
+        {
+            print("there are no players in the scene!");
             e = 0;
         }
         print(alivePlayers + ": these are the alive players");
