@@ -1,40 +1,55 @@
 fileFormatVersion: 2
-guid: abaae23a4ed9d484fb124b08d39ec645
+guid: b64aaad5b5dd96e43ba4a66777d4af38
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6096061396649701542
-    second: DamagedWell_0
+      213: 7888855193036222031
+    second: viask73$fgbdj& 1_0
   - first:
-      213: -6352276768767116102
-    second: DamagedWell_1
+      213: -4064063165490283359
+    second: viask73$fgbdj& 1_1
   - first:
-      213: 1720092206302543255
-    second: DamagedWell_2
+      213: 8941344379620874581
+    second: viask73$fgbdj& 1_2
   - first:
-      213: 7142953087869331457
-    second: DamagedWell_3
+      213: -6616491839526092353
+    second: viask73$fgbdj& 1_3
   - first:
-      213: 8308851137118332019
-    second: DamagedWell_4
+      213: -9215535756433795923
+    second: viask73$fgbdj& 1_4
   - first:
-      213: -2282698154315644318
-    second: DamagedWell_5
+      213: -6489309744497950519
+    second: viask73$fgbdj& 1_5
   - first:
-      213: 8349113972204039529
-    second: DamagedWell_6
+      213: 8330734996576395144
+    second: viask73$fgbdj& 1_6
   - first:
-      213: 399634543571653311
-    second: DamagedWell_7
+      213: 2843543596651161201
+    second: viask73$fgbdj& 1_7
   - first:
-      213: -8853167028157508663
-    second: DamagedWell_8
+      213: 1423621142732983330
+    second: viask73$fgbdj& 1_8
   - first:
-      213: -8822224530119645700
-    second: DamagedWell_9
+      213: 4710544884035754866
+    second: viask73$fgbdj& 1_9
   - first:
-      213: 7041431476559299997
-    second: DamagedWell_10
+      213: 5474407724931443866
+    second: viask73$fgbdj& 1_10
+  - first:
+      213: 8945617471802121521
+    second: viask73$fgbdj& 1_11
+  - first:
+      213: 6965426170845322195
+    second: viask73$fgbdj& 1_12
+  - first:
+      213: -7156224729249694760
+    second: viask73$fgbdj& 1_13
+  - first:
+      213: -1065657423542996802
+    second: viask73$fgbdj& 1_14
+  - first:
+      213: 5967164837190823679
+    second: viask73$fgbdj& 1_15
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -67,7 +82,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -102,10 +117,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -130,13 +145,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DamagedWell_0
+      name: viask73$fgbdj& 1_0
       rect:
         serializedVersion: 2
-        x: 57
-        y: 559
-        width: 78
-        height: 131
+        x: 16
+        y: 0
+        width: 32
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,20 +159,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a5f09b34570766ba0800000000000000
-      internalID: -6096061396649701542
+      spriteID: f4e6b694008da7d60800000000000000
+      internalID: 7888855193036222031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_1
+      name: viask73$fgbdj& 1_1
       rect:
         serializedVersion: 2
-        x: 257
-        y: 559
-        width: 78
-        height: 131
+        x: 79
+        y: 0
+        width: 33
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,20 +180,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: abc7ba24fed28d7a0800000000000000
-      internalID: -6352276768767116102
+      spriteID: 1acb334551c8997c0800000000000000
+      internalID: -4064063165490283359
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_2
+      name: viask73$fgbdj& 1_2
       rect:
         serializedVersion: 2
-        x: 457
-        y: 559
-        width: 78
-        height: 131
+        x: 143
+        y: 0
+        width: 34
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,20 +201,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 79db4998fbefed710800000000000000
-      internalID: 1720092206302543255
+      spriteID: 559dcb90759061c70800000000000000
+      internalID: 8941344379620874581
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_3
+      name: viask73$fgbdj& 1_3
       rect:
         serializedVersion: 2
-        x: 657
-        y: 559
-        width: 78
-        height: 131
+        x: 207
+        y: 0
+        width: 36
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -207,20 +222,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1082bb90dfdd02360800000000000000
-      internalID: 7142953087869331457
+      spriteID: fb1c6c54abf7d24a0800000000000000
+      internalID: -6616491839526092353
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_4
+      name: viask73$fgbdj& 1_4
       rect:
         serializedVersion: 2
-        x: 57
-        y: 309
-        width: 78
-        height: 131
+        x: 269
+        y: 0
+        width: 37
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,20 +243,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 374e9874618fe4370800000000000000
-      internalID: 8308851137118332019
+      spriteID: da45ad63e07db1080800000000000000
+      internalID: -9215535756433795923
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_5
+      name: viask73$fgbdj& 1_5
       rect:
         serializedVersion: 2
-        x: 257
-        y: 309
-        width: 78
-        height: 131
+        x: 335
+        y: 0
+        width: 36
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,20 +264,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 26283967f1a3250e0800000000000000
-      internalID: -2282698154315644318
+      spriteID: 9c008b15b2751f5a0800000000000000
+      internalID: -6489309744497950519
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_6
+      name: viask73$fgbdj& 1_6
       rect:
         serializedVersion: 2
-        x: 457
-        y: 309
-        width: 78
-        height: 131
+        x: 399
+        y: 0
+        width: 34
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,20 +285,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 96de8761ce20ed370800000000000000
-      internalID: 8349113972204039529
+      spriteID: 88fd9dc5757bc9370800000000000000
+      internalID: 8330734996576395144
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_7
+      name: viask73$fgbdj& 1_7
       rect:
         serializedVersion: 2
-        x: 657
-        y: 309
-        width: 78
-        height: 131
+        x: 463
+        y: 0
+        width: 33
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,20 +306,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fb250910089cb8500800000000000000
-      internalID: 399634543571653311
+      spriteID: 176aabdd5db467720800000000000000
+      internalID: 2843543596651161201
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_8
+      name: viask73$fgbdj& 1_8
       rect:
         serializedVersion: 2
-        x: 57
-        y: 59
-        width: 78
-        height: 131
+        x: 528
+        y: 0
+        width: 32
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -312,20 +327,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9c398757e7b332580800000000000000
-      internalID: -8853167028157508663
+      spriteID: 22cc55bf2e7b1c310800000000000000
+      internalID: 1423621142732983330
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_9
+      name: viask73$fgbdj& 1_9
       rect:
         serializedVersion: 2
-        x: 257
-        y: 59
-        width: 78
-        height: 131
+        x: 592
+        y: 0
+        width: 33
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -333,20 +348,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cf52b713889219580800000000000000
-      internalID: -8822224530119645700
+      spriteID: 27b1c7f4d973f5140800000000000000
+      internalID: 4710544884035754866
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_10
+      name: viask73$fgbdj& 1_10
       rect:
         serializedVersion: 2
-        x: 457
-        y: 59
-        width: 78
-        height: 131
+        x: 655
+        y: 0
+        width: 34
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -354,8 +369,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d95429eee9038b160800000000000000
-      internalID: 7041431476559299997
+      spriteID: a9c613832d009fb40800000000000000
+      internalID: 5474407724931443866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: viask73$fgbdj& 1_11
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 0
+        width: 36
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13d1b47d1b7352c70800000000000000
+      internalID: 8945617471802121521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: viask73$fgbdj& 1_12
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 0
+        width: 37
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dbd17ea23a2aa060800000000000000
+      internalID: 6965426170845322195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: viask73$fgbdj& 1_13
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 0
+        width: 36
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dbb438268bffac90800000000000000
+      internalID: -7156224729249694760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: viask73$fgbdj& 1_14
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 0
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb0367928360631f0800000000000000
+      internalID: -1065657423542996802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: viask73$fgbdj& 1_15
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 0
+        width: 33
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffee5f4ddc0afc250800000000000000
+      internalID: 5967164837190823679
       vertices: []
       indices: 
       edges: []
@@ -370,18 +490,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      DamagedWell_0: -6096061396649701542
-      DamagedWell_1: -6352276768767116102
-      DamagedWell_10: 7041431476559299997
-      DamagedWell_2: 1720092206302543255
-      DamagedWell_3: 7142953087869331457
-      DamagedWell_4: 8308851137118332019
-      DamagedWell_5: -2282698154315644318
-      DamagedWell_6: 8349113972204039529
-      DamagedWell_7: 399634543571653311
-      DamagedWell_8: -8853167028157508663
-      DamagedWell_9: -8822224530119645700
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

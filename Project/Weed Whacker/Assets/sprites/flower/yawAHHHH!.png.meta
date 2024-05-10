@@ -1,40 +1,55 @@
 fileFormatVersion: 2
-guid: abaae23a4ed9d484fb124b08d39ec645
+guid: a9df1f89f6af8c54da72d275e1c70671
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6096061396649701542
-    second: DamagedWell_0
+      213: 8473639237617639949
+    second: yawAHHHH!_0
   - first:
-      213: -6352276768767116102
-    second: DamagedWell_1
+      213: 4526715801000993951
+    second: yawAHHHH!_1
   - first:
-      213: 1720092206302543255
-    second: DamagedWell_2
+      213: 7870843884436741448
+    second: yawAHHHH!_2
   - first:
-      213: 7142953087869331457
-    second: DamagedWell_3
+      213: -6981201339763856713
+    second: yawAHHHH!_3
   - first:
-      213: 8308851137118332019
-    second: DamagedWell_4
+      213: 3178418971989709092
+    second: yawAHHHH!_4
   - first:
-      213: -2282698154315644318
-    second: DamagedWell_5
+      213: -4507893963445975482
+    second: yawAHHHH!_5
   - first:
-      213: 8349113972204039529
-    second: DamagedWell_6
+      213: 3514769562526066191
+    second: yawAHHHH!_6
   - first:
-      213: 399634543571653311
-    second: DamagedWell_7
+      213: 8084335893041633609
+    second: yawAHHHH!_7
   - first:
-      213: -8853167028157508663
-    second: DamagedWell_8
+      213: 306767969507163047
+    second: yawAHHHH!_8
   - first:
-      213: -8822224530119645700
-    second: DamagedWell_9
+      213: -199103368902081608
+    second: yawAHHHH!_9
   - first:
-      213: 7041431476559299997
-    second: DamagedWell_10
+      213: 6370295447769131854
+    second: yawAHHHH!_10
+  - first:
+      213: -5074119154066672768
+    second: yawAHHHH!_11
+  - first:
+      213: -5181825040817565951
+    second: yawAHHHH!_12
+  - first:
+      213: -6291720885523694649
+    second: yawAHHHH!_13
+  - first:
+      213: 8955136699814509084
+    second: yawAHHHH!_14
+  - first:
+      213: -7638329697342527876
+    second: yawAHHHH!_15
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -67,7 +82,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -102,10 +117,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -130,13 +145,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DamagedWell_0
+      name: yawAHHHH!_0
       rect:
         serializedVersion: 2
-        x: 57
-        y: 559
-        width: 78
-        height: 131
+        x: 15
+        y: 1
+        width: 32
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,20 +159,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a5f09b34570766ba0800000000000000
-      internalID: -6096061396649701542
+      spriteID: d02e209cdf9689570800000000000000
+      internalID: 8473639237617639949
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_1
+      name: yawAHHHH!_1
       rect:
         serializedVersion: 2
-        x: 257
-        y: 559
-        width: 78
-        height: 131
+        x: 79
+        y: 1
+        width: 33
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,20 +180,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: abc7ba24fed28d7a0800000000000000
-      internalID: -6352276768767116102
+      spriteID: f94efc5990022de30800000000000000
+      internalID: 4526715801000993951
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_2
+      name: yawAHHHH!_2
       rect:
         serializedVersion: 2
-        x: 457
-        y: 559
-        width: 78
-        height: 131
+        x: 143
+        y: 0
+        width: 33
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,20 +201,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 79db4998fbefed710800000000000000
-      internalID: 1720092206302543255
+      spriteID: 84d5866bfcada3d60800000000000000
+      internalID: 7870843884436741448
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_3
+      name: yawAHHHH!_3
       rect:
         serializedVersion: 2
-        x: 657
-        y: 559
-        width: 78
-        height: 131
+        x: 204
+        y: 0
+        width: 38
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -207,20 +222,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1082bb90dfdd02360800000000000000
-      internalID: 7142953087869331457
+      spriteID: 7bae4e59e5acd1f90800000000000000
+      internalID: -6981201339763856713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_4
+      name: yawAHHHH!_4
       rect:
         serializedVersion: 2
-        x: 57
-        y: 309
-        width: 78
-        height: 131
+        x: 265
+        y: 0
+        width: 41
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,20 +243,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 374e9874618fe4370800000000000000
-      internalID: 8308851137118332019
+      spriteID: 4211fcc07330c1c20800000000000000
+      internalID: 3178418971989709092
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_5
+      name: yawAHHHH!_5
       rect:
         serializedVersion: 2
-        x: 257
-        y: 309
-        width: 78
-        height: 131
+        x: 332
+        y: 0
+        width: 38
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,20 +264,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 26283967f1a3250e0800000000000000
-      internalID: -2282698154315644318
+      spriteID: 646cca7f25eb071c0800000000000000
+      internalID: -4507893963445975482
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_6
+      name: yawAHHHH!_6
       rect:
         serializedVersion: 2
-        x: 457
-        y: 309
-        width: 78
-        height: 131
+        x: 399
+        y: 0
+        width: 33
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,20 +285,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 96de8761ce20ed370800000000000000
-      internalID: 8349113972204039529
+      spriteID: f06a8b98b48f6c030800000000000000
+      internalID: 3514769562526066191
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_7
+      name: yawAHHHH!_7
       rect:
         serializedVersion: 2
-        x: 657
-        y: 309
-        width: 78
-        height: 131
+        x: 463
+        y: 1
+        width: 33
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,20 +306,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fb250910089cb8500800000000000000
-      internalID: 399634543571653311
+      spriteID: 949dfad79a4513070800000000000000
+      internalID: 8084335893041633609
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_8
+      name: yawAHHHH!_8
       rect:
         serializedVersion: 2
-        x: 57
-        y: 59
-        width: 78
-        height: 131
+        x: 527
+        y: 1
+        width: 32
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -312,20 +327,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9c398757e7b332580800000000000000
-      internalID: -8853167028157508663
+      spriteID: 7ab31fac7dbd14400800000000000000
+      internalID: 306767969507163047
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_9
+      name: yawAHHHH!_9
       rect:
         serializedVersion: 2
-        x: 257
-        y: 59
-        width: 78
-        height: 131
+        x: 590
+        y: 1
+        width: 33
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -333,20 +348,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cf52b713889219580800000000000000
-      internalID: -8822224530119645700
+      spriteID: 8b302077a84ac3df0800000000000000
+      internalID: -199103368902081608
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_10
+      name: yawAHHHH!_10
       rect:
         serializedVersion: 2
-        x: 457
-        y: 59
-        width: 78
-        height: 131
+        x: 654
+        y: 0
+        width: 33
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -354,8 +369,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d95429eee9038b160800000000000000
-      internalID: 7041431476559299997
+      spriteID: e4b219e55f5d76850800000000000000
+      internalID: 6370295447769131854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yawAHHHH!_11
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 0
+        width: 38
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 083b9d1638b1599b0800000000000000
+      internalID: -5074119154066672768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yawAHHHH!_12
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 0
+        width: 41
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10f48d174957618b0800000000000000
+      internalID: -5181825040817565951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yawAHHHH!_13
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 0
+        width: 38
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cb347880315fa8a0800000000000000
+      internalID: -6291720885523694649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yawAHHHH!_14
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 0
+        width: 33
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1af183d169074c70800000000000000
+      internalID: 8955136699814509084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yawAHHHH!_15
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 1
+        width: 33
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c76e4902c933ff590800000000000000
+      internalID: -7638329697342527876
       vertices: []
       indices: 
       edges: []
@@ -370,18 +490,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      DamagedWell_0: -6096061396649701542
-      DamagedWell_1: -6352276768767116102
-      DamagedWell_10: 7041431476559299997
-      DamagedWell_2: 1720092206302543255
-      DamagedWell_3: 7142953087869331457
-      DamagedWell_4: 8308851137118332019
-      DamagedWell_5: -2282698154315644318
-      DamagedWell_6: 8349113972204039529
-      DamagedWell_7: 399634543571653311
-      DamagedWell_8: -8853167028157508663
-      DamagedWell_9: -8822224530119645700
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

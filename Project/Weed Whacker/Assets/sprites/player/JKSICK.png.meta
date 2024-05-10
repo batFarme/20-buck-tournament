@@ -1,40 +1,40 @@
 fileFormatVersion: 2
-guid: abaae23a4ed9d484fb124b08d39ec645
+guid: 5bbf1d6eab30f33409b0e9f3c40929de
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6096061396649701542
-    second: DamagedWell_0
+      213: 7472868358470053174
+    second: JKSICK_0
   - first:
-      213: -6352276768767116102
-    second: DamagedWell_1
+      213: -5856633316738818518
+    second: JKSICK_1
   - first:
-      213: 1720092206302543255
-    second: DamagedWell_2
+      213: 983113166390220799
+    second: JKSICK_2
   - first:
-      213: 7142953087869331457
-    second: DamagedWell_3
+      213: 7728038235317701945
+    second: JKSICK_3
   - first:
-      213: 8308851137118332019
-    second: DamagedWell_4
+      213: -6927912018713338515
+    second: JKSICK_4
   - first:
-      213: -2282698154315644318
-    second: DamagedWell_5
+      213: -4672927864706385568
+    second: JKSICK_5
   - first:
-      213: 8349113972204039529
-    second: DamagedWell_6
+      213: 4037220092465073635
+    second: JKSICK_6
   - first:
-      213: 399634543571653311
-    second: DamagedWell_7
+      213: -7342545317832273905
+    second: JKSICK_7
   - first:
-      213: -8853167028157508663
-    second: DamagedWell_8
+      213: 7584377799462423912
+    second: JKSICK_8
   - first:
-      213: -8822224530119645700
-    second: DamagedWell_9
+      213: 7131402019687558192
+    second: JKSICK_9
   - first:
-      213: 7041431476559299997
-    second: DamagedWell_10
+      213: 2793053535023554160
+    second: JKSICK_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -67,7 +67,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -102,10 +102,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -130,13 +130,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DamagedWell_0
+      name: JKSICK_0
       rect:
         serializedVersion: 2
-        x: 57
-        y: 559
-        width: 78
-        height: 131
+        x: 10
+        y: 0
+        width: 52
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,20 +144,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a5f09b34570766ba0800000000000000
-      internalID: -6096061396649701542
+      spriteID: 63d2dd7dd26f4b760800000000000000
+      internalID: 7472868358470053174
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_1
+      name: JKSICK_1
       rect:
         serializedVersion: 2
-        x: 257
-        y: 559
-        width: 78
-        height: 131
+        x: 73
+        y: 0
+        width: 52
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,20 +165,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: abc7ba24fed28d7a0800000000000000
-      internalID: -6352276768767116102
+      spriteID: a2e9018370f09bea0800000000000000
+      internalID: -5856633316738818518
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_2
+      name: JKSICK_2
       rect:
         serializedVersion: 2
-        x: 457
-        y: 559
-        width: 78
-        height: 131
+        x: 137
+        y: 0
+        width: 51
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,20 +186,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 79db4998fbefed710800000000000000
-      internalID: 1720092206302543255
+      spriteID: ff7d2b05738b4ad00800000000000000
+      internalID: 983113166390220799
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_3
+      name: JKSICK_3
       rect:
         serializedVersion: 2
-        x: 657
-        y: 559
-        width: 78
-        height: 131
+        x: 203
+        y: 0
+        width: 47
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -207,20 +207,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1082bb90dfdd02360800000000000000
-      internalID: 7142953087869331457
+      spriteID: 93d8fb284d18f3b60800000000000000
+      internalID: 7728038235317701945
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_4
+      name: JKSICK_4
       rect:
         serializedVersion: 2
-        x: 57
-        y: 309
-        width: 78
-        height: 131
+        x: 264
+        y: 0
+        width: 44
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,20 +228,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 374e9874618fe4370800000000000000
-      internalID: 8308851137118332019
+      spriteID: d6d9e6189bc1bdf90800000000000000
+      internalID: -6927912018713338515
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_5
+      name: JKSICK_5
       rect:
         serializedVersion: 2
-        x: 257
-        y: 309
-        width: 78
-        height: 131
+        x: 330
+        y: 0
+        width: 40
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,20 +249,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 26283967f1a3250e0800000000000000
-      internalID: -2282698154315644318
+      spriteID: 069b6238ddc662fb0800000000000000
+      internalID: -4672927864706385568
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_6
+      name: JKSICK_6
       rect:
         serializedVersion: 2
-        x: 457
-        y: 309
-        width: 78
-        height: 131
+        x: 392
+        y: 0
+        width: 44
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,20 +270,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 96de8761ce20ed370800000000000000
-      internalID: 8349113972204039529
+      spriteID: 3ed4373b846170830800000000000000
+      internalID: 4037220092465073635
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_7
+      name: JKSICK_7
       rect:
         serializedVersion: 2
-        x: 657
-        y: 309
-        width: 78
-        height: 131
+        x: 459
+        y: 0
+        width: 47
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,20 +291,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fb250910089cb8500800000000000000
-      internalID: 399634543571653311
+      spriteID: f0056679fe90a1a90800000000000000
+      internalID: -7342545317832273905
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_8
+      name: JKSICK_8
       rect:
         serializedVersion: 2
-        x: 57
-        y: 59
-        width: 78
-        height: 131
+        x: 521
+        y: 0
+        width: 51
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -312,20 +312,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9c398757e7b332580800000000000000
-      internalID: -8853167028157508663
+      spriteID: 86d0153cc6f114960800000000000000
+      internalID: 7584377799462423912
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_9
+      name: JKSICK_9
       rect:
         serializedVersion: 2
-        x: 257
-        y: 59
-        width: 78
-        height: 131
+        x: 585
+        y: 0
+        width: 52
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -333,20 +333,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cf52b713889219580800000000000000
-      internalID: -8822224530119645700
+      spriteID: 03ceaf56a54d7f260800000000000000
+      internalID: 7131402019687558192
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DamagedWell_10
+      name: JKSICK_10
       rect:
         serializedVersion: 2
-        x: 457
-        y: 59
-        width: 78
-        height: 131
+        x: 650
+        y: 0
+        width: 52
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -354,8 +354,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d95429eee9038b160800000000000000
-      internalID: 7041431476559299997
+      spriteID: 07e5ab1546be2c620800000000000000
+      internalID: 2793053535023554160
       vertices: []
       indices: 
       edges: []
@@ -370,18 +370,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      DamagedWell_0: -6096061396649701542
-      DamagedWell_1: -6352276768767116102
-      DamagedWell_10: 7041431476559299997
-      DamagedWell_2: 1720092206302543255
-      DamagedWell_3: 7142953087869331457
-      DamagedWell_4: 8308851137118332019
-      DamagedWell_5: -2282698154315644318
-      DamagedWell_6: 8349113972204039529
-      DamagedWell_7: 399634543571653311
-      DamagedWell_8: -8853167028157508663
-      DamagedWell_9: -8822224530119645700
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
