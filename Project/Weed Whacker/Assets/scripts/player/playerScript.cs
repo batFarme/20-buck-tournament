@@ -97,22 +97,27 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
     {
         States nextStateKey = CrntState.GetNextState();
 
-        if (!isTransitioningState)
+        if (!isTransitioningState)//!isTransitioningState
         {
             if (!nextStateKey.Equals(CrntState.StateKey))  // a check like this running every frame seems unoptimal... im just copying off the video for now but i should come back and see if it cant be optimized  TO-DO-FLAG-1
             {
+                print("CrntState and nextStateKey mismatch! transitioning!");
                 stateTransition(nextStateKey);
             }
-            CrntState.UpdateState();
         }
+        CrntState.UpdateState();
     }
 
     public void stateTransition(States stateKey)
     {
         isTransitioningState = true;
+        print("about to run CrntState's ExitState()");
         CrntState.ExitState();
+        print("just ran previous state's ExitState()");
         CrntState = StateDict[stateKey];
+        print("current state changed! about to run current state's EnterState()...");
         CrntState.EnterState();
+        print("current state's EnterState() just ran!");
         isTransitioningState = false;
     }
 
@@ -142,6 +147,11 @@ public class playerScript : StateMachine<playerScript.States>, Ientity, IWalkBeh
     public void rezFinished()
     {
         revitalize();
+    }
+
+    public void backToDemoScreen()
+    {
+        CrntState.StateIWantToBe = States.limbo;
     }
 
     public void onHealthEqualsZero(object sender, EventArgs e)

@@ -392,7 +392,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             ""bindingGroup"": ""Debug"",
             ""devices"": [
                 {
-                    ""devicePath"": ""<Keyboard>"",
+                    ""devicePath"": ""<HID::Microntek              USB Joystick          >"",
                     ""isOptional"": true,
                     ""isOR"": false
                 },
@@ -402,8 +402,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isOR"": false
                 },
                 {
-                    ""devicePath"": ""<HID::Microntek              USB Joystick          >"",
-                    ""isOptional"": false,
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": true,
                     ""isOR"": false
                 }
             ]

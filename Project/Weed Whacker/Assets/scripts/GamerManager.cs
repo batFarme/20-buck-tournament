@@ -42,6 +42,7 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
     }
     private void Start()
     {
+        
         theWell.GetComponent<wellScript>().onDeath += wellGameEnd;
         allPlayersDeadEvent += wellGameEnd;
         StartCoroutine(firstWaveStart());
@@ -74,13 +75,15 @@ public class GamerManager : MonoBehaviour //its named GamerManager rather than t
     public void returnToDemoScreen()
     {
         print("going back to the demo scene!");
-        if (player1 != null)
+        if (player1.GetComponent<playerScript>().CrntState != player1.GetComponent<playerScript>().StateDict[playerScript.States.limbo]) //"if this player's state isnt currently limbo, then..."
         {
-            player1.GetComponent<playerScript>().CrntState.StateIWantToBe = playerScript.States.limbo;
+            print("player1 is present; setting their state to limbo");
+            player1.GetComponent<playerScript>().backToDemoScreen();
         }
-        if (player2 != null)
+        if (player2.GetComponent<playerScript>().CrntState != player2.GetComponent<playerScript>().StateDict[playerScript.States.limbo]) //"if this player's state isnt currently limbo, then..."
         {
-            player2.GetComponent<playerScript>().CrntState.StateIWantToBe = playerScript.States.limbo;
+            print("player2 s present; setting their state to limbo");
+            player2.GetComponent<playerScript>().backToDemoScreen();
         }
         SceneManager.LoadScene("demoScreen");
     }

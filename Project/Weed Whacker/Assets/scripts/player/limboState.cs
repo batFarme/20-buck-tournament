@@ -26,11 +26,12 @@ public class limboState : BaseState<playerScript.States>
     {
         playersScript.attack.performed += joinGameFromLimbo; //forget having action maps change :shrug: ill just have functions subscribe and unsubscribe...
         selfObject.GetComponent<Animator>().SetTrigger("backToDemoScreen");
-        Debug.Log("limbostate's EnterState() run!");
+        //Debug.Log("limboState EnterState() just ran");
     }
 
     public override void ExitState() //essentially the "on spawn" function... though when i work on rezzing stuff, might have to make this a function th acutally nmv
     {
+        //Debug.Log("limboState ExitState() currently running...");
         playersScript.attack.performed -= joinGameFromLimbo;
         playersScript.notTheBallsTheManager = GameObject.Find("newGameManager");
         selfObject.GetComponent<Animator>().SetTrigger("gameJoin");
@@ -43,6 +44,7 @@ public class limboState : BaseState<playerScript.States>
         {
             GameObject.Find("newGameManager").GetComponent<GamerManager>().player2 = selfObject;
         }
+        Debug.Log("limboState ExitState() just ran");
     }
 
     public override playerScript.States GetNextState()

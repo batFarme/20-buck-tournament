@@ -370,7 +370,7 @@
             "bindingGroup": "Debug",
             "devices": [
                 {
-                    "devicePath": "<Keyboard>",
+                    "devicePath": "<HID::Microntek              USB Joystick          >",
                     "isOptional": true,
                     "isOR": false
                 },
@@ -380,8 +380,8 @@
                     "isOR": false
                 },
                 {
-                    "devicePath": "<HID::Microntek              USB Joystick          >",
-                    "isOptional": false,
+                    "devicePath": "<Keyboard>",
+                    "isOptional": true,
                     "isOR": false
                 }
             ]
